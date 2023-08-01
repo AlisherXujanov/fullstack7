@@ -1,24 +1,22 @@
-import Heading from './Components/Heading.jsx'
-import Nav from './Components/Nav'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { useState } from 'react'
+import Nav from './Components/Nav'
+import MainPage from './Components/MainPage.jsx'
+import NoPage from './Components/NoPage.jsx'
+import About from './Components/About.jsx'
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
-
-  function changeTheme() {
-    setDarkTheme(!darkTheme)
-  }
-
   return (
-    <div class={darkTheme ? 'dark-theme' : ''} className="App">
-      <button onClick={changeTheme}>
-        Change Theme
-      </button>
-
-      <Nav />
-      <Heading>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, nobis sequi. Modi doloribus maiores voluptates minus, facilis autem tempore? Repudiandae quae ratione natus incidunt, vitae ipsum tenetur esse id eaque!</p>
-      </Heading>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Nav />}>
+            <Route index element={<MainPage />} />
+            <Route path="/About" element={<About />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

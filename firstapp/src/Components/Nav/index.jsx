@@ -1,16 +1,18 @@
 import nav from './nav.scss';
 import { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom'
 
 function Navbar() {
     
     return (
-        <nav style={nav}>
-            <h3>Test</h3>
+        <>
+            <nav style={nav}>
+                <Link to={'/'}> Home </Link>
+                <Link to={'/About'}> About </Link>
+            </nav>
 
-            <div >
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident accusantium suscipit error odit ipsam dolorum placeat et. Libero, debitis, aliquam quos possimus consectetur delectus blanditiis reiciendis earum, obcaecati iure eaque.</p>
-            </div>
-        </nav>
+            <Outlet />
+        </>
     );
 }
 
