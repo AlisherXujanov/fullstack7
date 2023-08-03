@@ -1,0 +1,6 @@
+@use "./_resets";
+@import "./_settings";
+
+h1 {
+  color: map-get($map: $colors, $key: "warning");
+}

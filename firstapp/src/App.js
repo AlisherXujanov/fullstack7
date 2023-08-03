@@ -1,5 +1,4 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { useState } from 'react'
 import Header from './Components/Header'
 import MainPage from './Components/MainPage.jsx'
 import NoPage from './Components/NoPage.jsx'

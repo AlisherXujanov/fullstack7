@@ -1,9 +1,9 @@
-import nav from './nav.scss';
-import { useState } from 'react';
 import Nav from './Nav.jsx'
 import { Outlet } from 'react-router-dom'
 
 function Navbar() {
+
+    
 
     return (
         <>

@@ -1,12 +1,17 @@
 import style from './nav.scss'
 import Theme from '../Theme'
-import audioFile from '../../click.mp3'
+import audioFile from '../../Assets/click.mp3'
+import clickSound from '../../Assets/link_click.mp3'
 import { useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Nav() {
     const [theme, setTheme] = useState(false)
 
+    function playClickSound() {
+        const sound = new Audio(clickSound);
+        sound.play();
+    }
     function changeTheme() {
         const audio = new Audio(audioFile)
         audio.play()
@@ -20,8 +25,8 @@ function Nav() {
             <a id='theme-link' href="#" onClick={changeTheme}>
                 <Theme theme={theme} />
             </a>
-            <Link to={'/'}> Home </Link>
-            <Link to={'/About'}> About </Link>
+            <Link to={'/'} onClick={playClickSound}> Home </Link>
+            <Link to={'/About'} onClick={playClickSound}> About </Link>
         </nav>
     );
 }

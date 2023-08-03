@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.2s;
+    text-align: center;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+    transition: 0.2s;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
