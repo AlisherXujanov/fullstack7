@@ -1,0 +1,67 @@
+nav {
+    overflow: hidden;
+    background-color: #333;
+
+    #logo {
+        float: left;
+    }
+    #theme-link {
+        margin: 8px 20px;
+        border-radius: 30px;
+    }
+    a {
+        float: right;
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:link {
+            color: snow;
+        }
+        &:visited {
+            color: #eee;
+        }
+        &:hover:not(#theme-link) {
+            background-color: red;
+        }
+        &:active:not(#theme-link) {
+            transform: scale(0.6);
+            background-color: darkred;
+        }
+    }
+    a:not(#theme-link) {
+        padding: 10px 20px;
+    }
+}
+.dark-theme {
+    background-color: #333;
+    color: snow;
+}
+.light-theme {
+    background-color: lightgray;
+    a {
+        &:link {
+            color: black;
+        }
+        &:visited {
+            color: rgb(31, 0, 53);
+        }
+        &:hover:not(#theme-link) {
+            background-color: #333;
+            color: snow;
+        }
+        &:active:not(#theme-link) {
+            transform: scale(0.6);
+            background-color: #111;
+            color: snow;
+        }
+    }
+}
+
+#outlet {
+    min-height: 500px;
+}
+footer {
+    background-color: lightgray;
+    padding: 20px;
+    min-height: 180px;
+}

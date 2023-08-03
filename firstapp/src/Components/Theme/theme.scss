@@ -1,0 +1,38 @@
+.theme {
+    position: relative;
+    width: 45px;
+    height: 22px;
+    background-color: gray;
+    box-sizing: border-box;
+    padding: 1px;
+    border-radius: 20px;
+    * {
+        transition: 0.3s linear;
+    }
+
+    input[type="checkbox"],
+    .theme-toggler {
+        position: absolute;
+    }
+    input[type="checkbox"] {
+        z-index: 10;
+        width: 55px;
+        height: 30px;
+        bottom: -5px;
+        left: -5px;
+        opacity: 0;
+    }
+    .theme-toggler {
+        z-index: 5;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 20px;
+        bottom: 5px;
+        left: -2px;
+    }
+
+    input[type="checkbox"]:checked ~ .theme-toggler {
+        transform: translateX(23px) rotate(360deg);
+    }
+}
