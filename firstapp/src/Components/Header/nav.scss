@@ -20,10 +20,10 @@ nav {
         &:visited {
             color: #eee;
         }
-        &:hover:not(#theme-link) {
+        &:hover:not(#theme-link, #logo) {
             background-color: red;
         }
-        &:active:not(#theme-link) {
+        &:active:not(#theme-link, #logo) {
             transform: scale(0.6);
             background-color: darkred;
         }
@@ -45,11 +45,11 @@ nav {
         &:visited {
             color: rgb(31, 0, 53);
         }
-        &:hover:not(#theme-link) {
+        &:hover:not(#theme-link, #logo) {
             background-color: #333;
             color: snow;
         }
-        &:active:not(#theme-link) {
+        &:active:not(#theme-link, #logo) {
             transform: scale(0.6);
             background-color: #111;
             color: snow;
