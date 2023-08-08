@@ -5,6 +5,8 @@ import clickSound from '../../Assets/link_click.mp3'
 import logo from '../../Assets/images/logo.png'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+
 
 function Nav() {
     const [theme, setTheme] = useState(false)
