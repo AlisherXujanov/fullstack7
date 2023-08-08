@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import MainPage from './Components/MainPage.jsx'
 import NoPage from './Components/NoPage.jsx'
 import About from './Components/About.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

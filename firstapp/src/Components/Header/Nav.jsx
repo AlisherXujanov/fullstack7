@@ -5,7 +5,6 @@ import clickSound from '../../Assets/link_click.mp3'
 import logo from '../../Assets/images/logo.png'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button';
 
 
 function Nav() {
@@ -30,7 +29,9 @@ function Nav() {
             <a id='theme-link' href="#" onClick={changeTheme}>
                 <Theme theme={theme} />
             </a>
+
             <Link to={'/'} onClick={playClickSound}> Home </Link>
+
             <Link to={'/About'} onClick={playClickSound}> About </Link>
         </nav>
     );
