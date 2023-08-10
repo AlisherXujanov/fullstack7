@@ -1,8 +1,9 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './Components/Header'
 import MainPage from './Components/MainPage.jsx'
-import NoPage from './Components/NoPage.jsx'
+import NotFound from './Components/NotFound'
 import About from './Components/About.jsx'
+import Cards from './Components/Cards'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
           <Route path="/" element={<Header />}>
             <Route index element={<MainPage />} />
             <Route path="/About" element={<About />} />
-            <Route path="*" element={<NoPage />} />
+            <Route path="/Cards" element={<Cards />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

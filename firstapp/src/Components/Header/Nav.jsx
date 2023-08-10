@@ -30,9 +30,11 @@ function Nav() {
                 <Theme theme={theme} />
             </a>
 
-            <Link to={'/'} onClick={playClickSound}> Home </Link>
 
+            <Link to={'/Cards'} onClick={playClickSound}> Cards </Link>
+            
             <Link to={'/About'} onClick={playClickSound}> About </Link>
+            <Link to={'/'} onClick={playClickSound}> Home </Link>
         </nav>
     );
 }
