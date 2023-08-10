@@ -1,0 +1,29 @@
+@import "../../Assets/style/_main.scss";
+
+form {
+    width: 70%;
+    margin: 10px auto;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+
+    .card {
+        width: 100%;
+        border-radius: 5px;
+        background: linear-gradient(to right bottom, gray, silver);
+        color: map-get($colors, "green-light");
+        padding: 10px;
+    }
+}
