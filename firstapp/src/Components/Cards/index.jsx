@@ -29,7 +29,7 @@ function Card() {
             </form>
 
 
-            <hr />
+            <hr width='70%' style={{margin: "0 auto"}} />
 
             <div className="cards">
                 {cards.map(card => {
