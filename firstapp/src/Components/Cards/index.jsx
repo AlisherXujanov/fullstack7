@@ -3,7 +3,7 @@ import cardStyles from "./card.scss";
 
 function Card() {
     const [cards, setCards] = useState([]);
-
+    
     function createCard(event) {
         event.preventDefault()
         
@@ -27,9 +27,13 @@ function Card() {
             >
                 <div className="form-control">
                     <label htmlFor="card-title">Card Title</label>
-                    <input id="card-title" type="text" />
+                    <input 
+                        id="card-title" 
+                        type="text" 
+                        placeholder="Title"
+                    />
+                    <p id="error-field"></p>
                 </div>
-
                 <button>Submit</button>
             </form>
 
