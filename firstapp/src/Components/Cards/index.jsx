@@ -6,11 +6,16 @@ function Card() {
 
     function createCard(event) {
         event.preventDefault()
+        
+        const content = event.target[0].value
+        if (!content) return alert("Please enter a card title first!")
+
         const newCard = {
             id: Date.now(),
-            content: 'New Card'
+            content: content
         }
         setCards([...cards, newCard]);
+        event.target[0].value = ""
     }
 
     return (

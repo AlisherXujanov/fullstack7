@@ -17,6 +17,17 @@ form {
         color: snow;
         margin: 5px;
     }
+    button:hover {
+        background-color: map-get($colors, "blue-light");
+        color: darkcyan;
+    }
+    label {
+        font-size: 1.5em;
+        font-variant: small-caps;
+        color: darkcyan;
+        display: block;
+        font-family: cursive;
+    }
 }
 
 .cards {
