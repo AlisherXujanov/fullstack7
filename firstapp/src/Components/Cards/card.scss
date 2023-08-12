@@ -19,7 +19,7 @@ form {
         outline: none;
         border: none;
         padding: 8px 16px;
-        background-color: darkcyan;
+        background-color: #00b055;
         border-radius: 5px;
         color: snow;
         margin: 5px;
@@ -31,13 +31,13 @@ form {
     input {
         text-align: left;
         &::placeholder {
-            color: black;
+            color: map-get($colors, "blue-light");
         }
     }
     label {
         font-size: 1.5em;
         font-variant: small-caps;
-        color: darkcyan;
+        color: #00b055;
         display: block;
         font-family: cursive;
     }
