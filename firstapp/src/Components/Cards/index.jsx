@@ -3,11 +3,11 @@ import cardStyles from "./card.scss";
 
 function Card() {
     const [cards, setCards] = useState([]);
-    
+    const [content, setContent] = useState("");
+
     function createCard(event) {
         event.preventDefault()
-        
-        const content = event.target[0].value
+
         if (!content) return alert("Please enter a card title first!")
 
         const newCard = {
@@ -15,7 +15,7 @@ function Card() {
             content: content
         }
         setCards([...cards, newCard]);
-        event.target[0].value = ""
+        setContent("")
     }
 
     return (
@@ -27,25 +27,31 @@ function Card() {
             >
                 <div className="form-control">
                     <label htmlFor="card-title">Card Title</label>
-                    <input 
-                        id="card-title" 
-                        type="text" 
+                    <p>
+                        <b>{content}</b>
+                    </p>
+                    <input
+                        id="card-title"
+                        type="text"
+                        value={content}
+                        onChange={e => { setContent(e.target.value) }}
                         placeholder="Title"
                     />
                     <p id="error-field"></p>
                 </div>
+
                 <button>Submit</button>
             </form>
 
 
-            <hr width='70%' style={{margin: "0 auto"}} />
+            <hr width='70%' style={{ margin: "0 auto" }} />
 
             <div className="cards">
                 {cards.map(card => {
                     return (
-                        <div 
-                            key={card.id} 
-                            id={card.id + "-card"} 
+                        <div
+                            key={card.id}
+                            id={card.id + "-card"}
                             className="card"
                         >
                             <h3>{card.content}</h3>
