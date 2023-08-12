@@ -4,11 +4,20 @@ import cardStyles from "./card.scss";
 function Card() {
     const [cards, setCards] = useState([]);
     const [content, setContent] = useState("");
+    const [error, setError] = useState("");
+
+    function showError(message) {
+        const errorField = document.getElementById("error-field");
+        setError(message);
+        setTimeout(() => {
+            errorField.style.display = "none";
+        }, 1500)
+    }
 
     function createCard(event) {
         event.preventDefault()
 
-        if (!content) return alert("Please enter a card title first!")
+        if (!content) return showError("Please enter a title")
 
         const newCard = {
             id: Date.now(),
@@ -27,9 +36,6 @@ function Card() {
             >
                 <div className="form-control">
                     <label htmlFor="card-title">Card Title</label>
-                    <p>
-                        <b>{content}</b>
-                    </p>
                     <input
                         id="card-title"
                         type="text"
@@ -37,7 +43,7 @@ function Card() {
                         onChange={e => { setContent(e.target.value) }}
                         placeholder="Title"
                     />
-                    <p id="error-field"></p>
+                    <p id="error-field">{error}</p>
                 </div>
 
                 <button>Submit</button>
