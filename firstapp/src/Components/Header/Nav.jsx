@@ -32,6 +32,7 @@ function Nav() {
 
 
             <Link to={'/Cards'} onClick={playClickSound}> Cards </Link>
+            <Link to={'/Paginate'} onClick={playClickSound}> Paginate </Link>
             
             <Link to={'/About'} onClick={playClickSound}> About </Link>
             <Link to={'/'} onClick={playClickSound}> Home </Link>

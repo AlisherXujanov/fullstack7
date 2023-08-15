@@ -62,3 +62,15 @@ form {
         padding: 10px;
     }
 }
+@media screen and (max-width: 768px) {
+    // screen is for all devices and max-width is for the width of the screen
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 550px) {
+    // screen is for all devices and max-width is for the width of the screen
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
