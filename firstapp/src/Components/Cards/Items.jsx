@@ -3,7 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 
 function Items({ elements, elClass, containerClass }) {
-    let [page, setPage] = useState(elements ? 1 : 0 );
+    let [page, setPage] = useState(1);
     let [pageNumbers, setPageNumbers] = useState([]);
 
     const numberOfItems = elements.length
@@ -11,13 +11,14 @@ function Items({ elements, elClass, containerClass }) {
     const totalPages = Math.ceil(numberOfItems / itemsPerPage)
 
     for (let i = 0; i < totalPages; i++) {
+        const current = i + 1; 
         pageNumbers.push(
             <Pagination.Item
                 key={i} 
-                active={i + 1 === page}
-                onClick={() => setPage(i + 1)}
+                active={current === page}
+                onClick={() => setPage(i)}
             >
-                {i + 1}
+                {current}
             </Pagination.Item>
         );
     }
