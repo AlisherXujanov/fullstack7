@@ -17,6 +17,8 @@ function TestPaginate() {
     let [page, setPage] = useState(1);
     let [items, setItems] = useState(initialItems);
     let [pageNumbers, setPageNumbers] = useState([]);
+    let [active, setActive] = useState(1);
+
     const itemsPerPage = 4 
     const totalPages = 4
 
@@ -40,7 +42,6 @@ function TestPaginate() {
                 />
                 {pageNumbers}
                 <Pagination.Next
-
                     onClick={() => setPage(page + 1)}
                     disabled={page === totalPages}
                 />

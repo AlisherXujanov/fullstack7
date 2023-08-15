@@ -1,5 +1,6 @@
 import { useState } from "react";
 import cardStyles from "./card.scss";
+import Items from './Items.jsx'
 
 function Card() {
     const [cards, setCards] = useState([]);
@@ -80,7 +81,8 @@ function Card() {
             <hr width='70%' style={{ margin: "0 auto" }} />
 
             <div className="cards">
-                {cards.map(card => {
+                <Items elements={cards} />
+                {/* {cards.map(card => {
                     return (
                         <div
                             key={card.id}
@@ -95,7 +97,7 @@ function Card() {
                             </p>
                         </div>
                     )
-                })}
+                })} */}
             </div>
         </div>
     );
