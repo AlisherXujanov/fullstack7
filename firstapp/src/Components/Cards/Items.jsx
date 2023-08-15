@@ -4,7 +4,7 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function Items({ elements, elClass, containerClass }) {
     let [page, setPage] = useState(1);
-    let [pageNumbers, setPageNumbers] = useState([]);
+    let pageNumbers = []
 
     const numberOfItems = elements.length
     const itemsPerPage = 6
@@ -16,7 +16,7 @@ function Items({ elements, elClass, containerClass }) {
             <Pagination.Item
                 key={i} 
                 active={current === page}
-                onClick={() => setPage(i)}
+                onClick={() => setPage(i + 1)}
             >
                 {current}
             </Pagination.Item>
