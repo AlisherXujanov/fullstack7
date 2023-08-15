@@ -74,3 +74,25 @@ form {
         grid-template-columns: 1fr;
     }
 }
+
+.page-item .page-link {
+    background: linear-gradient(to right bottom, #00b09b, #96c93d);
+    color: snow;
+    transition: 0.2s;
+    &:active {
+        outline: 5px solid #00b09b80;
+    }
+    &:hover:not(.active .page-link) {
+        background: linear-gradient(to right bottom, #00ffe1, #a2ff00);
+        color: snow;
+        transform: scale(1.1);
+        z-index: 999;
+        border: solid 1px #a2ff00;
+    }
+}
+.disabled .page-link {
+    background: linear-gradient(to right bottom, #00b09b50, #96c93d50);
+}
+.active .page-link {
+    background: linear-gradient(to right bottom, #00ffe1, #a2ff00);
+}

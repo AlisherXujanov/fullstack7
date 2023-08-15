@@ -85,6 +85,7 @@ function Card() {
                     elements={cards} 
                     elClass={'card'}
                     containerClass={"cards"}
+                    itemsPerPage={6}
                 />
                 {/* {cards.map(card => {
                     return (

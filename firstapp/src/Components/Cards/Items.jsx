@@ -2,19 +2,17 @@ import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 
 
-function Items({ elements, elClass, containerClass }) {
+function Items({ elements, elClass, containerClass, itemsPerPage }) {
     let [page, setPage] = useState(1);
-    let pageNumbers = []
 
-    const numberOfItems = elements.length
-    const itemsPerPage = 6
-    const totalPages = Math.ceil(numberOfItems / itemsPerPage)
+    const pageNumbers = []
+    const totalPages = Math.ceil(elements.length / itemsPerPage)
 
     for (let i = 0; i < totalPages; i++) {
-        const current = i + 1; 
+        const current = i + 1;
         pageNumbers.push(
             <Pagination.Item
-                key={i} 
+                key={i}
                 active={current === page}
                 onClick={() => setPage(i + 1)}
             >
@@ -22,20 +20,28 @@ function Items({ elements, elClass, containerClass }) {
             </Pagination.Item>
         );
     }
+    const pageLinkStyle = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '10px'
+    }
 
     return (
         <div>
-            <Pagination>
-                <Pagination.Prev
-                    onClick={() => setPage(page - 1)}
-                    disabled={page === 1}
-                />
-                {pageNumbers}
-                <Pagination.Next
-                    onClick={() => setPage(page + 1)}
-                    disabled={page === totalPages}
-                />
-            </Pagination>
+            {itemsPerPage < elements.length &&
+                <Pagination style={pageLinkStyle}>
+                    <Pagination.Prev
+                        onClick={() => setPage(page - 1)}
+                        disabled={page === 1}
+                    />
+                    {pageNumbers}
+                    <Pagination.Next
+                        onClick={() => setPage(page + 1)}
+                        disabled={page === totalPages}
+                    />
+                </Pagination>
+            }
 
             <div className={containerClass ?? 'all-items-pagination'}>
                 {elements
