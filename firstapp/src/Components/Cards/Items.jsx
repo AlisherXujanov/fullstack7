@@ -2,24 +2,24 @@ import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 
 
-function Items({ elements }) {
-    let [page, setPage] = useState(1);
+function Items({ elements, elClass, containerClass }) {
+    let [page, setPage] = useState(elements ? 1 : 0 );
     let [pageNumbers, setPageNumbers] = useState([]);
-    let [active, setActive] = useState(1);
 
+    const numberOfItems = elements.length
     const itemsPerPage = 6
-    const totalPages = Math.ceil(elements.length / itemsPerPage)
+    const totalPages = Math.ceil(numberOfItems / itemsPerPage)
 
     for (let i = 0; i < totalPages; i++) {
         pageNumbers.push(
             <Pagination.Item
-                key={i}
-                active={i === active}
-                onClick={() => setPage(i)}
+                key={i} 
+                active={i + 1 === page}
+                onClick={() => setPage(i + 1)}
             >
-                {i}
+                {i + 1}
             </Pagination.Item>
-        )
+        );
     }
 
     return (
@@ -35,22 +35,25 @@ function Items({ elements }) {
                     disabled={page === totalPages}
                 />
             </Pagination>
-            {elements
-                .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-                .map(element => (
-                    <div
-                        key={element.id}
-                        id={element.id + "-element"}
-                        className="element"
-                    >
-                        <h3>{element.content}</h3>
-                        <p>
-                            <em>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam magni ex, nihil cum alias molestias.
-                            </em>
-                        </p>
-                    </div>
-                ))}
+
+            <div className={containerClass ?? 'all-items-pagination'}>
+                {elements
+                    .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+                    .map(element => (
+                        <div
+                            key={element.id}
+                            id={element.id + "-" + elClass}
+                            className={elClass}
+                        >
+                            <h3>{element.content}</h3>
+                            <p>
+                                <em>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam magni ex, nihil cum alias molestias.
+                                </em>
+                            </p>
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 }

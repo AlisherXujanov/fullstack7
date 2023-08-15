@@ -80,8 +80,12 @@ function Card() {
 
             <hr width='70%' style={{ margin: "0 auto" }} />
 
-            <div className="cards">
-                <Items elements={cards} />
+            <div>
+                <Items 
+                    elements={cards} 
+                    elClass={'card'}
+                    containerClass={"cards"}
+                />
                 {/* {cards.map(card => {
                     return (
                         <div
