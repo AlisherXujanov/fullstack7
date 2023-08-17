@@ -1,2 +1,15 @@
 @use "./Assets/style/_main";
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    // background: linear-gradient(90deg, #78790930, #00ffd130);
+    background: url(./Assets/images/background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    color: snow;
+}

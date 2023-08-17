@@ -3,9 +3,13 @@
 form {
     width: 70%;
     margin: 10px auto;
-    background: linear-gradient(to right bottom, #00b09b, #96c93d);
+    background: linear-gradient(to right bottom, #00b09b50, #96c93d50);
     border-radius: 10px;
     padding: 20px;
+
+    .form-control {
+        background-color: #cccccc70;
+    }
 
     #error-field {
         color: red;
