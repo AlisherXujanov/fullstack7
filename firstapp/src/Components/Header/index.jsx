@@ -8,6 +8,7 @@ function Navbar() {
 
     return (
         <>
+            <span id='starting-point'></span>
             <div id='navigation-menu'>
                 <Nav />
             </div>
@@ -50,7 +51,7 @@ function Navbar() {
                     </ul>
 
                     <span id='go-to-top-icon'>
-                        <a href="#navigation-menu">🔝</a>
+                        <a href="#starting-point">🔝</a>
                     </span>
                 </div>
             </footer>
