@@ -65,4 +65,14 @@ footer {
     background-color: lightgray;
     padding: 20px;
     min-height: 180px;
+
+    mask-image: linear-gradient(to bottom, transparent, black, black);
+    mask-position: center;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+
+    mask-image: linear-gradient(to bottom, transparent, black, black);
+    -webkit-mask-position: center;
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
 }
