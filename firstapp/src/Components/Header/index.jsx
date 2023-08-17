@@ -4,11 +4,13 @@ import logo from '../../Assets/images/logo.png'
 
 function Navbar() {
 
-    
+
 
     return (
         <>
-            <Nav id='navigation-menu' />
+            <div id='navigation-menu'>
+                <Nav />
+            </div>
 
             <div id='outlet'>
                 <Outlet />
@@ -16,14 +18,14 @@ function Navbar() {
 
             <footer>
                 <div className='left'>
-                    <img 
-                        src={logo} 
-                        alt="Alisher Company" 
+                    <img
+                        src={logo}
+                        alt="Alisher Company"
                         className='me-3'
-                        width={50} 
-                        height={30} 
+                        width={50}
+                        height={30}
                     />
-                    ©️ 2023 
+                    ©️ 2023
                     <br /> by Alisher & Fullstack Team
                 </div>
                 <div className="right">
@@ -47,7 +49,9 @@ function Navbar() {
                         <li><a href="#">Docs</a></li>
                     </ul>
 
-                    <span id='go-to-top-icon'>🔝</span>
+                    <span id='go-to-top-icon'>
+                        <a href="#navigation-menu">🔝</a>
+                    </span>
                 </div>
             </footer>
         </>

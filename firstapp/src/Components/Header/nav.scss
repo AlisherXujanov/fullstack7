@@ -1,4 +1,5 @@
 @import "../../Assets/style/_main.scss";
+
 nav {
     overflow: hidden;
     background-color: #333;
@@ -99,5 +100,8 @@ footer {
     #go-to-top-icon {
         font-size: 40px;
         cursor: pointer;
+        a {
+            text-decoration: none;
+        }
     }
 }
