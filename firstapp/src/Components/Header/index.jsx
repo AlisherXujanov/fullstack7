@@ -9,9 +9,7 @@ function Navbar() {
     return (
         <>
             <span id='starting-point'></span>
-            <div id='navigation-menu'>
-                <Nav />
-            </div>
+            <Nav />
 
             <div id='outlet'>
                 <Outlet />
