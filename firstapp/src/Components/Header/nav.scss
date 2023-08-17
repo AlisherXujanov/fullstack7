@@ -1,3 +1,4 @@
+@import "../../Assets/style/_main.scss";
 nav {
     overflow: hidden;
     background-color: #333;
@@ -62,17 +63,41 @@ nav {
     min-height: 500px;
 }
 footer {
-    background-color: lightgray;
+    background: linear-gradient(to bottom, rgb(0, 255, 0, 0.1), rgb(0, 255, 0, 0.3), rgb(0, 255, 0, 0.4));
     padding: 20px;
     min-height: 180px;
 
-    mask-image: linear-gradient(to bottom, transparent, black, black);
-    mask-position: center;
-    mask-size: 100%;
-    mask-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
 
-    mask-image: linear-gradient(to bottom, transparent, black, black);
-    -webkit-mask-position: center;
-    -webkit-mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
+    ul {
+        list-style-type: none;
+
+        li {
+            text-align: left;
+            a {
+                transition: 0.1s;
+                text-decoration: none;
+                color: map-get($colors, "right");
+                font-family: sans-serif;
+                display: inline-block;
+                padding: 3px 6px;
+                &:hover {
+                    color: snow;
+                    padding: 3px 6px;
+                    text-decoration: underline solid 1px snow;
+                }
+            }
+        }
+    }
+    .right {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #go-to-top-icon {
+        font-size: 40px;
+        cursor: pointer;
+    }
 }

@@ -1,5 +1,6 @@
 import Nav from './Nav.jsx'
 import { Outlet } from 'react-router-dom'
+import logo from '../../Assets/images/logo.png'
 
 function Navbar() {
 
@@ -7,15 +8,23 @@ function Navbar() {
 
     return (
         <>
-            <Nav />
+            <Nav id='navigation-menu' />
+
             <div id='outlet'>
                 <Outlet />
             </div>
 
             <footer>
                 <div className='left'>
-                    <img src="" alt="" width={50} height={50} />
-                    ©️ 2023 by Alisher & Fullstack Team
+                    <img 
+                        src={logo} 
+                        alt="Alisher Company" 
+                        className='me-3'
+                        width={50} 
+                        height={30} 
+                    />
+                    ©️ 2023 
+                    <br /> by Alisher & Fullstack Team
                 </div>
                 <div className="right">
                     <ul>
@@ -37,6 +46,8 @@ function Navbar() {
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Docs</a></li>
                     </ul>
+
+                    <span id='go-to-top-icon'>🔝</span>
                 </div>
             </footer>
         </>
