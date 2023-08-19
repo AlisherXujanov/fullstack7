@@ -2,7 +2,6 @@
 
 nav {
     overflow: hidden;
-    background-color: #333;
     margin-bottom: 100px;
     position: sticky;
     top: 0;
@@ -18,13 +17,9 @@ nav {
         float: right;
         text-decoration: none;
         transition: 0.2s;
+        color: snow;
+        text-transform: uppercase;
 
-        &:link {
-            color: snow;
-        }
-        &:visited {
-            color: #eee;
-        }
         &:hover:not(#theme-link, #logo) {
             background-color: red;
         }
@@ -35,30 +30,6 @@ nav {
     }
     a:not(#theme-link) {
         padding: 10px 20px;
-    }
-}
-.dark-theme {
-    background-color: #333;
-    color: snow;
-}
-.light-theme {
-    background-color: lightgray;
-    a {
-        &:link {
-            color: black;
-        }
-        &:visited {
-            color: rgb(31, 0, 53);
-        }
-        &:hover:not(#theme-link, #logo) {
-            background-color: #333;
-            color: snow;
-        }
-        &:active:not(#theme-link, #logo) {
-            transform: scale(0.6);
-            background-color: #111;
-            color: snow;
-        }
     }
 }
 
