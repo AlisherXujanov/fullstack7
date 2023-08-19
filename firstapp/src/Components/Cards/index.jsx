@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import cardStyles from "./card.scss";
 import Items from './Items.jsx'
 
 function Card() {
-    const [cards, setCards] = useState([]);
+    const CardKey = 'cards'
+    const [cards, setCards] = useState(getLSfunction(CardKey));
     const [content, setContent] = useState("");
     const [error, setError] = useState("");
 
@@ -54,6 +55,20 @@ function Card() {
             }
         }
     }
+
+    function getLSfunction(key) {
+        return JSON.parse(localStorage.getItem(key)) || []
+    }
+    function setLSfunction(key, value) {
+        localStorage.setItem(key, JSON.stringify(value))
+    }
+
+
+    
+    useEffect(() => {
+        setLSfunction(CardKey, cards)
+    }, [cards])
+
 
     return (
         <div style={cardStyles}>
