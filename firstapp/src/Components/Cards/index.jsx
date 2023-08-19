@@ -63,12 +63,9 @@ function Card() {
         localStorage.setItem(key, JSON.stringify(value))
     }
 
-
-    
     useEffect(() => {
         setLSfunction(CardKey, cards)
     }, [cards])
-
 
     return (
         <div style={cardStyles}>

@@ -1,10 +1,22 @@
 import Button from 'react-bootstrap/Button';
+import MemoTest from './MemoTest';
+import { useState } from 'react';
 
 function MainPage() {
+    const [count, setCount] = useState(0)
+
     return (
         <>
             <h1>Main Page</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolore, laboriosam earum quibusdam ratione reprehenderit nobis numquam dolorem similique repellendus natus. Nobis omnis deserunt quos excepturi eveniet natus animi obcaecati.</p>
+            <h1>Count: {count}</h1>
+            <Button 
+                variant='outline-primary' 
+                onClick={() => { setCount(count + 1) }}
+            >
+                Increment
+            </Button>
+
+            <MemoTest />
         </>
     );
 }
