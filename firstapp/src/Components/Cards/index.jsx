@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import cardStyles from "./card.scss";
 import Items from './Items.jsx'
+import { motion } from 'framer-motion'
 
 function Card() {
     const CardKey = 'cards'
     const [cards, setCards] = useState(getLSfunction(CardKey));
     const [content, setContent] = useState("");
     const [error, setError] = useState("");
+
+    const initialMotion = { transform: 'translateY(100vh)' }
+    const animate = { transform: 'translateY(0)' }
+    const exit = { transform: 'translateY(100vh)' }
 
     function showError(message) {
         setError(message);
@@ -68,7 +73,12 @@ function Card() {
     }, [cards])
 
     return (
-        <div style={cardStyles}>
+        <motion.div 
+            style={cardStyles}
+            initial={initialMotion}
+            animate={animate}
+            exit={exit}
+        >
             <h1>Cards</h1>
 
             <form id="create-card-form"
@@ -116,7 +126,7 @@ function Card() {
                     )
                 })} */}
             </div>
-        </div>
+        </motion.div>
     );
 }
 
