@@ -15,6 +15,7 @@ function Nav() {
             const scrollHeihgt = window.scrollY
             if (scrollHeihgt < 10) {
                 document.querySelector('nav').style.backgroundColor = 'transparent'
+                document.querySelector('nav').style.color = 'snow'
             } else {
                 document.querySelector('nav').style.backgroundColor = '#1f1f1f'
             }
