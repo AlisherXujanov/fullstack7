@@ -9,6 +9,10 @@ function reducer(state, action) {
     switch (action.type) {
         case 'increment':
             return { count: state.count + 1 }
+        case 'decrement':
+            return { count: state.count - 1 }
+        default:
+            throw new Error("Invalid Action")
     }
 }
 
@@ -31,6 +35,12 @@ function MainPage() {
                 onClick={() => { dispatch({type: "increment"}) }}
             >
                 Increment
+            </Button>
+            <Button
+                variant='danger'
+                onClick={() => { dispatch({type: "decrement"}) }}
+            >
+                Decrement
             </Button>
 
             <MemoTest />
