@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import MemoTest from './MemoTest';
-import { useState, useReducer } from 'react';
+import { useReducer } from 'react';
 import { motion } from 'framer-motion'
 
 const initialState = { count: 0 }
@@ -17,8 +17,6 @@ function reducer(state, action) {
 }
 
 function MainPage() {
-    // const [count, setCount] = useState(0)
-
     const [state, dispatch] = useReducer(reducer, initialState)
 
 
