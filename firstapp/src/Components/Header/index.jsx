@@ -1,15 +1,42 @@
 import Nav from './Nav.jsx'
 import { Outlet } from 'react-router-dom'
 import logo from '../../Assets/images/logo.png'
+import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import Button from 'react-bootstrap/esm/Button.js';
 
 function Navbar() {
 
-
+    const { t, i18n: { changeLanguage, language } } = useTranslation();
+    const [currentLanguage, setCurrentLanguage] = useState(language)
+    const handleChangeLanguage = () => {
+        const newLanguage = currentLanguage === "en" ? "ru" : "en";
+        setCurrentLanguage(newLanguage);
+        changeLanguage(newLanguage);
+    }
 
     return (
         <>
             <span id='starting-point'></span>
             <Nav />
+
+            <hr />
+            <h1>
+                Our Translated Heading:
+                {t('heading', { name: "Alisher", appName: "App for Translations" })}
+                <hr />
+                {t('test')}
+            </h1>
+            <h3>
+                Current Language: {currentLanguage}
+            </h3>
+            <Button
+                variant='success'
+                onClick={handleChangeLanguage}
+            >
+                Change Language
+            </Button>
+            <hr />
 
             <div id='outlet'>
                 <Outlet />
