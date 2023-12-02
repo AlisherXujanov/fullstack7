@@ -1,4 +1,5 @@
 import Navigation from "./components/Navigation"
+import About from "./components/About"
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
         <Navigation />
       </nav>
 
-      <h1>Hello world</h1>
+      <main>
+        <About />
+      </main>
     </div>
   );
 }
