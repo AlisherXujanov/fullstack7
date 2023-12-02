@@ -30,5 +30,9 @@ $light: #f4f4f4;
             -2px -2px 15px $warning,
             inset 2px 2px 15px $warning,
             inset -2px -2px 15px $warning;
+        transform: scale(0.95);
+    }
+    &:active {
+        transform: scale(0.8);
     }
 }
