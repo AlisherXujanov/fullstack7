@@ -3,7 +3,24 @@ import './style.scss'
 function Navigation() {
     return (
         <div className="nav-wrapper">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quos voluptates sint corrupti ex nemo totam odio sunt aliquam fuga accusantium neque quidem minus veritatis ullam, error dicta cum repellat.</p>
+            <div className="logo">
+                <h2>Fonte</h2>
+            </div>
+
+            <div className="nav-links">
+                <a href="/#О-нас">О нас</a>
+                <a href="/#Команда">Команда</a>
+                <a href="/#Блог">Блог</a>
+                <a href="/#Продукты">Продукты</a>
+                <a href="/#Контакты">Контакты</a>
+            </div>
+
+            <div className="auth">
+                <button className="warning-btn">
+                    Войти
+                </button>
+                <a href="/#Рус">Рус</a>
+            </div>
         </div>
     );
 }
