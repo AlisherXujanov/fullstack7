@@ -3,4 +3,27 @@
 .nav-wrapper {
     background-color: #141414;
     color: snow;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+
+    .logo {
+        h2 {
+            font-size: 1.8em;
+        }
+    }
+    .nav-links {
+        a {
+            @extend %link;
+        }
+    }
+    .auth {
+        a {
+            @extend %link;
+            text-decoration: underline 1px solid snow;
+        }
+        button {
+            @extend %warning-btn;
+        }
+    }
 }

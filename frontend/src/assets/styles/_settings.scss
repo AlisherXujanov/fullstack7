@@ -1,6 +1,34 @@
 @import "./samples";
 
 $warning: #ff6600;
+$warning-t: #ff660050;
 $dark: #141414;
 $success: #00cc00;
 $light: #f4f4f4;
+
+%link {
+    @extend %link-style;
+}
+
+%warning-btn {
+    @extend %btn;
+    padding: 10px 35px;
+    background-color: $warning-t;
+    border: 2px solid $warning;
+    color: snow;
+    border-radius: 0;
+    box-shadow:
+        2px 2px 15px $warning-t,
+        -2px -2px 15px $warning-t,
+        inset 2px 2px 15px $warning-t,
+        inset -2px -2px 15px $warning-t;
+
+    &:hover {
+        background-color: darken(black, 10%);
+        box-shadow:
+            2px 2px 15px $warning,
+            -2px -2px 15px $warning,
+            inset 2px 2px 15px $warning,
+            inset -2px -2px 15px $warning;
+    }
+}
