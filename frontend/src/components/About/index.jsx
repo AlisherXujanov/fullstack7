@@ -7,6 +7,7 @@ import { useState } from "react"
 
 function About({ title, children }) {
     const [theme, setTheme] = useState(false)
+    const [number, setNumber] = useState(0)
 
     const themeStyle = {
         backgroundColor: theme ? "#333" : "#fff",
@@ -38,6 +39,12 @@ function About({ title, children }) {
             <button onClick={toggle}>
                 Toggle theme
             </button>
+
+            <hr />
+
+            <h2>{number}</h2>
+            <button onClick={() => {setNumber(number+1)}}>Increment +</button>
+            <button onClick={() => {setNumber(number-1)}}>Decrement -</button>
         </div>
     );
 }
