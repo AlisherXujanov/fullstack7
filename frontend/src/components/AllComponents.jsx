@@ -1,7 +1,8 @@
 import { useLocation, Route, Routes } from 'react-router-dom'
 import Navigation from "./Navigation"
 import About from "./About"
-
+import Blog from "./Blog"
+import NoPage from "./NoPage"
 
 function AllComponents(props) {
     const location = useLocation()
