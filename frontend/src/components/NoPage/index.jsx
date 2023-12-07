@@ -1,11 +1,11 @@
 import './style.scss'
 
-function Blog(props) {
+function NoPage(props) {
     return (
-        <div id="blog-wrapper">
-            <h2>Blog</h2>
+        <div id="no-page-wrapper">
+            <h2>404 Page Not Found</h2>
         </div>
     );
 }
 
-export default Blog;
+export default NoPage;
