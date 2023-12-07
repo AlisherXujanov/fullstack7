@@ -7,7 +7,19 @@
         gap: 50px;
         margin-top: 50px;
 
+        .left {
+            img {
+                filter: grayscale(100%);
+            }
+        }
+
         .right {
+            p {
+                font-family: cursive;
+                line-height: 30px;
+                color: darkgray;
+            }
+
             button {
                 @extend %warning-btn;
                 display: flex;
