@@ -1,15 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: 0.1s;
-}
+@import "assets/styles/settings";
 
 #outlet {
     padding: 100px;
 }
 
 body {
-    background-color: #333;
-    color: snow;
+    background-color: $dark;
+    color: $light;
 }
