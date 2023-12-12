@@ -1,0 +1,11 @@
+.heading-wrapper {
+    h2 {
+        display: inline-block;
+        position: relative;
+        img {
+            position: absolute;
+            right: -25px;
+            top: -15px;
+        }
+    }
+}
