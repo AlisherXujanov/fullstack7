@@ -32,4 +32,31 @@
             }
         }
     }
+
+    .values {
+        margin-top: 50px;
+
+        .values-content {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+
+            .value-item {
+                display: flex;
+
+                div {
+                    h2 {
+                        margin-bottom: 30px;
+                    }
+                    p {
+                        color: darkgray;
+                        font-family: cursive;
+                        line-height: 25px;
+                    }
+                    padding-top: 45px;
+                }
+            }
+        }
+    }
 }

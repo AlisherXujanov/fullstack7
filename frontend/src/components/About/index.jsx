@@ -2,6 +2,7 @@ import "./style.scss"
 import AboutPic from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
 import Heading from "../common/Heading"
+import Values from "./Values.jsx"
 
 function About() {
 
@@ -25,6 +26,12 @@ function About() {
                         Лицензии
                     </button>
                 </div>
+            </div>
+
+            <hr style={{margin: "70px 0"}} />
+
+            <div className="values">
+                <Values />
             </div>
         </div>
     );
