@@ -2,6 +2,13 @@ import "./style.scss"
 import AboutPic from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
 
+// 1. git clone
+// 2. cd fullstack7
+// 3. code .
+// 4. cd frontend
+// 5. npm install
+// 6. npm start
+
 function About() {
 
     return (

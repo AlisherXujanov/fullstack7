@@ -8,3 +8,19 @@ body {
     background-color: $dark;
     color: $light;
 }
+
+::-webkit-scrollbar {
+    background-color: $dark-lighter;
+    border-radius: 10px;
+    width: 14px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $warning-t;
+    border-radius: 20px;
+    width: 8px;
+    border: 4px solid $dark-lighter;
+
+    &:hover {
+        background-color: $warning;
+    }
+}
