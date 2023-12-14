@@ -59,4 +59,32 @@
             }
         }
     }
+
+    #teams {
+        margin: 50px 0;
+        .info {
+            color: darkgray;
+            width: 70%;
+            padding: 50px 0 50px 0;
+        }
+        .teams-wrapper {
+            .images {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
+
+                .member {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                img {
+                    border-radius: 50%;
+                    filter: grayscale(100%);
+                }
+            }
+        }
+    }
 }

@@ -3,6 +3,7 @@ import AboutPic from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
 import Heading from "../common/Heading"
 import Values from "./Values.jsx"
+import Team from "./Team.jsx"
 import Marquee from "../common/Marquee"
 
 function About() {
@@ -38,8 +39,11 @@ function About() {
             <Marquee />
 
             <div id="teams">
-                
+                <Heading size={2}>Наша команда</Heading>
+                <Team />
             </div>
+            
+            <Marquee />
         </div>
     );
 }

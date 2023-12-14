@@ -16,7 +16,7 @@ function Navigation() {
 
                 <div className="nav-links">
                     <Link to={"/about"}>О нас</Link>
-                    <Link to={"/about#teams"}>Команда</Link>
+                    <a href={"/about#teams"}>Команда</a>
                     <Link to={"/blog"}>Блог</Link>
                     <Link to={"/products"}>Продукты</Link>
                     <Link to={"/contacts"}>Контакты</Link>
