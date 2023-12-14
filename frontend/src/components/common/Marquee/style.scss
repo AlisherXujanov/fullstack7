@@ -1,0 +1,51 @@
+@import "../../../assets/styles/settings";
+
+#progress-marquee {
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .progress-wrapper {
+        width: 200%;
+        padding: 20px;
+        height: 70px;
+        overflow: hidden;
+        position: absolute;
+        animation: marquee 5s linear infinite;
+
+        .progress-bar {
+            float: left;
+            height: 3px;
+            position: relative;
+            width: calc(50% - 50px);
+            margin: 10px 25px;
+            background: linear-gradient(to right, #222, $warning-t, $warning);
+            box-shadow:
+                1px 1px 20px 1px $warning,
+                4px 4px 20px 4px black;
+
+            .dot {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: $warning;
+                position: absolute;
+                right: -1px;
+                top: -1.5px;
+                box-shadow:
+                    3px 3px 20px 3px $warning,
+                    -3px -3px 20px 3px $warning;
+            }
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -100%;
+    }
+}
