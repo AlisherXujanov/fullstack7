@@ -3,6 +3,7 @@ import AboutPic from "../../assets/images/about.png"
 import Licence from "../../assets/icons/licence.png"
 import Heading from "../common/Heading"
 import Values from "./Values.jsx"
+import Marquee from "../common/Marquee"
 
 function About() {
 
@@ -28,7 +29,7 @@ function About() {
                 </div>
             </div>
 
-            <hr style={{margin: "70px 0"}} />
+            <Marquee />
 
             <div className="values">
                 <Values />
