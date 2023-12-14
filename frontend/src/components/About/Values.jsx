@@ -5,25 +5,27 @@ import Diamond from "../../assets/icons/diamond.png"
 import Bag from "../../assets/icons/bag.png"
 import Graph from "../../assets/icons/graph.png"
 import HandShake from "../../assets/icons/handShake.png"
+import ValueItem from "./ValueItem.jsx"
 
 function Values() {
+    const imgs = [Diamond, Graph, Bag, HandShake]
     return (
         <div className="values-wrapper">
             <Heading size={2}>Наши ценности</Heading>
 
             <div className="values-content">
-                <div className="value-item">
-                    <img 
-                        src={Diamond}
-                        alt="diamond" 
-                        width={200}
-                        height={200}
-                    />
-                    <div>
-                        <h2>Стабильность</h2>
-                        <p>Сохранность капитала клиентов приоритетнее доходности - каждое решение взвешено, обдумано и оценено.</p>
-                    </div>
-                </div>
+                {
+                    valuesDB.map((item, index) => {
+                        return (
+                            <ValueItem 
+                                key={index}
+                                image={imgs[index]}
+                                title={item.title}
+                                subtitle={item.subtitle}
+                            />
+                        )
+                    })
+                }
             </div>
         </div>
     );
