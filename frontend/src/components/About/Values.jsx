@@ -1,3 +1,4 @@
+import valuesDB from "../../db/values.json"
 import "./style.scss"
 import Heading from "../common/Heading"
 import Diamond from "../../assets/icons/diamond.png"
