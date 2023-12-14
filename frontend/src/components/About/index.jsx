@@ -34,6 +34,12 @@ function About() {
             <div className="values">
                 <Values />
             </div>
+
+            <Marquee />
+
+            <div id="teams">
+                
+            </div>
         </div>
     );
 }
