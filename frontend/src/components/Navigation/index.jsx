@@ -1,5 +1,6 @@
 import './style.scss'
 import { Outlet, Link } from 'react-router-dom'
+import Heading from "../common/Heading"
 
 function Navigation() {
     return (
@@ -7,16 +8,18 @@ function Navigation() {
             <div className="nav-wrapper">
                 <div className="logo">
                     <h2>
-                        <Link to={"/"}>Fonte</Link>
+                        <Link to={"/"}>
+                            <Heading size={1.5}>Fonte</Heading>
+                        </Link>
                     </h2>
                 </div>
 
                 <div className="nav-links">
-                    <a href="/#О-нас">О нас</a>
-                    <a href="/#Команда">Команда</a>
+                    <Link to={"/about"}>О нас</Link>
+                    <Link to={"/about#teams"}>Команда</Link>
                     <Link to={"/blog"}>Блог</Link>
-                    <a href="/#Продукты">Продукты</a>
-                    <a href="/#Контакты">Контакты</a>
+                    <Link to={"/products"}>Продукты</Link>
+                    <Link to={"/contacts"}>Контакты</Link>
                 </div>
 
                 <div className="auth">
