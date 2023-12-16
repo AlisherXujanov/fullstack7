@@ -1,0 +1,7 @@
+.footer-wrapper {
+    .footer-top {
+        display: grid;
+        grid-template-columns: 2fr 3fr 1fr;
+        gap: 20px;
+    }
+}
