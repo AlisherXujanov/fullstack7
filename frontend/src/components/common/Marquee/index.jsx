@@ -1,17 +1,23 @@
 import "./style.scss"
-// import reversedStyle from "./reversed.scss"
+
 
 function Marquee(props) {
-    // let style = props.direction === "left" ? reversedStyle : {}
+    let progressBar = props.reversed ? {
+        float: "left",
+        background: "linear-gradient(to left, #222, #ff660050, #ff6600)"
+    } : {}
+
+    let dotPosition = props.reversed ? { left: "-1px" } : {}
+
     return (
         <div>
             <div id="progress-marquee">
-                <div class="progress-wrapper">
-                    <div class="progress-bar">
-                        <span class="dot"></span>
+                <div class={props.reversed ? "progress-wrapper reversed" : "progress-wrapper"}>
+                    <div style={progressBar} class="progress-bar">
+                        <span style={dotPosition} class="dot"></span>
                     </div>
-                    <div class="progress-bar">
-                        <span class="dot"></span>
+                    <div style={progressBar} class="progress-bar">
+                        <span style={dotPosition} class="dot"></span>
                     </div>
                 </div>
             </div>

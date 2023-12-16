@@ -1,17 +1,3 @@
-@import "../../../assets/styles/settings";
-#progress-marquee {
-    .progress-wrapper {
-        .progress-bar {
-            float: right;
-            background: linear-gradient(to left, #222, $warning-t, $warning);
-
-            .dot {
-                left: -1px;
-            }
-        }
-    }
-}
-
 @keyframes marquee {
     0% {
         left: 0;

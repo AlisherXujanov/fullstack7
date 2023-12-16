@@ -39,6 +39,10 @@
             }
         }
     }
+
+    .progress-wrapper.reversed {
+        animation: marquee-reversed 5s linear infinite;
+    }
 }
 
 @keyframes marquee {
@@ -47,5 +51,14 @@
     }
     100% {
         right: -100%;
+    }
+}
+
+@keyframes marquee-reversed {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
     }
 }
