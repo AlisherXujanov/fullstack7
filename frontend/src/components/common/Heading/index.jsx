@@ -4,6 +4,7 @@ import HeadingVector from "../../../assets/icons/headingVector.png"
 function Heading(props) {
     const fontSize = {
         fontSize: `calc(48px / ${props.size})`,
+        color: props.color ? props.color : ""
     }
     return (
         <div className="heading-wrapper">

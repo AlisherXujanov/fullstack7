@@ -1,6 +1,7 @@
 import './style.scss'
 import { Outlet, Link } from 'react-router-dom'
 import Heading from "../common/Heading"
+import Footer from "../Footer"
 
 function Navigation() {
     return (
@@ -33,6 +34,10 @@ function Navigation() {
             <div id='outlet'>
                 <Outlet />
             </div>
+
+            <footer id="footer">
+                <Footer />
+            </footer>
         </div>
 
     );
