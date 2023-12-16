@@ -26,13 +26,13 @@
                 4px 4px 20px 4px black;
 
             .dot {
-                width: 7px;
-                height: 7px;
+                width: 10px;
+                height: 10px;
                 border-radius: 50%;
                 background-color: $warning;
                 position: absolute;
                 right: -1px;
-                top: -1.5px;
+                top: -3px;
                 box-shadow:
                     3px 3px 20px 3px $warning,
                     -3px -3px 20px 3px $warning;

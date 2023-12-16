@@ -30,20 +30,20 @@ function About() {
                 </div>
             </div>
 
-            <Marquee />
+            <Marquee direction={'right'} />
 
             <div className="values">
                 <Values />
             </div>
 
-            <Marquee />
+            <Marquee direction={'left'} />
 
             <div id="teams">
                 <Heading size={2}>Наша команда</Heading>
                 <Team />
             </div>
             
-            <Marquee />
+            <Marquee direction={'right'} />
         </div>
     );
 }
