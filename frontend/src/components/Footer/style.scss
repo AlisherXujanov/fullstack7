@@ -1,9 +1,12 @@
+@import "../../assets/styles/settings";
+
 .footer-wrapper {
     .footer-top {
         display: grid;
         grid-template-columns: 2fr 3fr 1fr;
         gap: 20px;
         padding: 50px 0;
+        background-color: $dark;
 
         .footer-heading {
             padding: 20px 50px;
@@ -21,6 +24,16 @@
                 color: gray;
                 padding: 10px 0;
             }
+        }
+    }
+    .footer-bottom {
+        background-color: $dark-darker;
+        padding: 50px;
+
+        p {
+            font-size: 0.8em;
+            color: gray;
+            margin: 30px 0;
         }
     }
 }
