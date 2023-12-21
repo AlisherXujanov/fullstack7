@@ -1,46 +1,59 @@
 @import "../../assets/styles/settings";
 
-#contacts-wrapper {
-    padding: 100px;
-    background-color: $dark-lighter;
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+.contacts {
+    #contacts-wrapper {
+        padding: 100px;
+        background-color: $dark-lighter;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
 
-    .left {
-        .info {
-            margin: 40px 0;
-            p {
-                color: darkgray;
+        .left {
+            .info {
+                margin: 40px 0;
+                p {
+                    color: darkgray;
+                }
+            }
+        }
+        .right {
+            input,
+            button {
+                width: 100%;
+                margin: 5px 0;
+                border: 2px solid transparent;
+                padding: 15px 20px;
+                outline: none;
+                background-color: $dark;
+                color: snow;
+
+                &::placeholder {
+                    color: darkgray;
+                    font-size: 0.8em;
+                }
+                &:hover,
+                &:focus {
+                    border: 2px solid yellow;
+                    box-shadow:
+                        5px 5px 25px $warning,
+                        -5px -5px 25px $warning,
+                        10px 10px 50px black,
+                        -10px -10px 50px black,
+                        inset 0 1px 30px $warning-t,
+                        inset 0 -1px 30px $warning-t;
+                }
             }
         }
     }
-    .right {
-        input,
-        button {
+    .maps {
+        div {
             width: 100%;
-            margin: 5px 0;
-            border: 2px solid transparent;
-            padding: 15px 20px;
-            outline: none;
-            background-color: $dark;
-            color: snow;
-
-            &::placeholder {
-                color: darkgray;
-                font-size: 0.8em;
-            }
-            &:hover,
-            &:focus {
-                border: 2px solid yellow;
-                box-shadow:
-                    5px 5px 25px $warning,
-                    -5px -5px 25px $warning,
-                    10px 10px 50px black,
-                    -10px -10px 50px black,
-                    inset 0 1px 30px $warning-t,
-                    inset 0 -1px 30px $warning-t;
-            }
+            margin-bottom: 20px;
         }
+        padding: 0 100px;
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        background-color: $dark-lighter;
     }
 }

@@ -41,12 +41,12 @@ function Contacts(props) {
             <div className="maps">
                 <div className="left">
                     <div id="map-1">
-                        <img src={Map1} alt="Map1" width={"100%"} />
+                        <img src={Map2} alt="Map2" width={"100%"} />
                     </div>
                 </div>
                 <div className="right">
                     <div id="map-2">
-                        <img src={Map2} alt="Map2" width={"100%"} />
+                        <img src={Map1} alt="Map1" width={"100%"} />
                     </div>
                 </div>
             </div>
