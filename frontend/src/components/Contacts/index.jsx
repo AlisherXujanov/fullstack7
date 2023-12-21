@@ -9,7 +9,7 @@ function Contacts(props) {
     return (
         <div id="contacts-wrapper">
             <div className="left">
-                <Heading size={2}>Контакты</Heading>
+                <Heading size={1.6}>Контакты</Heading>
                 <div className='info'>
                     <h4>Задайте нам любой вопрос</h4>
                     <p>+998 33 4747477</p>

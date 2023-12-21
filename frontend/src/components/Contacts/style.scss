@@ -1,10 +1,18 @@
+@import "../../assets/styles/settings";
+
 #contacts-wrapper {
+    padding: 100px;
+    background-color: $dark-lighter;
     display: flex;
     justify-content: space-between;
     gap: 50px;
 
     .left {
         .info {
+            margin: 40px 0;
+            p {
+                color: darkgray;
+            }
         }
     }
     .right {
