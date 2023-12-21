@@ -28,7 +28,9 @@ function Contacts(props) {
                     <input type="text" placeholder='Полное Имя' required />
                     <input type="email" placeholder='Email' required />
                     <input type="text" placeholder='Телефон' required />
-                    <input className='submit-btn' type='button' value="Отправить"></input>
+                    <button className='submit-btn'>
+                        Отправить
+                    </button>
                 </form>
             </div>
         </div>
