@@ -1,35 +1,37 @@
 @import "../../assets/styles/settings";
 
 #about-wrapper {
-    padding: 100px;
-
     .about {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: 50px;
-        margin-top: 50px;
+        padding: 100px;
 
-        .left {
-            img {
-                filter: grayscale(100%);
-            }
-        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 50px;
+            margin-top: 50px;
 
-        .right {
-            p {
-                font-family: cursive;
-                line-height: 30px;
-                color: darkgray;
-            }
-
-            button {
-                @extend %warning-btn;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
+            .left {
                 img {
-                    margin-right: 10px;
+                    filter: grayscale(100%);
+                }
+            }
+
+            .right {
+                p {
+                    font-family: cursive;
+                    line-height: 30px;
+                    color: darkgray;
+                }
+
+                button {
+                    @extend %warning-btn;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        margin-right: 10px;
+                    }
                 }
             }
         }
@@ -37,6 +39,7 @@
 
     .values {
         margin-top: 50px;
+        padding: 100px;
 
         .values-content {
             margin-top: 30px;
@@ -63,6 +66,7 @@
     }
 
     #teams {
+        padding: 100px;
         margin: 50px 0;
         .info {
             color: darkgray;
