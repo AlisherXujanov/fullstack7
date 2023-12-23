@@ -1,7 +1,6 @@
 import './style.scss'
 import Heading from '../common/Heading';
-import Map1 from '../../assets/maps/Ala.png'
-import Map2 from '../../assets/maps/Ast.png'
+import MapComponent from '../common/MapComponent';
 
 function Contacts(props) {
     function submit(e) {
@@ -41,12 +40,12 @@ function Contacts(props) {
             <div className="maps">
                 <div className="left">
                     <div id="map-1">
-                        <img src={Map2} alt="Map2" width={"100%"} />
+                        <MapComponent />
                     </div>
                 </div>
                 <div className="right">
                     <div id="map-2">
-                        <img src={Map1} alt="Map1" width={"100%"} />
+                        <MapComponent />
                     </div>
                 </div>
             </div>
