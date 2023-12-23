@@ -7,11 +7,11 @@ function CarouselComponent(props) {
         filter: props.blurred ? "grayscale(100%)" : "none"
     }
     return (
-        <>
+        <section className="carousel-section">
             <div className="carousel-c-children">
                 { props.children }
             </div>
-            <Carousel autoPlay={true} infiniteLoop={true}>
+            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
                 {
                     props.images.map((img, index) => {
                         return (
@@ -28,7 +28,7 @@ function CarouselComponent(props) {
                     })
                 }
             </Carousel>
-        </>
+        </section>
     );
 }
 

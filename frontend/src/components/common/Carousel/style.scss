@@ -1,0 +1,15 @@
+@import "../../../assets/styles/settings";
+
+.carousel-section {
+    box-shadow: 0 0 50px $warning-t;
+
+    .control-dots {
+        li.dot {
+            background-color: $warning;
+            box-shadow:
+                1px 1px 10px 1px $warning-t,
+                -1px -1px 10px 1px $warning-t;
+            transform: scale(2);
+        }
+    }
+}
