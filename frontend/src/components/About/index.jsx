@@ -6,11 +6,23 @@ import Values from "./Values.jsx"
 import Team from "./Team.jsx"
 import Marquee from "../common/Marquee"
 import ContactsForm from "../ContactsForm"
+import CarouselComponent from "../common/Carousel"
+
+import Img1 from "../../assets/images/img1.png"
+import Img2 from "../../assets/images/img2.png"
+import Img3 from "../../assets/images/img3.png"
+import Img4 from "../../assets/images/img4.png"
+import Img5 from "../../assets/images/img5.png"
 
 function About() {
+    const images = [Img1, Img2, Img3, Img4, Img5]
 
     return (
         <div id="about-wrapper">
+            <CarouselComponent images={images} blurred={true}>
+                {/* ... */}
+            </CarouselComponent>
+
 
             <div className="about">
                 <Heading size={2}>О нас</Heading>
