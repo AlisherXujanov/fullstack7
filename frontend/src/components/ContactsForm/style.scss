@@ -1,0 +1,50 @@
+@import "../../assets/styles/settings";
+
+#contacts-form-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    background-color: $black;
+    padding: 0 250px;
+
+    form {
+        padding: 50px 50px 50px 0;
+        text-align: center;
+
+        button {
+            @extend %warning-btn;
+            padding: 20px 40px;
+            font-weight: bold;
+            box-shadow:
+                inset 10px 10px 50px $warning-t,
+                10px 10px 50px $warning-t,
+                -10px -10px 50px $warning-t;
+            margin: 30px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background-color: $dark;
+            padding: 20px;
+            color: snow;
+            outline: none;
+            border: none;
+            margin: 5px;
+
+            &:focus {
+                box-shadow:
+                    inset 10px 10px 50px $warning-t,
+                    10px 10px 50px $warning-t,
+                    -10px -10px 50px $warning-t;
+                background-color: $dark;
+                border: 1px solid $warning;
+            }
+        }
+        div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+    }
+}

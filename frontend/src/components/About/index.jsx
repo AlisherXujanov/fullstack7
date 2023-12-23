@@ -5,6 +5,7 @@ import Heading from "../common/Heading"
 import Values from "./Values.jsx"
 import Team from "./Team.jsx"
 import Marquee from "../common/Marquee"
+import ContactsForm from "../ContactsForm"
 
 function About() {
 
@@ -44,6 +45,7 @@ function About() {
             </div>
             
             <Marquee />
+            <ContactsForm />
         </div>
     );
 }
