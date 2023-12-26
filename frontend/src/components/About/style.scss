@@ -96,6 +96,16 @@
         .values {
             padding: 20px;
         }
+        #teams {
+            padding: 20px;
+
+            .teams-wrapper {
+                .images {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+            }
+        }
     }
 
     @media (max-width: $medium-screen) {
@@ -114,6 +124,22 @@
             }
         }
         #teams {
+        }
+    }
+
+    @media (max-width: $small-screen) {
+        .about {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+        #teams {
+            .teams-wrapper {
+                .images {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
         }
     }
 }
