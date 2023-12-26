@@ -16,17 +16,8 @@
             padding: 20px;
         }
         .warning-btn {
-            border: none;
-            outline: none;
+            border: 1px solid $warning-t;
             background-color: transparent;
-            color: #ff6600;
-            padding: 10px 20px;
-            &:hover {
-                box-shadow: 1px 1px 10px #ff660050;
-            }
-            &:active {
-                transform: scale(0.8);
-            }
         }
         p {
             color: darkgray;

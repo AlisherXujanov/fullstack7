@@ -9,10 +9,15 @@
         z-index: 10;
         max-width: 500px;
         min-width: 300px;
+        top: 25%;
+        left: 10%;
 
         h1 {
             font-size: 2em;
             font-family: "Montserrat", sans-serif;
+        }
+        p {
+            margin: 20px 0;
         }
     }
 

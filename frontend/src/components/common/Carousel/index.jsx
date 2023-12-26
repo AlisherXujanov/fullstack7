@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 function CarouselComponent(props) {
     const imgStyle = {
-        filter: props.blurred ? "grayscale(100%)" : "none"
+        filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
     return (
         <section className="carousel-section">
