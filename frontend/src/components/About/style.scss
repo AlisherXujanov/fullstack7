@@ -6,7 +6,7 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 1fr 2.5fr;
             gap: 50px;
             margin-top: 50px;
 
@@ -36,7 +36,6 @@
             }
         }
     }
-
     .values {
         margin-top: 50px;
         padding: 100px;
@@ -64,7 +63,6 @@
             }
         }
     }
-
     #teams {
         padding: 100px;
         margin: 50px 0;
@@ -91,6 +89,31 @@
                     filter: grayscale(100%);
                 }
             }
+        }
+    }
+
+    @media (max-width: $large-screen) {
+        .values {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: $medium-screen) {
+        .about {
+            padding: 20px;
+            .about-content {
+                grid-template-columns: 0.5fr 1fr;
+                gap: 30px;
+            }
+        }
+        .values {
+            padding: 10px;
+
+            .values-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        #teams {
         }
     }
 }

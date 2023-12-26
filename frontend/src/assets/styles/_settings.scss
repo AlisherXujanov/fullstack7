@@ -10,6 +10,10 @@ $black: #0a0a0a;
 $success: #00cc00;
 $light: #f4f4f4;
 
+$large-screen: 1050px;
+$medium-screen: 830px;
+$small-screen: 600px;
+
 %link {
     @extend %link-style;
 }
