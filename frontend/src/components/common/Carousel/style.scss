@@ -2,6 +2,19 @@
 
 .carousel-section {
     box-shadow: 0 50px 100px -50px $warning-t;
+    position: relative;
+
+    .inner-carousel {
+        position: absolute;
+        z-index: 10;
+        max-width: 500px;
+        min-width: 300px;
+
+        h1 {
+            font-size: 2em;
+            font-family: "Montserrat", sans-serif;
+        }
+    }
 
     .control-dots {
         li.dot {

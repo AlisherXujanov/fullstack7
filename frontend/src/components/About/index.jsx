@@ -20,7 +20,13 @@ function About() {
     return (
         <div id="about-wrapper">
             <CarouselComponent images={images} blurred={true}>
-                {/* ... */}
+                <div className="inner-carousel">
+                    <h1>Хедж-фонд</h1>
+                    <br />
+                    <p>Классический выбор профессиональных инвесторов с заданными умеренными параметрами риска. Основан на инвестировании в бумаги индекса S&P 500 с диверсификацией по 11 секторам экономики.</p>
+                    <br />
+                    <button className="warning-btn">Подробнее</button>
+                </div>
             </CarouselComponent>
 
 

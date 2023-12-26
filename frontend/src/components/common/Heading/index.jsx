@@ -9,14 +9,14 @@ function Heading(props) {
     }
     return (
         <div className="heading-wrapper">
-            <h2 style={fontSize}>
+            <b style={fontSize}>
                 <img 
                     src={HeadingVector} 
                     alt="Vector"
                     width={`calc(50px / ${props.size})`}
                 />
                 {props.children}
-            </h2>
+            </b>
         </div>
     );
 }
