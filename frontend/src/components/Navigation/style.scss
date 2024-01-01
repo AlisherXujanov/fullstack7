@@ -18,8 +18,12 @@
         }
     }
     .nav-links {
-        a {
+        a,
+        button {
             @extend %link;
+            background-color: transparent;
+            border: none;
+            outline: none;
         }
     }
     .auth {

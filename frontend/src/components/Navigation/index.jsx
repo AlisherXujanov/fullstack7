@@ -1,9 +1,20 @@
 import './style.scss'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, useNavigate } from 'react-router-dom'
 import Heading from "../common/Heading"
 import Footer from "../Footer"
 
 function Navigation() {
+    const navigate = useNavigate();
+
+    const goToTeamsHash = () => {
+        navigate('/about');
+        setTimeout(() => {
+            const element = document.getElementById('teams');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 0);
+      };
     return (
         <div>
             <div className="nav-wrapper">
@@ -17,7 +28,7 @@ function Navigation() {
 
                 <div className="nav-links">
                     <Link to={"/about"}>О нас</Link>
-                    <a href={"/about#teams"}>Команда</a>
+                    <button onClick={goToTeamsHash}>Команда</button>
                     <Link to={"/blog"}>Блог</Link>
                     <Link to={"/products"}>Продукты</Link>
                     <Link to={"/contacts"}>Контакты</Link>

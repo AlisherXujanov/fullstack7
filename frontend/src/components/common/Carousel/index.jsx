@@ -21,7 +21,7 @@ function CarouselComponent(props) {
                                     src={img} 
                                     alt={"Carousel-item-" + index} 
                                     width={"100%"}
-                                    height="600"
+                                    height="650"
                                 />
                             </div>
                         )
