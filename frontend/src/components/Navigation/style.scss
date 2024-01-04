@@ -1,38 +1,79 @@
 @import "../../assets/styles/settings";
 
-.nav-wrapper {
-    background-color: #141414;
-    color: snow;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    box-shadow: 0 3px 50px $warning-t;
+header {
+    position: relative;
 
-    .logo {
-        h2 {
-            font-size: 1.8em;
-            a {
-                text-decoration: none;
-                color: snow;
+    .nav-wrapper {
+        background-color: #141414;
+        color: snow;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        padding: 20px 40px;
+        box-shadow: 0 3px 50px $warning-t;
+
+        .logo {
+            h2 {
+                font-size: 1.8em;
+                a {
+                    text-decoration: none;
+                    color: snow;
+                }
+            }
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 100px;
+
+            .nav-links {
+                a,
+                button {
+                    @extend %link;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                }
+            }
+            .auth {
+                a {
+                    @extend %link;
+                    text-decoration: underline 1px solid snow;
+                }
+                button {
+                    @extend %warning-btn;
+                }
             }
         }
     }
-    .nav-links {
-        a,
-        button {
-            @extend %link;
-            background-color: transparent;
-            border: none;
-            outline: none;
+
+    .burger-menu-wrapper {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        align-items: center;
+
+        div {
+            width: 100%;
+            height: 5px;
+            background-color: red;
+            margin-top: 5px;
         }
     }
-    .auth {
-        a {
-            @extend %link;
-            text-decoration: underline 1px solid snow;
-        }
-        button {
-            @extend %warning-btn;
-        }
+
+    .burger-menu-wrapper,
+    #burger-menu-toggler {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        display: none;
+    }
+
+    #burger-menu-toggler {
+        opacity: 0;
     }
 }
