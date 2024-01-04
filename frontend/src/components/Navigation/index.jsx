@@ -11,9 +11,9 @@ function Navigation() {
         <div>
             <header>
                 <div className={burgerMenuOpened ? "burger-menu-wrapper opened" : "burger-menu-wrapper"}>
-                    <div className='first-div'></div>    
-                    <div className='second-div'></div>    
-                    <div className='third-div'></div>    
+                    <div className='top'></div>    
+                    <div className='middle'></div>    
+                    <div className='bottom'></div>    
                 </div>
                 <input  
                     id='burger-menu-toggler' 

@@ -57,8 +57,10 @@ header {
         div {
             width: 100%;
             height: 5px;
-            background-color: red;
+            background-color: $warning;
+            border-radius: 5px;
             margin-top: 5px;
+            transform-origin: left;
         }
     }
 
@@ -69,7 +71,7 @@ header {
         border-radius: 10px;
         position: absolute;
         right: 40px;
-        top: 20px;
+        top: 15px;
         display: none;
         z-index: 11;
     }
@@ -77,6 +79,14 @@ header {
     #burger-menu-toggler {
         opacity: 0;
         z-index: 12;
+    }
+
+    @media (max-width: $large-screen) {
+        .nav-wrapper {
+            .menu {
+                padding: 0;
+            }
+        }
     }
 
     @media (max-width: $medium-screen) {
@@ -87,18 +97,17 @@ header {
 
         .burger-menu-wrapper {
             &.opened {
-                .second-div {
-                    display: none;
+                div {
+                    margin: 5px 0;
                 }
 
-                .first-div,
-                .third-div {
-                    transform-origin: 0% 50%;
+                .middle {
+                    opacity: 0;
                 }
-                .first-div {
+                .top {
                     transform: rotate(45deg);
                 }
-                .third-div {
+                .bottom {
                     transform: rotate(-45deg);
                 }
             }
