@@ -71,9 +71,52 @@ header {
         right: 40px;
         top: 20px;
         display: none;
+        z-index: 11;
     }
 
     #burger-menu-toggler {
         opacity: 0;
+        z-index: 12;
+    }
+
+    @media (max-width: $medium-screen) {
+        .burger-menu-wrapper,
+        #burger-menu-toggler {
+            display: flex;
+        }
+
+        .nav-wrapper {
+            .menu {
+                width: 0;
+                height: 500px;
+                background-color: $dark;
+                overflow: hidden;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 10;
+                display: none;
+            }
+        }
+
+        #burger-menu-toggler:checked + .nav-wrapper > .menu {
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+
+                button {
+                    text-align: left;
+                }
+            }
+
+            * {
+                margin-top: 10px;
+            }
+        }
     }
 }
