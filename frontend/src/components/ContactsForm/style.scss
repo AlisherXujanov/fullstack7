@@ -47,4 +47,19 @@
             gap: 5px;
         }
     }
+
+    @media (max-width: $large-screen) {
+        padding: 10px;
+    }
+    @media (max-width: $medium-screen) {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        img {
+            height: 250px;
+        }
+        form {
+            padding: 5px;
+        }
+    }
 }
