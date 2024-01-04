@@ -85,6 +85,25 @@ header {
             display: flex;
         }
 
+        .burger-menu-wrapper {
+            &.opened {
+                .second-div {
+                    display: none;
+                }
+
+                .first-div,
+                .third-div {
+                    transform-origin: 0% 50%;
+                }
+                .first-div {
+                    transform: rotate(45deg);
+                }
+                .third-div {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
         .nav-wrapper {
             .menu {
                 width: 0;
