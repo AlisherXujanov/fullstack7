@@ -25,6 +25,19 @@
                 padding: 10px 0;
             }
         }
+
+        @media (max-width: $medium-screen) {
+            grid-template-columns: 3fr 2fr;
+            gap: 10px;
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .social-media {
+                padding-left: 50px;
+            }
+        }
     }
     .footer-bottom {
         background-color: $dark-darker;
