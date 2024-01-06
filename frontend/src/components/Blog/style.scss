@@ -2,6 +2,7 @@
 
 #blog-wrapper {
     padding: 100px;
+    background-color: $dark-lighter;
     .content {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
