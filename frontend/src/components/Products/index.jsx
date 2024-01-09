@@ -1,34 +1,37 @@
 import './style.scss'
-import { useState } from 'react'
+import { useState, useReducer } from 'react'
 
-// RULES OF HOOKS
-// 1. Always import hook from 'react'
-// 2. Always call it at the top level of the component
+// RULES OF useReducer
+// useReducer  is identical to useState, but allows us reduce the code 
+// that we write to manage the state of our component
+// RU: useReducer  идентичен useState, но позволяет нам уменьшить код,
+// который мы пишем для управления состоянием нашего компонента
+
+const initialState = { // изначальное состояние
+    count: 0,                   // useState(0)
+    color: 'red',               // useState('red')
+    name: 'John',               // useState('John')
+    transform: 'translateX(0)'  // useState('translateX(0)')
+}
+// payload == the information that we pass to the dispatch function
+// state   == the current state of our component
+function globalFunction(state, payload) {
+    switch(payload.type) {
+        case "increment":
+            return { ...state, count: state.count + 1 }
+        case "decrement":
+            return { ...state, count: state.count - 1 }
+        default:
+            return state
+    }
+}
 
 function Products(props) {
-    const [state, setState] = useState({
-        count: 0,
-        color: 'red',
-        name: 'John',
-        transform: 'translateX(0)'
-    })
+    const [state, dispatch] = useReducer(globalFunction, initialState)
 
-    function inc(e) {
-        setState({
-            count: state.count + 1,
-            color: 'blue',
-            name: 'Joseph',
-            transform: 'translateX(-150px)'
-        })
-    }
-    function dec(e) {
-        setState({
-            count: state.count - 1,
-            color: 'yellow',
-            name: 'Martha',
-            transform: 'translateX(150px)'
-        })
-    }
+    function inc(e) { dispatch({type: "increment"}) }
+
+    function dec(e) { dispatch({type: "decrement"}) }
 
     return (
         <div id="products-wrapper">
@@ -42,16 +45,9 @@ function Products(props) {
 
                 <br />
                 <br />
-                <button onClick={inc}>Increment</button>
-                <button onClick={dec}>Decrement</button>
+                <button className='warning-btn' onClick={dec}>Decrement</button>
+                <button className='warning-btn' onClick={inc}>Increment</button>
             </div>
-
-            {/* 
-                function(e) { 
-                    setCounter(counter+1)
-                } 
-            */}
-            
         </div>
     );
 }
