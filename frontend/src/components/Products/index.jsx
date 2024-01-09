@@ -1,5 +1,5 @@
 import './style.scss'
-import { useState, useReducer } from 'react'
+import { useReducer } from 'react'
 
 // RULES OF useReducer
 // useReducer  is identical to useState, but allows us reduce the code 
@@ -21,6 +21,10 @@ function globalFunction(state, payload) {
             return { ...state, count: state.count + 1 }
         case "decrement":
             return { ...state, count: state.count - 1 }
+        case "color":
+            return { ...state, color: payload.color }
+        case "name":
+            return { ...state, name: payload.name }
         default:
             return state
     }
@@ -32,6 +36,13 @@ function Products(props) {
     function inc(e) { dispatch({type: "increment"}) }
 
     function dec(e) { dispatch({type: "decrement"}) }
+
+    const names = ['John', 'Bob', 'Alice', 'Kate']
+    const colors = ['red', 'green', 'blue', 'yellow']
+    const randomNumber = Math.floor(Math.random() * names.length)
+
+    function setColor(e) { dispatch({type: 'color', color: colors[randomNumber]}) }
+    function setName(e)  { dispatch({type: 'name',  name: names[randomNumber]}) }
 
     return (
         <div id="products-wrapper">
@@ -47,6 +58,9 @@ function Products(props) {
                 <br />
                 <button className='warning-btn' onClick={dec}>Decrement</button>
                 <button className='warning-btn' onClick={inc}>Increment</button>
+                <hr />
+                <button className='warning-btn' onClick={setColor}>Color</button>
+                <button className='warning-btn' onClick={setName}>Name</button>
             </div>
         </div>
     );
