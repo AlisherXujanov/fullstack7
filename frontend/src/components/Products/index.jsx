@@ -25,6 +25,12 @@ function globalFunction(state, payload) {
             return { ...state, color: payload.color }
         case "name":
             return { ...state, name: payload.name }
+        case "left":
+            return { ...state, transform: "translateX(-200px)" }
+        case "right":
+            return { ...state, transform: "translateX(200px)" }
+        case "middle":
+            return { ...state, transform: "translateX(0)" }
         default:
             return state
     }
@@ -44,23 +50,40 @@ function Products(props) {
     function setColor(e) { dispatch({type: 'color', color: colors[randomNumber]}) }
     function setName(e)  { dispatch({type: 'name',  name: names[randomNumber]}) }
 
+    function setLeft(e)  { dispatch({type: "left"}) }
+    function setMiddle(e) { dispatch({type: "middle"}) }
+    function setRight(e) { dispatch({type: "right"}) }
+    
+
     return (
         <div id="products-wrapper">
             <h2>Products</h2>
-            <div style={{
-                color: state.color, 
-                textAlign: 'center', 
-                transform:state.transform
-            }}>
-                { state.count } by { state.name }
+            <div>
+                <p style={{
+                    color: state.color, 
+                    textAlign: 'center', 
+                    transform: state.transform
+                }}>
+                    { state.count } by { state.name }
+                </p>
 
                 <br />
                 <br />
                 <button className='warning-btn' onClick={dec}>Decrement</button>
                 <button className='warning-btn' onClick={inc}>Increment</button>
+                <br />
+                <br />
                 <hr />
+                <br />
                 <button className='warning-btn' onClick={setColor}>Color</button>
                 <button className='warning-btn' onClick={setName}>Name</button>
+                <br />
+                <br />
+                <hr />
+                <br />
+                <button className='warning-btn' onClick={setLeft}>Left</button>
+                <button className='warning-btn' onClick={setMiddle}>Middle</button>
+                <button className='warning-btn' onClick={setRight}>Right</button>
             </div>
         </div>
     );
