@@ -1,43 +1,17 @@
 import './style.scss'
 import { useReducer } from 'react'
 
-// RULES OF useReducer
-// useReducer  is identical to useState, but allows us reduce the code 
-// that we write to manage the state of our component
-// RU: useReducer  идентичен useState, но позволяет нам уменьшить код,
-// который мы пишем для управления состоянием нашего компонента
-
-const initialState = { // изначальное состояние
-    count: 0,                   // useState(0)
-    color: 'red',               // useState('red')
-    name: 'John',               // useState('John')
-    transform: 'translateX(0)'  // useState('translateX(0)')
-}
-// payload == the information that we pass to the dispatch function
-// state   == the current state of our component
-function globalFunction(state, payload) {
-    switch(payload.type) {
-        case "increment":
-            return { ...state, count: state.count + 1 }
-        case "decrement":
-            return { ...state, count: state.count - 1 }
-        case "color":
-            return { ...state, color: payload.color }
-        case "name":
-            return { ...state, name: payload.name }
-        case "left":
-            return { ...state, transform: "translateX(-200px)" }
-        case "right":
-            return { ...state, transform: "translateX(200px)" }
-        case "middle":
-            return { ...state, transform: "translateX(0)" }
-        default:
-            return state
-    }
-}
+// 1. Move everything into state.js
+// RU: Перенести все в state.js
+// 2. Import all global functions ONLY from state.js
+// RU: Импортировать все глобальные функции ТОЛЬКО из state.js
+// 3. Create useContext in state.js so that we could import global state from it
+//    in every possible component
+// RU: Создать useContext в state.js, чтобы мы могли 
+// импортировать глобальное состояние//память из него во всех возможных компонентах
 
 function Products(props) {
-    const [state, dispatch] = useReducer(globalFunction, initialState)
+    
 
     function inc(e) { dispatch({type: "increment"}) }
 
