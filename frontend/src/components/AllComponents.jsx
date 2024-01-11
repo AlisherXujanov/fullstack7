@@ -5,18 +5,19 @@ import Blog from "./Blog"
 import NoPage from "./NoPage"
 import Products from "./Products"
 import Contacts from "./Contacts"
-import { useContext, useReducer } from 'react'
+import { useReducer } from 'react'
 import { globalContext, initialState } from '../state'
 import { globalReducerFunction } from '../state/functions.js'
 
 function AllComponents(props) {
     const location = useLocation()
-    const context = useContext(globalContext)
+    // const state = useContext(globalContext)
     const [state, dispatch] = useReducer(globalReducerFunction, initialState)
+    state.dispatch = dispatch
 
     return (
         <>
-            <context.Provider value={state}>
+            <globalContext.Provider value={state}>
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Navigation />} >
                         <Route index element={<About />} />
@@ -27,7 +28,7 @@ function AllComponents(props) {
                         <Route path="*" element={<NoPage />} />
                     </Route>
                 </Routes>
-            </context.Provider>
+            </globalContext.Provider>
         </>
     );
 }

@@ -1,5 +1,6 @@
 import './style.scss'
-import { useReducer } from 'react'
+import { useContext } from 'react'
+import { globalContext } from '../../state'
 
 // 1. Move everything into state.js
 // RU: Перенести все в state.js
@@ -11,22 +12,22 @@ import { useReducer } from 'react'
 // импортировать глобальное состояние//память из него во всех возможных компонентах
 
 function Products(props) {
+    const state = useContext(globalContext)
     
+    function inc(e) { state.dispatch({type: "increment"}) }
 
-    function inc(e) { dispatch({type: "increment"}) }
-
-    function dec(e) { dispatch({type: "decrement"}) }
+    function dec(e) { state.dispatch({type: "decrement"}) }
 
     const names = ['John', 'Bob', 'Alice', 'Kate']
     const colors = ['red', 'green', 'blue', 'yellow']
     const randomNumber = Math.floor(Math.random() * names.length)
 
-    function setColor(e) { dispatch({type: 'color', color: colors[randomNumber]}) }
-    function setName(e)  { dispatch({type: 'name',  name: names[randomNumber]}) }
+    function setColor(e) { state.dispatch({type: 'color', color: colors[randomNumber]}) }
+    function setName(e)  { state.dispatch({type: 'name',  name: names[randomNumber]}) }
 
-    function setLeft(e)  { dispatch({type: "left"}) }
-    function setMiddle(e) { dispatch({type: "middle"}) }
-    function setRight(e) { dispatch({type: "right"}) }
+    function setLeft(e)  { state.dispatch({type: "left"}) }
+    function setMiddle(e) { state.dispatch({type: "middle"}) }
+    function setRight(e) { state.dispatch({type: "right"}) }
     
 
     return (
