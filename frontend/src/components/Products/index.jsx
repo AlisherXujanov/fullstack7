@@ -2,15 +2,6 @@ import './style.scss'
 import { useContext } from 'react'
 import { globalContext } from '../../state'
 
-// 1. Move everything into state.js
-// RU: Перенести все в state.js
-// 2. Import all global functions ONLY from state.js
-// RU: Импортировать все глобальные функции ТОЛЬКО из state.js
-// 3. Create useContext in state.js so that we could import global state from it
-//    in every possible component
-// RU: Создать useContext в state.js, чтобы мы могли 
-// импортировать глобальное состояние//память из него во всех возможных компонентах
-
 function Products(props) {
     const state = useContext(globalContext)
     

@@ -11,7 +11,6 @@ import { globalReducerFunction } from '../state/functions.js'
 
 function AllComponents(props) {
     const location = useLocation()
-    // const state = useContext(globalContext)
     const [state, dispatch] = useReducer(globalReducerFunction, initialState)
     state.dispatch = dispatch
 

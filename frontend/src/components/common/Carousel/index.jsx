@@ -11,7 +11,7 @@ function CarouselComponent(props) {
             <div className="carousel-c-children">
                 { props.children }
             </div>
-            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true}>
+            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} showStatus={false}>
                 {
                     props.images.map((img, index) => {
                         return (

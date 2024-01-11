@@ -13,16 +13,6 @@ function globalReducerFunction(state, payload) {
             return { ...state, count: state.count + 1 }
         case "decrement":
             return { ...state, count: state.count - 1 }
-        case "color":
-            return { ...state, color: payload.color }
-        case "name":
-            return { ...state, name: payload.name }
-        case "left":
-            return { ...state, transform: "translateX(-200px)" }
-        case "right":
-            return { ...state, transform: "translateX(200px)" }
-        case "middle":
-            return { ...state, transform: "translateX(0)" }
         default:
             return state
     }
