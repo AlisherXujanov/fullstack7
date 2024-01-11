@@ -1,7 +1,8 @@
 import { createContext } from "react"
 
 const initialState = { // изначальное состояние
-    lang: 'Рус'
+    lang: 'Рус',
+    count: 0,
 }
 const globalContext = createContext(initialState)
 

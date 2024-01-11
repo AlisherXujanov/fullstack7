@@ -9,6 +9,10 @@
 // state   == the current state of our component
 function globalReducerFunction(state, payload) {
     switch (payload.type) {
+        case "CHANGE_LANG":
+            // '...' ?  'true' : 'false'
+            const lang = state.lang === 'En' ? 'Рус' : 'En'
+            return { ...state, lang }
         case "increment":
             return { ...state, count: state.count + 1 }
         case "decrement":

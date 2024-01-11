@@ -1,12 +1,16 @@
 import Heading from "../common/Heading"
 import { Link, useNavigate } from 'react-router-dom'
 
+import { useContext } from "react";
+import { globalContext } from "../../state";
+
 // 1. Create a burger
 // 2. Put the input checkbox onto the burger and make it invisible
 // 3. Open the Nav-width div when the checkbox is checked
 
 function Nav(props) {
     const navigate = useNavigate();
+    const state = useContext(globalContext);
 
     const goToTeamsHash = () => {
         navigate('/about');
@@ -41,7 +45,13 @@ function Nav(props) {
                     <button className="warning-btn">
                         Войти
                     </button>
-                    <a href="/#Рус">Рус</a>
+                    <span 
+                        onClick={(e) => {state.dispatch(
+                            { type: "CHANGE_LANG" }
+                        )}}
+                    >
+                        { state.lang }
+                    </span>
                 </div>
             </div>
         </div>
