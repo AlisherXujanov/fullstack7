@@ -10,7 +10,7 @@ function App() {
 
   const handleChangeLanguage = () => {
     const newLanguage = state.currentLanguage === "en" ? "ru" : "en";
-    state.dispatch({ type: "CHANGE_LANGUAGE", currentLanguage: newLanguage })
+    state.dispatch({ type: "CHANGE_LANG", currentLanguage: newLanguage })
     changeLanguage(newLanguage);
   }
 
@@ -19,6 +19,20 @@ function App() {
       <BrowserRouter>
         <AllComponents />
       </BrowserRouter>
+
+      <h1>
+        Our Translated Heading:
+        {t('heading', { name: "Alisher", appName: "App for Translations" })}
+      </h1>
+      <h3>
+        Current Language: {state.currentLanguage}
+      </h3>
+      <button
+        type="button"
+        onClick={handleChangeLanguage}
+      >
+        Change Language
+      </button>
     </div>
   );
 }

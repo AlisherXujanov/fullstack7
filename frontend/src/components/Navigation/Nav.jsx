@@ -11,6 +11,7 @@ import { globalContext } from "../../state";
 function Nav(props) {
     const navigate = useNavigate();
     const state = useContext(globalContext);
+    const newLanguage = state.currentLanguage === "en" ? "ru" : "en";
 
     const goToTeamsHash = () => {
         navigate('/about');
@@ -47,7 +48,7 @@ function Nav(props) {
                     </button>
                     <span 
                         onClick={(e) => {state.dispatch(
-                            { type: "CHANGE_LANG" }
+                            { type: "CHANGE_LANG", currentLanguage: newLanguage }
                         )}}
                     >
                         { state.currentLanguage }
