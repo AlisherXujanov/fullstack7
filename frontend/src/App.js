@@ -9,7 +9,7 @@ function App() {
   const state = useContext(globalContext)
 
   const handleChangeLanguage = () => {
-    const newLanguage = state.currentLanguage === "en" ? "ru" : "en";
+    const newLanguage = language === "en" ? "ru" : "en";
     state.dispatch({ type: "CHANGE_LANG", currentLanguage: newLanguage })
     changeLanguage(newLanguage);
   }
@@ -25,11 +25,9 @@ function App() {
         {t('heading', { name: "Alisher", appName: "App for Translations" })}
       </h1>
       <h3>
-        Current Language: {state.currentLanguage}
+        Current Language: {language}
       </h3>
-      <button
-        type="button"
-        onClick={handleChangeLanguage}
+      <button className="warning-btn" onClick={handleChangeLanguage}
       >
         Change Language
       </button>
