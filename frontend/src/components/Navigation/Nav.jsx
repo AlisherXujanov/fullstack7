@@ -50,7 +50,7 @@ function Nav(props) {
                             { type: "CHANGE_LANG" }
                         )}}
                     >
-                        { state.lang }
+                        { state.currentLanguage }
                     </span>
                 </div>
             </div>
