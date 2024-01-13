@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { useContext } from "react";
 import { globalContext } from "../../state";
+import { BrowserRouter } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // 1. Create a burger
 // 2. Put the input checkbox onto the burger and make it invisible
@@ -11,7 +13,15 @@ import { globalContext } from "../../state";
 function Nav(props) {
     const navigate = useNavigate();
     const state = useContext(globalContext);
-    const newLanguage = state.currentLanguage === "en" ? "ru" : "en";
+    const { t, i18n: { changeLanguage, language } } = useTranslation();
+
+    const newLanguage = () => {
+        return language === "en" ? "ru" : "en";
+    }
+    const initiateChangeLanguage = () => {
+        state.dispatch({ type: "CHANGE_LANG", currentLanguage: newLanguage() })
+        changeLanguage(newLanguage());
+    }
 
     const goToTeamsHash = () => {
         navigate('/about');
@@ -44,14 +54,10 @@ function Nav(props) {
 
                 <div className="auth">
                     <button className="warning-btn">
-                        Войти
+                        { t('login') }
                     </button>
-                    <span 
-                        onClick={(e) => {state.dispatch(
-                            { type: "CHANGE_LANG", currentLanguage: newLanguage }
-                        )}}
-                    >
-                        { state.currentLanguage }
+                    <span onClick={initiateChangeLanguage} >
+                        {language}
                     </span>
                 </div>
             </div>

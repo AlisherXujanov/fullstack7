@@ -1,5 +1,6 @@
 {
-    "translation": {
-      "heading": "Hello {{name}}, welcome to {{appName}}"
-    }
+  "translation": {
+    "heading": "Hello {{name}}, welcome to {{appName}}",
+    "login": "Sign in"
   }
+}
