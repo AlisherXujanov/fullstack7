@@ -1,6 +1,10 @@
 {
   "translation": {
-    "heading": "Hello {{name}}, welcome to {{appName}}",
-    "login": "Sign in"
+    "login": "Sign in",
+    "about": "About",
+    "team": "Team",
+    "blog": "Blog",
+    "products": "Products",
+    "contacts": "Contacts"
   }
 }

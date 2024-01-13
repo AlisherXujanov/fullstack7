@@ -1,6 +1,10 @@
 {
     "translation": {
-        "heading": "Привет {{name}}, добро пожаловать в {{appName}}",
-        "login": "Войти"
+        "login": "Войти",
+        "about": "О нас",
+        "team": "Команда",
+        "blog": "Блог",
+        "products": "Продукты",
+        "contacts": "Контакты"
     }
 }

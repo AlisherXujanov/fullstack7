@@ -39,6 +39,11 @@ header {
                 span {
                     @extend %link;
                     text-decoration: underline 1px solid snow;
+                    cursor: pointer;
+                    transform: scale(1.5);
+                    &::selection {
+                        background-color: transparent;
+                    }
                 }
                 button {
                     @extend %warning-btn;

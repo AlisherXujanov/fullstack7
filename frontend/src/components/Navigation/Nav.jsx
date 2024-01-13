@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { useContext } from "react";
 import { globalContext } from "../../state";
-import { BrowserRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // 1. Create a burger
@@ -45,19 +44,29 @@ function Nav(props) {
 
             <div className="menu">
                 <div className="nav-links">
-                    <Link to={"/about"}>О нас</Link>
-                    <button onClick={goToTeamsHash}>Команда</button>
-                    <Link to={"/blog"}>Блог</Link>
-                    <Link to={"/products"}>Продукты</Link>
-                    <Link to={"/contacts"}>Контакты</Link>
+                    <Link to={"/about"}>
+                        {t('about')}
+                    </Link>
+                    <button onClick={goToTeamsHash}>
+                        {t('team')}
+                    </button>
+                    <Link to={"/blog"}>
+                        {t('blog')}
+                    </Link>
+                    <Link to={"/products"}>
+                        {t('products')}
+                    </Link>
+                    <Link to={"/contacts"}>
+                        {t('contacts')}
+                    </Link>
                 </div>
 
                 <div className="auth">
                     <button className="warning-btn">
-                        { t('login') }
+                        {t('login')}
                     </button>
                     <span onClick={initiateChangeLanguage} >
-                        {language}
+                        {newLanguage()}
                     </span>
                 </div>
             </div>
