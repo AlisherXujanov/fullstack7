@@ -1,5 +1,5 @@
 {
     "translation": {
-        "specificKey": "Переведенное Значение"
+        "heading": "Привет {{name}}, добро пожаловать в {{appName}}"
     }
 }
