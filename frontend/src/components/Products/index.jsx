@@ -67,6 +67,12 @@ function Products(props) {
                         else if (response !== null) {
                             return (
                                 <div>
+                                    <button 
+                                        className='warning-btn' 
+                                        onClick={() => makeRequest({ params: { refresh: true } })}
+                                    >
+                                        Refresh
+                                    </button>
                                     {
                                         response.data.map((post, index) => {
                                             return (
@@ -78,12 +84,6 @@ function Products(props) {
                                             )
                                         })
                                     }
-                                    <button 
-                                        className='warning-btn' 
-                                        onClick={() => makeRequest({ params: { refresh: true } })}
-                                    >
-                                        Refresh
-                                    </button>
                                 </div>
                             )
                         }
