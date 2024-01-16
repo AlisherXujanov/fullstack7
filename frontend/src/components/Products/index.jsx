@@ -45,7 +45,18 @@ function Products(props) {
             <hr />
             <hr />
             <div>
-                <Get url="/api/user" params={{ id: "12345" }}>
+                {/* 
+                    
+                    HTTP or REQUEST METHODS
+                    RU: МЕТОДЫ ЗАПРОСОВ
+                
+                        GET     =>  Брать данные
+                        POST    =>  Создавать данные (Отправлять данные)
+                        PUT     =>  Обновлять данные (Целиком)
+                        PATCH   =>  Обновлять данные (Частично)
+                        DELETE  =>  Удалять данные
+                */}
+                <Get url="https://jsonplaceholder.typicode.com/posts" params={{}}>
                     {(error, response, isLoading, makeRequest, axios) => {
                         if (error) {
                             return (<div>Something bad happened: {error.message} <button onClick={() => makeRequest({ params: { reload: true } })}>Retry</button></div>)
@@ -54,7 +65,27 @@ function Products(props) {
                             return (<div>Loading...</div>)
                         }
                         else if (response !== null) {
-                            return (<div>{response.data.message} <button onClick={() => makeRequest({ params: { refresh: true } })}>Refresh</button></div>)
+                            return (
+                                <div>
+                                    {
+                                        response.data.map((post, index) => {
+                                            return (
+                                                <div key={index}>
+                                                    <h2>{post.title}</h2>
+                                                    <p>{post.body}</p>
+                                                    <br />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                    <button 
+                                        className='warning-btn' 
+                                        onClick={() => makeRequest({ params: { refresh: true } })}
+                                    >
+                                        Refresh
+                                    </button>
+                                </div>
+                            )
                         }
                         return (<div>Default message before request is made.</div>)
                     }}
