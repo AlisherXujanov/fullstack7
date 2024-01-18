@@ -2,6 +2,7 @@ import "./style.scss"
 import Rectangle from "./Rectangle.png"
 import { useState } from "react"
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 function ContactsForm() {
     const [form, setForm] = useState({
@@ -26,12 +27,15 @@ function ContactsForm() {
 
     function submit(e) {
         e.preventDefault()
-
         emailjs.send('<YOUR_SERVICE_ID>', '<YOUR_TEMPLATE_ID>', templateParams, '<YOUR_PUBLIC_KEY>')
             .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
+                toast.success(`SUCCESS!, ${response.status + response.text}`, {
+                    theme: "dark"
+                })
             }, (err) => {
-                console.log('FAILED...', err);
+                toast.error(`FAILED, ${err}`, {
+                    theme: "dark"
+                })
             });
     }
 
