@@ -12,12 +12,12 @@ function Marquee(props) {
     return (
         <div>
             <div id="progress-marquee">
-                <div class={props.reversed ? "progress-wrapper reversed" : "progress-wrapper"}>
-                    <div style={progressBar} class="progress-bar">
-                        <span style={dotPosition} class="dot"></span>
+                <div className={props.reversed ? "progress-wrapper reversed" : "progress-wrapper"}>
+                    <div style={progressBar} className="progress-bar">
+                        <span style={dotPosition} className="dot"></span>
                     </div>
-                    <div style={progressBar} class="progress-bar">
-                        <span style={dotPosition} class="dot"></span>
+                    <div style={progressBar} className="progress-bar">
+                        <span style={dotPosition} className="dot"></span>
                     </div>
                 </div>
             </div>
