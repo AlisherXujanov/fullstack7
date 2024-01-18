@@ -1,10 +1,10 @@
 Here's a step-by-step guide on how to use the emailjs library to build a component to send real-world emails:
 
 ### 1. Install the emailjs library by running the following command in your terminal:
-- npm install emailjs-com;
+- npm i @emailjs/browser;
 
 ### 2. Import the library in your component:
-- import emailjs from 'emailjs-com';
+- import emailjs from '@emailjs/browser';
 
 ### 3. Create a form in your component with the necessary fields for sending an email, such as "To", "Subject", and "Message". Here's an example:
 ```javascript
