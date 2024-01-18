@@ -15,7 +15,7 @@ function ContactsForm() {
         from_name: form.name,
         email: form.email,
         number: form.number,
-        notes: form.notes
+        message: form.notes
     };
 
     function fireSetForm(e) {
