@@ -27,16 +27,17 @@ function ContactsForm() {
 
     function submit(e) {
         e.preventDefault()
-        emailjs.send('<YOUR_SERVICE_ID>', '<YOUR_TEMPLATE_ID>', templateParams, '<YOUR_PUBLIC_KEY>')
+        emailjs.send('...', '...', templateParams, '...-')
             .then((response) => {
-                toast.success(`SUCCESS!, ${response.status + response.text}`, {
+                toast.success(`Successfully sent!`, {
                     theme: "dark"
                 })
             }, (err) => {
-                toast.error(`FAILED, ${err}`, {
+                toast.error(`Ooops!  Something went wrong. Tyr again!`, {
                     theme: "dark"
                 })
             });
+        e.target.reset()
     }
 
     return (
