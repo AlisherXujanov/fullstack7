@@ -7,13 +7,9 @@ function CarouselComponent(props) {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
     const indicatorsAsNumbers = (onClickHandler, isSelected, index, label) => {
-        const defStyle = { marginLeft: 20, color: "white", cursor: "pointer" };
-        const style = isSelected
-            ? { ...defStyle, color: "red" }
-            : { ...defStyle };
         return (
             <span
-                style={style}
+                className={isSelected ? "indicator selected" : "indicator"} 
                 onClick={onClickHandler}
                 onKeyDown={onClickHandler}
                 value={index}
@@ -32,7 +28,11 @@ function CarouselComponent(props) {
             <div className="carousel-c-children">
                 {props.children}
             </div>
-            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} showStatus={false}
+            <Carousel 
+                showThumbs={false} 
+                autoPlay={true} 
+                infiniteLoop={true} 
+                showStatus={false}
                 renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
             >
                 {

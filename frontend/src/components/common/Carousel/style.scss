@@ -29,5 +29,25 @@
                 -1px -1px 10px 1px $warning-t;
             transform: scale(1.5);
         }
+
+        span.indicator {
+            color: gray;
+            margin: 0 5px;
+            padding: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            font-family: sans-serif;
+
+            &.selected {
+                color: $warning;
+                border-bottom: 2px solid $warning;
+                padding: 1px 2px;
+                font-size: 1.5em;
+            }
+            &:hover:not(.selected) {
+                cursor: pointer;
+                color: lightgray;
+            }
+        }
     }
 }

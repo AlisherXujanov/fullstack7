@@ -19,7 +19,7 @@ function About() {
 
     return (
         <div id="about-wrapper">
-            <CarouselComponent images={images} blurred={true}>
+            <CarouselComponent images={images} blurred={true} indicatorsAsNumbers={true}>
                 <div className="inner-carousel">
                     <h1>Хедж-фонд</h1>
                     <br />
