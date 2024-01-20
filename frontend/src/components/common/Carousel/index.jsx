@@ -6,7 +6,6 @@ function CarouselComponent(props) {
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
-
     const indicatorsAsNumbers = (onClickHandler, isSelected, index, label) => {
         const defStyle = { marginLeft: 20, color: "white", cursor: "pointer" };
         const style = isSelected
@@ -33,32 +32,20 @@ function CarouselComponent(props) {
             <div className="carousel-c-children">
                 {props.children}
             </div>
-            <Carousel
-                showThumbs={false}
-                autoPlay={true}
-                infiniteLoop={true}
-                showStatus={false}
+            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} showStatus={false}
                 renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
             >
                 {
-                    props.images.map((item, index) => {
+                    props.images.map((img, index) => {
                         return (
-                            <div key={index + 100} className="slide-wrapper">
-                                {
-                                    item.map((img, index2) => {
-                                        return (
-                                            <div key={index2}>
-                                                <img
-                                                    style={imgStyle}
-                                                    src={img}
-                                                    alt={"Carousel-item-" + index}
-                                                    width={"100%"}
-                                                    height="250"
-                                                />
-                                            </div>
-                                        )
-                                    })
-                                }
+                            <div key={index}>
+                                <img
+                                    style={imgStyle}
+                                    src={img}
+                                    alt={"Carousel-item-" + index}
+                                    width={"100%"}
+                                    height="650"
+                                />
                             </div>
                         )
                     })
