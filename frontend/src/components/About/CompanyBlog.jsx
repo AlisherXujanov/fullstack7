@@ -4,10 +4,13 @@ const slides = []
 
 function CompanyBlog() {
     return (
-        <CarouselComponent
-            images={slides}
-            indicatorsAsNumbers={true}
-        />
+        <>
+            <CarouselComponent
+                images={slides}
+                indicatorsAsNumbers={true}
+            />
+            
+        </>
     );
 }
 
