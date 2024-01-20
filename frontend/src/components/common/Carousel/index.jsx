@@ -1,6 +1,7 @@
 import "./style.scss"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import BlogSlideItem from "./BlogSlideItem.jsx"
 
 function CarouselComponent(props) {
     const imgStyle = {
@@ -36,19 +37,36 @@ function CarouselComponent(props) {
                 renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
             >
                 {
-                    props.images.map((img, index) => {
-                        return (
-                            <div key={index}>
-                                <img
-                                    style={imgStyle}
-                                    src={img}
-                                    alt={"Carousel-item-" + index}
-                                    width={"100%"}
-                                    height="650"
-                                />
-                            </div>
-                        )
-                    })
+                    props.indicatorsAsNumbers ? 
+                        props.images.map((slide, index) => {
+                            return (
+                                <div className="c-slide-wrapper" key={10000+index}>
+                                    {
+                                        slide.map((info, index) => {
+                                            return (
+                                                <div key={index} className="slide">
+                                                    <BlogSlideItem info={info} />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            )
+                        })
+                        :
+                        props.images.map((img, index) => {
+                            return (
+                                <div key={index}>
+                                    <img
+                                        style={imgStyle}
+                                        src={img}
+                                        alt={"Carousel-item-" + index}
+                                        width={"100%"}
+                                        height="650"
+                                    />
+                                </div>
+                            )
+                        })
                 }
             </Carousel>
         </section>
