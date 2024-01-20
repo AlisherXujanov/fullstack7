@@ -27,7 +27,7 @@ function ContactsForm() {
 
     function submit(e) {
         e.preventDefault()
-        emailjs.send('...', '...', templateParams, '...-')
+        emailjs.send('...', '...', templateParams, '...')
             .then((response) => {
                 toast.success(`Successfully sent!`, {
                     theme: "dark"

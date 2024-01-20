@@ -6,23 +6,59 @@ function CarouselComponent(props) {
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
+
+    const indicatorsAsNumbers = (onClickHandler, isSelected, index, label) => {
+        const defStyle = { marginLeft: 20, color: "white", cursor: "pointer" };
+        const style = isSelected
+            ? { ...defStyle, color: "red" }
+            : { ...defStyle };
+        return (
+            <span
+                style={style}
+                onClick={onClickHandler}
+                onKeyDown={onClickHandler}
+                value={index}
+                key={index}
+                role="button"
+                tabIndex={0}
+                aria-label={`${label} ${index + 1}`}
+            >
+                {index + 1}
+            </span>
+        );
+    }
+
     return (
         <section className="carousel-section">
             <div className="carousel-c-children">
-                { props.children }
+                {props.children}
             </div>
-            <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} showStatus={false}>
+            <Carousel
+                showThumbs={false}
+                autoPlay={true}
+                infiniteLoop={true}
+                showStatus={false}
+                renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
+            >
                 {
-                    props.images.map((img, index) => {
+                    props.images.map((item, index) => {
                         return (
-                            <div key={index}>
-                                <img 
-                                    style={imgStyle}
-                                    src={img} 
-                                    alt={"Carousel-item-" + index} 
-                                    width={"100%"}
-                                    height="650"
-                                />
+                            <div key={index + 100} className="slide-wrapper">
+                                {
+                                    item.map((img, index2) => {
+                                        return (
+                                            <div key={index2}>
+                                                <img
+                                                    style={imgStyle}
+                                                    src={img}
+                                                    alt={"Carousel-item-" + index}
+                                                    width={"100%"}
+                                                    height="250"
+                                                />
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         )
                     })
