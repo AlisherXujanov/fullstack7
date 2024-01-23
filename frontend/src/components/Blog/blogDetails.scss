@@ -1,3 +1,5 @@
+@import "../../assets/styles/settings";
+
 .blog-item {
     padding: 100px 200px;
 
@@ -14,5 +16,15 @@
     }
     .blog-author span {
         margin-right: 20px;
+    }
+
+    @media (max-width: $large-screen) {
+        padding: 100px 150px;
+    }
+    @media (max-width: $medium-screen) {
+        padding: 100px;
+    }
+    @media (max-width: $small-screen) {
+        padding: 20px;
     }
 }

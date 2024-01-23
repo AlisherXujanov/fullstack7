@@ -96,6 +96,19 @@
                         margin: 20px 0;
                     }
                 }
+
+                @media (max-width: $large-screen) {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                    padding: 20px;
+
+                    .slide-content {
+                        text-align: center;
+                    }
+                }
+                @media (max-width: $medium-screen) {
+                    grid-template-columns: 1fr;
+                }
             }
         }
     }
