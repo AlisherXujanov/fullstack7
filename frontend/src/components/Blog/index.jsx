@@ -1,10 +1,6 @@
 import "./style.scss"
-import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 import Heading from "../common/Heading"
 import Item from "./Item.jsx"
-import Blog1 from "../../assets/images/blog-1.png"
-import Blog2 from "../../assets/images/blog-2.png"
-import Blog3 from "../../assets/images/blog-3.png"
 import BlogItems from "../../db/blog.json"
 
 

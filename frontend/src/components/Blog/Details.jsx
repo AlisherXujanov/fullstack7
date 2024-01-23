@@ -36,7 +36,7 @@ function BlogDetails() {
             <p className="blog-nav">Blog / {shortTitle}</p>
             <h1>{blogItem.title}</h1>
             <p className="blog-author">
-                <span className="name">{blogItem.author}</span>,
+                <span className="name">{blogItem.author},</span>
                 <span className="date">{blogItem.date}</span>
             </p>
             <img src={images[img_index]} alt=""  width={"100%"}/>
