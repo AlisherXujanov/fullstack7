@@ -152,4 +152,10 @@ header {
             }
         }
     }
+
+    @media (max-width: $small-screen) {
+        #burger-menu-toggler:checked + .nav-wrapper > .menu {
+            width: 100%;
+        }
+    }
 }

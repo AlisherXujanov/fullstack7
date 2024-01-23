@@ -44,10 +44,16 @@
             margin-top: 30px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 20px 0;
 
             .value-item {
-                display: flex;
+                display: grid;
+                grid-template-columns: 200px 1fr;
+
+                img {
+                    position: relative;
+                    bottom: 20px;
+                }
 
                 div {
                     h2 {
@@ -91,7 +97,6 @@
             }
         }
     }
-
     .company-blog {
         b {
             margin: 100px 0 50px 100px;
@@ -104,6 +109,11 @@
     @media (max-width: $large-screen) {
         .values {
             padding: 20px;
+            .values-content {
+                .value-item {
+                    grid-template-columns: 160px 1fr;
+                }
+            }
         }
         #teams {
             padding: 20px;
@@ -147,6 +157,25 @@
             .teams-wrapper {
                 .images {
                     grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+        .company-blog {
+            b {
+                margin: 50px 0 50px 20px;
+            }
+            .carousel-section {
+                padding: 20px;
+            }
+        }
+        .values {
+            .values-content {
+                grid-template-columns: 1fr;
+                .value-item {
+                    img {
+                        right: 30px;
+                    }
+                    grid-template-columns: 150px 1fr;
                 }
             }
         }

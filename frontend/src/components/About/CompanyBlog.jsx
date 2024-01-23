@@ -1,8 +1,5 @@
 import CarouselComponent from "../common/Carousel"
 import blogs from "../../db/blog.json"
-import { useEffect } from "react"
-
-
 
 function CompanyBlog() {
 
@@ -36,7 +33,6 @@ function CompanyBlog() {
         }
         return slides
     }
-
 
     return (
         <>

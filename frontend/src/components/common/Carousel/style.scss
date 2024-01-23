@@ -8,7 +8,7 @@
         position: absolute;
         z-index: 5;
         max-width: 500px;
-        min-width: 300px;
+        min-width: 200px;
         top: 25%;
         left: 10%;
 
@@ -18,6 +18,10 @@
         }
         p {
             margin: 20px 0;
+        }
+
+        @media (max-width: $medium-screen) {
+            font-size: small;
         }
     }
 
