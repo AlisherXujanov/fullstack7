@@ -6,6 +6,8 @@ import Blog4 from "../../../assets/images/img2.png"
 import Blog5 from "../../../assets/images/img3.png"
 
 
+import { Link } from 'react-router-dom'
+
 
 function BlogSlideItem(props) {
     const images = [Blog1, Blog2, Blog3, Blog4, Blog5]
@@ -20,9 +22,11 @@ function BlogSlideItem(props) {
         <div className="slide-content">
             <img src={images[img_index]} alt="" />
             <h3>{props.info.title}</h3>
-            <button className="warning-btn">
-                Подробнее
-            </button>
+            <Link to={`/blog/${props.info.id}`} className="link">
+                <button className="warning-btn">
+                    Подробнее
+                </button>
+            </Link>
         </div>
     );
 }
