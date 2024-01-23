@@ -1,3 +1,15 @@
 .blog-item {
     padding: 100px 200px;
+
+    .blog-nav {
+        margin-bottom: 50px;
+    }
+    h1,
+    img {
+        margin: 5px 0;
+    }
+    p {
+        margin: 10px 0;
+        color: lightgray;
+    }
 }

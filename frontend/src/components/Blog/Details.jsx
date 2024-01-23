@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"
 import BlogItems from "../../db/blog.json"
 import './blogDetails.scss'
 
@@ -8,6 +8,8 @@ import Blog3 from "../../assets/images/blog-3.png"
 import Blog4 from "../../assets/images/img2.png"
 import Blog5 from "../../assets/images/img3.png"
 
+import { useEffect } from 'react'
+
 function BlogDetails() {
     const { id } = useParams()
     const images = [Blog1, Blog2, Blog3, Blog4, Blog5]
@@ -15,10 +17,19 @@ function BlogDetails() {
     const blogItem = BlogItems.find(item => item.id === parseInt(id))
     const shortTitle = blogItem.title.split(" ").slice(0, 3).join(" ")
 
-
     let img_index = null
     if (blogItem.id < images.length) { img_index = blogItem.id } 
     else { img_index = blogItem.id % images.length }
+
+    function scrollUpSmoothly() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+    useEffect(() => {
+        scrollUpSmoothly()
+    }, [])
 
     return (
         <div className="blog-item">

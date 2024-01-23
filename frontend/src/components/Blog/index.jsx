@@ -15,17 +15,20 @@ function Blog(props) {
 
             <Item img={Blog1}
                 h2={"Минфин предложил единый налоговый вычет"}
+                id={1}
             />
 
             <Item img={Blog2}
                 h2={"Рэй Далио перестал считать наличные «мусором»"}
+                id={2}
             />
 
             <Item img={Blog3}
                 h2={"Инвестиции в 5G – необходимое условие экономического развития"}
+                id={3}
             />
 
-            <Get url="https://reqres.in/api/users?page=2" params={{}}>
+            {/* <Get url="https://reqres.in/api/users?page=2" params={{}}>
                 {(error, response, isLoading, makeRequest, axios) => {
                     if (error) {
                         return (
@@ -57,7 +60,7 @@ function Blog(props) {
                     }
                     return (<div>Default message before request is made.</div>)
                 }}
-            </Get>
+            </Get> */}
         </div>
     );
 }
