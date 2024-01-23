@@ -1,11 +1,23 @@
 import { Link } from "react-router-dom"
  
+import Blog1 from "../../assets/images/blog-1.png"
+import Blog2 from "../../assets/images/blog-2.png"
+import Blog3 from "../../assets/images/blog-3.png"
+import Blog4 from "../../assets/images/img2.png"
+import Blog5 from "../../assets/images/img3.png"
+
 function Item(props) {
+    const images = [Blog1, Blog2, Blog3, Blog4, Blog5]
+
+    let img_index = null
+    if (props.id < images.length) { img_index = props.id } 
+    else { img_index = props.id % images.length }
+
     return (
         <>
             <div className="content">
                 <div className="left">
-                    <img src={props.img} alt="Blog" width={"100%"}  height={300} />
+                    <img src={images[img_index]} alt="Blog" width={"100%"}  height={300} />
                 </div>
                 <div className="right">
                     <h4>Менеджемент</h4>

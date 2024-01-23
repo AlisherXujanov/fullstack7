@@ -5,6 +5,9 @@ import Item from "./Item.jsx"
 import Blog1 from "../../assets/images/blog-1.png"
 import Blog2 from "../../assets/images/blog-2.png"
 import Blog3 from "../../assets/images/blog-3.png"
+import BlogItems from "../../db/blog.json"
+
+
 
 function Blog(props) {
     return (
@@ -13,20 +16,17 @@ function Blog(props) {
                 <Heading size={2} >Blog</Heading>
             </div>
 
-            <Item img={Blog1}
-                h2={"Минфин предложил единый налоговый вычет"}
-                id={1}
-            />
+            {
+                BlogItems.map((item, index) => {
+                    return (
+                        <Item key={index} 
+                            h2={item.h2}
+                            id={item.id}
+                        />
+                    )
+                })
+            }
 
-            <Item img={Blog2}
-                h2={"Рэй Далио перестал считать наличные «мусором»"}
-                id={2}
-            />
-
-            <Item img={Blog3}
-                h2={"Инвестиции в 5G – необходимое условие экономического развития"}
-                id={3}
-            />
 
             {/* <Get url="https://reqres.in/api/users?page=2" params={{}}>
                 {(error, response, isLoading, makeRequest, axios) => {
