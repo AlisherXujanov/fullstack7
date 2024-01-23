@@ -68,6 +68,7 @@ function About() {
             <Marquee />
 
             <div className="company-blog">
+                <Heading size={1}>Блог компании</Heading>
                 <CompanyBlog />
             </div>
 

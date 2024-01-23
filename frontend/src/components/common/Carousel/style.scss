@@ -53,6 +53,8 @@
 
     .slider {
         .slide {
+            margin-bottom: 20px;
+
             .c-slide-wrapper {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -63,6 +65,38 @@
                 img {
                     width: 100%;
                     height: 300px;
+                    border-radius: 5px;
+                }
+
+                .slide-content {
+                    text-align: left;
+
+                    .warning-btn {
+                        border: none;
+                        margin-top: 50px;
+                        background-color: transparent;
+                        color: $warning;
+                        box-shadow: none;
+                        font-weight: bold;
+                        font-size: 1.1em;
+                        position: relative;
+                        padding: 0;
+
+                        &::after {
+                            content: ">";
+                            position: absolute;
+                            right: -15px;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            border-bottom: 1px solid $warning;
+                            padding-bottom: 2px;
+                        }
+                    }
+
+                    h3 {
+                        margin: 20px 0;
+                    }
                 }
             }
         }

@@ -92,6 +92,15 @@
         }
     }
 
+    .company-blog {
+        b {
+            margin: 100px 0 50px 100px;
+        }
+        .carousel-section {
+            padding: 0 100px;
+        }
+    }
+
     @media (max-width: $large-screen) {
         .values {
             padding: 20px;
