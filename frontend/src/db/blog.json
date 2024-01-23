@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "title": "Минфин предложил единый налоговый вычет для долгосрочных инвестиций с новым типом ИИС",
         "author": "Арман Арманов",
         "date": "Октябрь 13, 2022",
@@ -8,7 +8,7 @@
         "subtitle2": "Два первых типа ИИС появились в 2015 году. По данным Московской биржи на конец июля, они были открыты у 5,6 млн человек. ИИС-I позволяет его владельцу получать 13% от зачисленной на счет за год суммы, но не более 400 000 рублей (максимум вычета  — 52 000 рублей в год). По ИИС-II весь доход по операциям освобождается от уплаты налога при закрытии счета. Для получения льгот по обеим форматам счетов нужно держать ИИС три года и не выводить средства. Можно иметь только один ИИС и в год внести на него не более 1 млн рублей. "
     },
     {
-        "id": "2",
+        "id": 2,
         "title": "Рэй Далио перестал считать наличные «мусором»",
         "author": "Арман Арманов",
         "date": "Октябрь 13, 2022",
@@ -16,7 +16,7 @@
         "subtitle2": ""
     },
     {
-        "id": "3",
+        "id": 3,
         "title": "Инвестиции в 5G – необходимое условие экономического развития",
         "author": "Арман Арманов",
         "date": "Октябрь 23, 2012",
@@ -24,7 +24,7 @@
         "subtitle2": ""
     },
     {
-        "id": "4",
+        "id": 4,
         "title": "Global warming is a serious problem",
         "author": "Andrew Tate",
         "date": "Ноябрь 03, 2021",
@@ -32,7 +32,7 @@
         "subtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolores nihil! Aliquam suscipit, necessitatibus totam mollitia aliquid pariatur aperiam? Dolorem similique ab repudiandae consequuntur facilis? Excepturi qui praesentium iusto asperiores."
     },
     {
-        "id": "5",
+        "id": 5,
         "title": "Huge asteroid could hit Earth in 2182",
         "author": "Shoxjaxon Juraev",
         "date": "Январь 15, 2020",
@@ -40,7 +40,7 @@
         "subtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolores nihil! Aliquam suscipit, necessitatibus totam mollitia aliquid pariatur aperiam? Dolorem similique ab repudiandae consequuntur facilis? Excepturi qui praesentium iusto asperiores."
     },
     {
-        "id": "6",
+        "id": 6,
         "title": "The most beautiful places in the world",
         "author": "Hamdam Sobirov",
         "date": "Июнь 20, 2015",
@@ -48,7 +48,7 @@
         "subtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolores nihil! Aliquam suscipit, necessitatibus totam mollitia aliquid pariatur aperiam? Dolorem similique ab repudiandae consequuntur facilis? Excepturi qui praesentium iusto asperiores."
     },
     {
-        "id": "7",
+        "id": 7,
         "title": "Минфин предложил единый налоговый вычет для долгосрочных инвестиций с новым типом ИИС",
         "author": "Арман Арманов",
         "date": "Октябрь 13, 2022",
@@ -56,7 +56,7 @@
         "subtitle2": "Два первых типа ИИС появились в 2015 году. По данным Московской биржи на конец июля, они были открыты у 5,6 млн человек. ИИС-I позволяет его владельцу получать 13% от зачисленной на счет за год суммы, но не более 400 000 рублей (максимум вычета  — 52 000 рублей в год). По ИИС-II весь доход по операциям освобождается от уплаты налога при закрытии счета. Для получения льгот по обеим форматам счетов нужно держать ИИС три года и не выводить средства. Можно иметь только один ИИС и в год внести на него не более 1 млн рублей. "
     },
     {
-        "id": "8",
+        "id": 8,
         "title": "Рэй Далио перестал считать наличные «мусором»",
         "author": "Арман Арманов",
         "date": "Октябрь 13, 2022",
@@ -64,7 +64,7 @@
         "subtitle2": ""
     },
     {
-        "id": "9",
+        "id": 9,
         "title": "Инвестиции в 5G – необходимое условие экономического развития",
         "author": "Арман Арманов",
         "date": "Октябрь 23, 2012",
@@ -72,7 +72,7 @@
         "subtitle2": ""
     },
     {
-        "id": "10",
+        "id": 10,
         "title": "Global warming is a serious problem",
         "author": "Andrew Tate",
         "date": "Ноябрь 03, 2021",
@@ -80,7 +80,7 @@
         "subtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolores nihil! Aliquam suscipit, necessitatibus totam mollitia aliquid pariatur aperiam? Dolorem similique ab repudiandae consequuntur facilis? Excepturi qui praesentium iusto asperiores."
     },
     {
-        "id": "11",
+        "id": 11,
         "title": "Huge asteroid could hit Earth in 2182",
         "author": "Shoxjaxon Juraev",
         "date": "Январь 15, 2020",
@@ -88,7 +88,7 @@
         "subtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolores nihil! Aliquam suscipit, necessitatibus totam mollitia aliquid pariatur aperiam? Dolorem similique ab repudiandae consequuntur facilis? Excepturi qui praesentium iusto asperiores."
     },
     {
-        "id": "12",
+        "id": 12,
         "title": "The most beautiful places in the world",
         "author": "Hamdam Sobirov",
         "date": "Июнь 20, 2015",
