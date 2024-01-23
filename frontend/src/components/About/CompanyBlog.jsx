@@ -1,6 +1,6 @@
 import CarouselComponent from "../common/Carousel"
 import blogs from "../../db/blog.json"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 
 
 
@@ -11,11 +11,7 @@ function CompanyBlog() {
     let large_screen = window.matchMedia("(max-width: 1100px)")
     let medium_screen = window.matchMedia("(max-width: 855px)")
 
-    useEffect(() => {
-        getSlides()
-    }, [window.screen.width, getSlides])
-
-    function getSlides() {
+    const getSlides = useCallback(() => {
         let breakPointItemsNumber = 3
         if (large_screen.matches) {
             breakPointItemsNumber = 2
@@ -38,7 +34,11 @@ function CompanyBlog() {
             }
         }
         setSlides(slides)
-    }
+    }, [large_screen, medium_screen])
+
+    useEffect(() => {
+        getSlides()
+    }, [getSlides])
 
     return (
         <>
@@ -46,7 +46,6 @@ function CompanyBlog() {
                 images={slides}
                 indicatorsAsNumbers={true}
             />
-
         </>
     );
 }
