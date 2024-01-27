@@ -21,9 +21,16 @@ export default function MapComponent() {
     zoom: 16,
   };
 
+  let normal_size = "40vw"
+  let small_screen = 680
+
+  if (window.innerWidth < small_screen) {
+    normal_size = "90vw"
+  }
+
   return (
     <YMaps >
-      <Map defaultState={defaultState} width={"600px"}>
+      <Map defaultState={defaultState} width={normal_size}>
         <Placemark geometry={coords} />
       </Map>
     </YMaps>
