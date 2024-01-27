@@ -6,7 +6,6 @@
     "@emailjs/browser": "^3.12.1",
     "@pbe/react-yandex-maps": "^1.2.5",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "i18next": "^23.7.16",
     "react": "^18.2.0",
@@ -45,6 +44,9 @@
     ]
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
+    "jest": "^27.5.1",
+    "prettier": "^3.2.4"
   }
 }
