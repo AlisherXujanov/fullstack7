@@ -5,14 +5,16 @@ function CompanyBlog() {
 
     // Separate blog items by 3 items per slide
     let breakPointItemsNumber = 3
-    let large_screen = window.matchMedia("(max-width: 1100px)")
-    let medium_screen = window.matchMedia("(max-width: 855px)")
+    // let large_screen = window.matchMedia("(max-width: 1100px)")
+    // let medium_screen = window.matchMedia("(max-width: 855px)")
 
+    let large_screen = 1100
+    let medium_screen = 855
     
-    if (large_screen.matches) {
+    if (window.innerWidth < large_screen) {
         breakPointItemsNumber = 2
     }
-    if (medium_screen.matches) {
+    if (window.innerWidth < medium_screen) {
         breakPointItemsNumber = 1
     }
 

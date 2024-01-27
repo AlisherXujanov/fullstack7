@@ -30,14 +30,14 @@ Which means, we can use `import` and `export` instead of `require` and `module.e
 3. Write your tests: In **MyComponent.test.js**, you'll import React, your component, and any testing utilities you need. Then, you'll write your tests inside a test or it block.
 
 ```javascript
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import MyComponent from '../MyComponent';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import App from '../App.js'
 
 test('renders component correctly', () => {
-  render(<MyComponent />);
-  const element = screen.getByText(/some text/i);
-  expect(element).toBeInTheDocument();
+    render(<App />);
+    const element = screen.getByText(/some text/i);
+    expect(element).toBeInTheDocument();
 });
 ```
 In this example, we're testing that MyComponent renders an element with the text "some text".
