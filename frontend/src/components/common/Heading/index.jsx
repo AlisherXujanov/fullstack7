@@ -7,6 +7,12 @@ function Heading(props) {
         color: props.color ? props.color : "",
         filter: props.color ? "grayscale(100%)" : "",
     }
+
+    const SMALL_SCREEN_SIZE = 680
+    if (window.innerWidth < SMALL_SCREEN_SIZE) {
+        fontSize.fontSize = `calc(38px / ${props.size})`
+    }
+
     return (
         <div className="heading-wrapper">
             <b style={fontSize}>

@@ -1,7 +1,14 @@
 {
     "presets": [
-        "@babel/preset-env",
+        "@babel/preset-env", // This is the preset for ES6
+        // it will help us to convert ES6 to ES5 code
+        // so that all browsers can understand it
+        //
+
         "@babel/preset-react"
+        // This is the preset for React
+        // it will help us to convert JSX to JS
+        // so that all browsers can understand it
     ],
     "plugins": []
 }

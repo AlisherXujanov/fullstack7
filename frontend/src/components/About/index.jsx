@@ -32,7 +32,7 @@ function About() {
 
 
             <div className="about">
-                <Heading size={2}>О нас</Heading>
+                <Heading size={1.5}>О нас</Heading>
                 <div className="about-content">
                     <div className="left">
                         <img src={AboutPic} alt="About" width="100%" height={400} />
@@ -61,7 +61,7 @@ function About() {
             <Marquee reversed={true} />
 
             <div id="teams">
-                <Heading size={2}>Наша команда</Heading>
+                <Heading size={1.5}>Наша команда</Heading>
                 <Team />
             </div>
 

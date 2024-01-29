@@ -8,7 +8,7 @@ function Footer(props) {
         <div className="footer-wrapper">
             <div className="footer-top">
                 <div className="footer-heading">
-                    <Heading size={2} color={"darkgray"} >
+                    <Heading size={1.5} color={"darkgray"} >
                         Fonte
                     </Heading>
                 </div>

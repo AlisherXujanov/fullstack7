@@ -11,7 +11,7 @@ function Values() {
     const imgs = [Diamond, Graph, Bag, HandShake]
     return (
         <div className="values-wrapper">
-            <Heading size={2}>Наши ценности</Heading>
+            <Heading size={1.5}>Наши ценности</Heading>
 
             <div className="values-content">
                 {

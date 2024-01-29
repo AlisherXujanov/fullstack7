@@ -9,7 +9,7 @@ function Blog(props) {
     return (
         <div id="blog-wrapper">
             <div style={{ padding: "0 0 20px 20px" }}>
-                <Heading size={2} >Blog</Heading>
+                <Heading size={1.5} >Blog</Heading>
             </div>
 
             {

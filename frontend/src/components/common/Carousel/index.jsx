@@ -7,10 +7,12 @@ function CarouselComponent(props) {
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
-    const indicatorsAsNumbers = (onClickHandler, isSelected, index, label) => {
+    const indicatorsAsNumbers = (onClickHandler, isSelected, index, label, maxVisibleIndicators) => {
+        const selected_index = index + 1
+
         return (
             <span
-                className={isSelected ? "indicator selected" : "indicator"} 
+                className={isSelected ? "indicator selected" : "indicator"}
                 onClick={onClickHandler}
                 onKeyDown={onClickHandler}
                 value={index}
@@ -29,18 +31,18 @@ function CarouselComponent(props) {
             <div className="carousel-c-children">
                 {props.children}
             </div>
-            <Carousel 
-                showThumbs={false} 
-                autoPlay={true} 
-                infiniteLoop={true} 
+            <Carousel
+                showThumbs={false}
+                autoPlay={true}
+                infiniteLoop={true}
                 showStatus={false}
                 renderIndicator={props.indicatorsAsNumbers ? indicatorsAsNumbers : undefined}
             >
                 {
-                    props.indicatorsAsNumbers ? 
+                    props.indicatorsAsNumbers ?
                         props.images.map((slide, index) => {
                             return (
-                                <div className="c-slide-wrapper" key={10000+index}>
+                                <div className="c-slide-wrapper" key={10000 + index}>
                                     {
                                         slide.map((info, index) => {
                                             return (
