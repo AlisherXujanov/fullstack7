@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.footer-wrapper .footer-top {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  gap: 20px;
+  padding: 50px 0;
+  background-color: #141414;
+}
+.footer-wrapper .footer-top .footer-heading {
+  padding: 20px 50px;
+}
+.footer-wrapper .footer-top .footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 50px;
+}
+.footer-wrapper .footer-top .footer-links a,
+.footer-wrapper .footer-top .footer-links button {
+  display: block;
+  text-decoration: none;
+  color: gray;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.footer-wrapper .footer-top .social-media img {
+  cursor: pointer;
+}
+.footer-wrapper .footer-top .social-media img:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 855px) {
+  .footer-wrapper .footer-top {
+    grid-template-columns: 3fr 2fr;
+    gap: 10px;
+  }
+  .footer-wrapper .footer-top .footer-links {
+    flex-direction: column;
+  }
+  .footer-wrapper .footer-top .social-media {
+    padding-left: 50px;
+  }
+}
+.footer-wrapper .footer-bottom {
+  background-color: #0a0a0a;
+  padding: 50px;
+}
+.footer-wrapper .footer-bottom p {
+  font-size: 0.8em;
+  color: gray;
+  margin: 30px 0;
+}/*# sourceMappingURL=style.css.map */

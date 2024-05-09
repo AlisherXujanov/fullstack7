@@ -1,9 +1,22 @@
 import Heading from "../common/Heading"
-import { Link } from 'react-router-dom'
-import SM from "../../assets/sm.png"
+import { Link, useNavigate } from 'react-router-dom'
+import Twitter from "../../assets/twitter.png"
+import Instagram from "../../assets/instagram.png"
+import Facebook from "../../assets/facebook.png"
 import "./style.scss"
 
 function Footer(props) {
+    const navigate = useNavigate();
+
+    const goToTeamsHash = () => {
+        navigate('/about');
+        setTimeout(() => {
+            const element = document.getElementById('teams');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 0);
+    };
     return (
         <div className="footer-wrapper">
             <div className="footer-top">
@@ -16,7 +29,7 @@ function Footer(props) {
                 <div className="footer-links">
                     <div className="left">
                         <Link to={"/about"}>О нас</Link>
-                        <Link to={"/team"}>Команда</Link>
+                        <button onClick={goToTeamsHash}>Команда</button>
                         <Link to={"/blog"}>Блог</Link>
                         <Link to={"/products"}>Продукты</Link>
                         <Link to={"/contacts"}>Контакты</Link>
@@ -28,7 +41,17 @@ function Footer(props) {
                 </div>
 
                 <div className="social-media">
-                    <img src={SM} alt="Social Media" />
+                    <Link to={"https://www.facebook.com"}>
+                        <img src={Facebook} alt="Facebook" width={50} height={50} />
+                    </Link>
+                    <Link to={"https://www.instagram.com/alisher_khujanov"}>
+                        <img src={Instagram} alt="Instagram" width={50} height={50} />
+                    </Link>
+                    <Link to={"https://www.twitter.com"}>
+                        <img src={Twitter} alt="Twitter" width={50} height={50} />
+                    </Link>
+                    <br />
+
                 </div>
             </div>
             <div className="footer-bottom">

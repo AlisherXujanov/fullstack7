@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+#blog-wrapper {
+  padding: 100px;
+  background-color: #202020;
+}
+#blog-wrapper .content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 25px;
+  font-family: cursive;
+}
+#blog-wrapper .content *:not(.warning-btn) {
+  margin-bottom: 20px;
+}
+#blog-wrapper .content .left,
+#blog-wrapper .content .right {
+  padding: 20px;
+}
+#blog-wrapper .content .warning-btn {
+  border: 1px solid rgba(255, 102, 0, 0.3137254902);
+  background-color: transparent;
+}
+#blog-wrapper .content p {
+  color: darkgray;
+  font-size: 0.75em;
+}
+@media (max-width: 1100px) {
+  #blog-wrapper {
+    padding: 50px;
+  }
+}
+@media (max-width: 855px) {
+  #blog-wrapper {
+    padding: 50px 10px;
+  }
+  #blog-wrapper .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+}
+@media (max-width: 680px) {
+  #blog-wrapper .content {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  #blog-wrapper .content .left {
+    margin: 0;
+    padding: 0;
+  }
+  #blog-wrapper .content .right {
+    padding: 0 10px 20px 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,3 +1,9 @@
 #products-wrapper {
     padding: 100px;
+
+    .container {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        border-bottom: 5px dashed black;
+    }
 }

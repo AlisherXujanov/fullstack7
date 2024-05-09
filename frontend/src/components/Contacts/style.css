@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.contacts #contacts-wrapper {
+  padding: 100px;
+  background-color: #202020;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.contacts #contacts-wrapper .left .info {
+  margin: 40px 0;
+}
+.contacts #contacts-wrapper .left .info p {
+  color: darkgray;
+}
+.contacts #contacts-wrapper .right input,
+.contacts #contacts-wrapper .right button {
+  width: 100%;
+  margin: 5px 0;
+  border: 2px solid transparent;
+  padding: 15px 20px;
+  outline: none;
+  background-color: #141414;
+  color: snow;
+}
+.contacts #contacts-wrapper .right input::-moz-placeholder, .contacts #contacts-wrapper .right button::-moz-placeholder {
+  color: darkgray;
+  font-size: 0.8em;
+}
+.contacts #contacts-wrapper .right input::placeholder,
+.contacts #contacts-wrapper .right button::placeholder {
+  color: darkgray;
+  font-size: 0.8em;
+}
+.contacts #contacts-wrapper .right input:hover, .contacts #contacts-wrapper .right input:focus,
+.contacts #contacts-wrapper .right button:hover,
+.contacts #contacts-wrapper .right button:focus {
+  border: 2px solid yellow;
+  box-shadow: 5px 5px 25px #ff6600, -5px -5px 25px #ff6600, 10px 10px 50px black, -10px -10px 50px black, inset 0 1px 30px rgba(255, 102, 0, 0.3137254902), inset 0 -1px 30px rgba(255, 102, 0, 0.3137254902);
+}
+.contacts .maps {
+  padding: 0 100px;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  background-color: #202020;
+}
+.contacts .maps div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media (max-width: 1100px) {
+  .contacts #contacts-wrapper {
+    padding: 50px;
+    gap: 20px;
+  }
+  .contacts .maps {
+    padding: 0 50px;
+    gap: 20px;
+  }
+}
+@media (max-width: 855px) {
+  .contacts #contacts-wrapper {
+    padding: 50px 20px;
+  }
+}
+@media (max-width: 680px) {
+  .contacts #contacts-wrapper {
+    flex-direction: column;
+  }
+  .contacts .maps {
+    padding: 0 20px;
+    gap: 10px;
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */

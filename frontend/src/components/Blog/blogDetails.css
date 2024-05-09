@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.blog-item {
+  padding: 100px 200px;
+}
+.blog-item .blog-nav {
+  margin-bottom: 50px;
+}
+.blog-item h1,
+.blog-item img {
+  margin: 5px 0;
+}
+.blog-item p {
+  margin: 10px 0;
+  color: lightgray;
+}
+.blog-item .blog-author span {
+  margin-right: 20px;
+}
+@media (max-width: 1100px) {
+  .blog-item {
+    padding: 100px 150px;
+  }
+}
+@media (max-width: 855px) {
+  .blog-item {
+    padding: 100px;
+  }
+}
+@media (max-width: 680px) {
+  .blog-item {
+    padding: 20px;
+  }
+}/*# sourceMappingURL=blogDetails.css.map */

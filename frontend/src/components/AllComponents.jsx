@@ -14,6 +14,10 @@ function AllComponents(props) {
     const location = useLocation()
     const [state, dispatch] = useReducer(globalReducerFunction, initialState)
     state.dispatch = dispatch
+    state.toggleAuthModal = function(e) {
+        e.preventDefault()
+        state.dispatch({type: "toggleAuthModal"})
+    }
 
     return (
         <>

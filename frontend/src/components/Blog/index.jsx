@@ -22,41 +22,6 @@ function Blog(props) {
                     )
                 })
             }
-
-
-            {/* <Get url="https://reqres.in/api/users?page=2" params={{}}>
-                {(error, response, isLoading, makeRequest, axios) => {
-                    if (error) {
-                        return (
-                            <div>
-                                Something bad happened: {error.message} 
-                                <button onClick={() => makeRequest({ params: { reload: true } })}>Retry</button>
-                            </div>)
-                    }
-                    else if (isLoading) {
-                        return (<div>Loading...</div>)
-                    }
-                    else if (response !== null) {
-                        return (
-                            <div>
-                                <button className="warning-btn" onClick={() => makeRequest({ params: { refresh: true } })}>
-                                    Refresh
-                                </button>
-                                {
-                                    response.data.data.map((user, index) => {
-                                        return (
-                                            <Item key={index} img={user.avatar}
-                                                h2={user.email}
-                                            />
-                                        )
-                                    })
-                                }
-                            </div>
-                        )
-                    }
-                    return (<div>Default message before request is made.</div>)
-                }}
-            </Get> */}
         </div>
     );
 }

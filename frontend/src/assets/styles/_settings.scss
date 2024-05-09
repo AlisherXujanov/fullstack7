@@ -44,3 +44,9 @@ $small-screen: 680px;
         transform: scale(0.8);
     }
 }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

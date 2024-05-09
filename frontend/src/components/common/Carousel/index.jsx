@@ -7,24 +7,48 @@ function CarouselComponent(props) {
     const imgStyle = {
         filter: props.blurred ? "grayscale(100%) brightness(0.5)" : "none"
     }
-    const indicatorsAsNumbers = (onClickHandler, isSelected, index, label, maxVisibleIndicators) => {
-        const selected_index = index + 1
-
-        return (
-            <span
-                className={isSelected ? "indicator selected" : "indicator"}
-                onClick={onClickHandler}
-                onKeyDown={onClickHandler}
-                value={index}
-                key={index}
-                role="button"
-                tabIndex={0}
-                aria-label={`${label} ${index + 1}`}
-            >
-                {index + 1}
-            </span>
-        );
+    const indicatorsAsNumbers = (onClickHandler, isSelected, index, label) => {
+        if (props.images.length > 10 ) {
+            return (
+                <span>
+                    .
+                    <span
+                        className={
+                            isSelected ? "indicator selected" : "indicator-hidden"
+                        }
+                        onClick={onClickHandler}
+                        onKeyDown={onClickHandler}
+                        value={index}
+                        key={index}
+                        role="button"
+                        tabIndex={index}
+                        aria-label={`${label} ${index + 1}`}
+                    >
+                        {index + 1}
+                    </span>
+                    .
+                </span>
+            )
+        } else {
+            return (
+                <span
+                    className={
+                        isSelected ? "indicator selected" : "indicator"
+                    }
+                    onClick={onClickHandler}
+                    onKeyDown={onClickHandler}
+                    value={index}
+                    key={index}
+                    role="button"
+                    tabIndex={index}
+                    aria-label={`${label} ${index + 1}`}
+                >
+                    {index + 1}
+                </span>
+            )
+        }
     }
+
 
     return (
         <section className="carousel-section">
@@ -58,7 +82,7 @@ function CarouselComponent(props) {
                         :
                         props.images.map((img, index) => {
                             return (
-                                <div key={index}>
+                                <div className="c-image-wrapper" key={index}>
                                     <img
                                         style={imgStyle}
                                         src={img}

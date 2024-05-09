@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+#contacts-form-wrapper form button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#contacts-form-wrapper form button {
+  padding: 10px 35px;
+  background-color: rgba(255, 102, 0, 0.3137254902);
+  border: 2px solid #ff6600;
+  color: snow;
+  border-radius: 0;
+  box-shadow: 2px 2px 15px rgba(255, 102, 0, 0.3137254902), -2px -2px 15px rgba(255, 102, 0, 0.3137254902), inset 2px 2px 15px rgba(255, 102, 0, 0.3137254902), inset -2px -2px 15px rgba(255, 102, 0, 0.3137254902);
+}
+#contacts-form-wrapper form button:hover {
+  background-color: black;
+  box-shadow: 2px 2px 15px #ff6600, -2px -2px 15px #ff6600, inset 2px 2px 15px #ff6600, inset -2px -2px 15px #ff6600;
+  transform: scale(0.95);
+}
+#contacts-form-wrapper form button:active {
+  transform: scale(0.8);
+}
+
+#contacts-form-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  background-color: #0a0a0a;
+  padding: 0 250px;
+}
+#contacts-form-wrapper form {
+  padding: 50px 50px 50px 0;
+  text-align: center;
+}
+#contacts-form-wrapper form button {
+  padding: 20px 40px;
+  font-weight: bold;
+  box-shadow: inset 10px 10px 50px rgba(255, 102, 0, 0.3137254902), 10px 10px 50px rgba(255, 102, 0, 0.3137254902), -10px -10px 50px rgba(255, 102, 0, 0.3137254902);
+  margin: 30px;
+}
+#contacts-form-wrapper form input,
+#contacts-form-wrapper form textarea {
+  width: 100%;
+  background-color: #141414;
+  padding: 20px;
+  color: snow;
+  outline: none;
+  border: none;
+  margin: 5px;
+}
+#contacts-form-wrapper form input:focus,
+#contacts-form-wrapper form textarea:focus {
+  box-shadow: inset 10px 10px 50px rgba(255, 102, 0, 0.3137254902), 10px 10px 50px rgba(255, 102, 0, 0.3137254902), -10px -10px 50px rgba(255, 102, 0, 0.3137254902);
+  background-color: #141414;
+  border: 1px solid #ff6600;
+}
+#contacts-form-wrapper form div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+@media (max-width: 1100px) {
+  #contacts-form-wrapper {
+    padding: 10px;
+  }
+}
+@media (max-width: 855px) {
+  #contacts-form-wrapper {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  #contacts-form-wrapper img {
+    height: 250px;
+  }
+  #contacts-form-wrapper form {
+    padding: 5px;
+  }
+}/*# sourceMappingURL=style.css.map */

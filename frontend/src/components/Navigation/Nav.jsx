@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { globalContext } from "../../state";
 import { useTranslation } from "react-i18next";
 
+import Authentication from "../Authentication"
+
 // 1. Create a burger
 // 2. Put the input checkbox onto the burger and make it invisible
 // 3. Open the Nav-width div when the checkbox is checked
@@ -43,6 +45,10 @@ function Nav(props) {
             </div>
 
             <div className="menu">
+                {
+                    state.showAuth ? <Authentication /> : null
+                }
+
                 <div className="nav-links">
                     <Link to={"/about"}>
                         {t('about')}
@@ -62,7 +68,7 @@ function Nav(props) {
                 </div>
 
                 <div className="auth">
-                    <button className="warning-btn">
+                    <button className="warning-btn" onClick={state.toggleAuthModal}>
                         {t('login')}
                     </button>
                     <span onClick={initiateChangeLanguage} >

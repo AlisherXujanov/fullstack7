@@ -18,11 +18,24 @@
             justify-content: flex-start;
             gap: 50px;
 
-            a {
+            a,
+            button {
                 display: block;
                 text-decoration: none;
                 color: gray;
                 padding: 10px 0;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .social-media {
+            img {
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
 

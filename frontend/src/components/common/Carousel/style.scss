@@ -19,31 +19,6 @@
         p {
             margin: 20px 0;
         }
-
-        @media (max-width: $medium-screen) {
-            font-size: small;
-        }
-        @media (max-width: $small-screen) {
-            height: 150px;
-            width: 70vw;
-            overflow: auto;
-            background-color: rgb(0, 0, 0, 0.3);
-            padding: 10px;
-
-            &::-webkit-scrollbar {
-                background-color: transparent;
-                width: 5px;
-            }
-            &::-webkit-scrollbar-thumb {
-                width: 5px;
-                border: 1px solid $warning-t;
-            }
-
-            button {
-                padding: 4px 10px;
-                font-size: 10px;
-            }
-        }
     }
 
     .control-dots {
@@ -78,20 +53,25 @@
             li.dot {
                 display: none;
             }
-            // span.indicator:not(.selected) {
-            //     display: none;
-            // }
+            span.indicator {
+                margin-top: 5px;
+            }
+            span.indicator-hidden {
+                display: none;
+            }
         }
     }
 
     .slider {
         .slide {
+            position: relative;
             .c-slide-wrapper {
+                position: relative;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 50px;
-                padding: 50px;
-                margin: 20px 0;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
 
                 img {
                     border-radius: 5px;
@@ -99,10 +79,11 @@
 
                 .slide-content {
                     text-align: left;
+                    position: relative;
 
                     .warning-btn {
                         border: none;
-                        margin-top: 50px;
+                        margin: 20px 0;
                         background-color: transparent;
                         color: $warning;
                         box-shadow: none;
@@ -127,26 +108,32 @@
                         margin: 20px 0;
                     }
                 }
+            }
+        }
+    }
+}
 
-                @media (max-width: $large-screen) {
+@media (max-width: $large-screen) {
+    .carousel-section {
+        .slider {
+            .slide {
+                .c-slide-wrapper {
                     grid-template-columns: 1fr 1fr;
                     gap: 20px;
-                    padding: 20px;
+                    padding-bottom: 20px;
 
                     .slide-content {
                         text-align: center;
                     }
                 }
-                @media (max-width: $medium-screen) {
-                    grid-template-columns: 1fr;
-                }
             }
         }
     }
-    @media (max-width: $medium-screen) {
-        height: 500px;
-
+}
+@media (max-width: $medium-screen) {
+    .carousel-section {
         .inner-carousel {
+            font-size: small;
             top: 10%;
             left: 5%;
         }
@@ -154,13 +141,27 @@
         .slider-wrapper {
             .slide {
                 img {
-                    height: 500px;
+                    height: 250px;
+                }
+            }
+        }
+        .slider {
+            .slide {
+                .c-slide-wrapper {
+                    grid-template-columns: 1fr;
+
+                    img {
+                        width: 80%;
+                    }
                 }
             }
         }
     }
-    @media (max-width: $small-screen) {
+}
+@media (max-width: $small-screen) {
+    .carousel-section {
         height: 350px;
+
         .slider-wrapper {
             .slide {
                 img {
@@ -170,11 +171,37 @@
         }
         .slider {
             .slide {
-                .slide-content {
+                .c-slide-wrapper {
+                    grid-template-columns: 1fr;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+
                     img {
-                        height: 250px;
+                        width: 75%;
+                        height: 150px;
                     }
                 }
+            }
+        }
+        .inner-carousel {
+            height: 150px;
+            width: 70vw;
+            overflow: auto;
+            background-color: rgb(0, 0, 0, 0.3);
+            padding: 10px;
+
+            &::-webkit-scrollbar {
+                background-color: transparent;
+                width: 5px;
+            }
+            &::-webkit-scrollbar-thumb {
+                width: 5px;
+                border: 1px solid $warning-t;
+            }
+
+            button {
+                padding: 4px 10px;
+                font-size: 10px;
             }
         }
     }

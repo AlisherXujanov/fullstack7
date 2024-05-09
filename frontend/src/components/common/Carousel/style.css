@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat&family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.carousel-section {
+  box-shadow: 0 50px 100px -50px rgba(255, 102, 0, 0.3137254902);
+  position: relative;
+}
+.carousel-section .inner-carousel {
+  position: absolute;
+  z-index: 5;
+  max-width: 500px;
+  min-width: 200px;
+  top: 25%;
+  left: 10%;
+}
+.carousel-section .inner-carousel h1 {
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+}
+.carousel-section .inner-carousel p {
+  margin: 20px 0;
+}
+.carousel-section .control-dots li.dot {
+  background-color: #ff6600;
+  box-shadow: 1px 1px 10px 1px rgba(255, 102, 0, 0.3137254902), -1px -1px 10px 1px rgba(255, 102, 0, 0.3137254902);
+  transform: scale(1.5);
+}
+.carousel-section .control-dots span.indicator {
+  color: gray;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.carousel-section .control-dots span.indicator.selected {
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+  padding: 1px 2px;
+  font-size: 1.5em;
+}
+.carousel-section .control-dots span.indicator:hover:not(.selected) {
+  cursor: pointer;
+  color: lightgray;
+}
+@media (max-width: 680px) {
+  .carousel-section .control-dots li.dot {
+    display: none;
+  }
+  .carousel-section .control-dots span.indicator {
+    margin-top: 5px;
+  }
+  .carousel-section .control-dots span.indicator-hidden {
+    display: none;
+  }
+}
+.carousel-section .slider .slide {
+  position: relative;
+}
+.carousel-section .slider .slide .c-slide-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.carousel-section .slider .slide .c-slide-wrapper img {
+  border-radius: 5px;
+}
+.carousel-section .slider .slide .c-slide-wrapper .slide-content {
+  text-align: left;
+  position: relative;
+}
+.carousel-section .slider .slide .c-slide-wrapper .slide-content .warning-btn {
+  border: none;
+  margin: 20px 0;
+  background-color: transparent;
+  color: #ff6600;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: relative;
+  padding: 0;
+}
+.carousel-section .slider .slide .c-slide-wrapper .slide-content .warning-btn::after {
+  content: ">";
+  position: absolute;
+  right: -15px;
+}
+.carousel-section .slider .slide .c-slide-wrapper .slide-content .warning-btn:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #ff6600;
+  padding-bottom: 2px;
+}
+.carousel-section .slider .slide .c-slide-wrapper .slide-content h3 {
+  margin: 20px 0;
+}
+
+@media (max-width: 1100px) {
+  .carousel-section .slider .slide .c-slide-wrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  .carousel-section .slider .slide .c-slide-wrapper .slide-content {
+    text-align: center;
+  }
+}
+@media (max-width: 855px) {
+  .carousel-section .inner-carousel {
+    font-size: small;
+    top: 10%;
+    left: 5%;
+  }
+  .carousel-section .slider-wrapper .slide img {
+    height: 250px;
+  }
+  .carousel-section .slider .slide .c-slide-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .carousel-section .slider .slide .c-slide-wrapper img {
+    width: 80%;
+  }
+}
+@media (max-width: 680px) {
+  .carousel-section {
+    height: 350px;
+  }
+  .carousel-section .slider-wrapper .slide img {
+    height: 350px;
+  }
+  .carousel-section .slider .slide .c-slide-wrapper {
+    grid-template-columns: 1fr;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .carousel-section .slider .slide .c-slide-wrapper img {
+    width: 75%;
+    height: 150px;
+  }
+  .carousel-section .inner-carousel {
+    height: 150px;
+    width: 70vw;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+  }
+  .carousel-section .inner-carousel::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+  }
+  .carousel-section .inner-carousel::-webkit-scrollbar-thumb {
+    width: 5px;
+    border: 1px solid rgba(255, 102, 0, 0.3137254902);
+  }
+  .carousel-section .inner-carousel button {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

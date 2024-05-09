@@ -1,0 +1,70 @@
+@import "../../assets/styles/settings";
+
+#authentication-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 99999;
+    @include flex-center;
+
+    section.content {
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: $dark-lighter;
+        color: $light;
+        position: relative;
+        width: 35%;
+
+        .close-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            @include flex-center;
+            background-color: $dark;
+            color: $warning;
+        }
+
+        .toggle-auth {
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: transparent;
+            color: blue;
+
+            &:hover {
+                border-bottom: 1px solid blue;
+            }
+        }
+    }
+}
+
+@media (max-width: $large-screen) {
+    #authentication-wrapper {
+        section.content {
+            width: 50%;
+        }
+    }
+}
+@media (max-width: $medium-screen) {
+    #authentication-wrapper {
+        section.content {
+            width: 60%;
+        }
+    }
+}
+
+@media (max-width: $small-screen) {
+    #authentication-wrapper {
+        section.content {
+            width: 80%;
+        }
+    }
+}
