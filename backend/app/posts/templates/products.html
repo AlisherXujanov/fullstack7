@@ -7,11 +7,9 @@
 </head>
 <body>
     <h1>{{ title }}</h1>
-    <p>{{ subtitle }}</p>
     <hr>
-    {% for i in posts %}
+    {% for i in objects %}
         <h3>Title: {{i.title}}</h3>
-        <p>Description: {{ i.description }}</p>
         <hr>
     {% endfor %}
 </body>
