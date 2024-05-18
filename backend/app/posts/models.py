@@ -22,6 +22,7 @@ class Posts(models.Model):
 
 class Products(models.Model):
     title = models.CharField(max_length=50)
+    description = models.TextField(default='...')
 
     def __str__(self) -> str:
         return self.title
