@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Posts, Products
-from .forms import PostsForm
+from .forms import PostsForm, ProductsForm
 
 
 # posts/
@@ -34,3 +34,16 @@ def create_post(request):
         form = PostsForm()
 
     return render(request, 'create_post.html', context={'form': form})
+
+
+
+def create_product(request):
+    if request.method == 'POST':
+        form = ProductsForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    else: # get method
+        form = ProductsForm()
+
+    return render(request, 'create_product.html', context={'form': form})
