@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Posts, Products
 from .forms import PostsForm, ProductsForm
 
@@ -29,6 +29,7 @@ def create_post(request):
         form = PostsForm(request.POST)
         if form.is_valid():
             form.save()
+        return redirect('home')
 
     else: # get method
         form = PostsForm()
@@ -42,6 +43,7 @@ def create_product(request):
         form = ProductsForm(request.POST)
         if form.is_valid():
             form.save()
+        return redirect('products')
 
     else: # get method
         form = ProductsForm()
