@@ -55,7 +55,11 @@
   <h1>My Web Site</h1>
   <div class="header">
     <h3>Announcements</h3>
-    <a class="btn btn-success" href="{% url 'create_announcement' %}">Create a new announcement</a>
+    <div class="all-links">
+      <a class="btn btn-success" href="{% url 'create_announcement' %}">Create a new announcement</a>
+      <a class="btn btn-success" href="{% url 'home' %}">Posts</a>
+      <a class="btn btn-success" href="{% url 'products' %}">Products</a>
+    </div>
   </div>
 
   <main>
@@ -66,5 +70,6 @@
       </article>
     {% endfor %}
   </main>
+
 {% endblock %}
 
