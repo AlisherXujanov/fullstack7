@@ -9,6 +9,7 @@
     <h1>{{ title }}</h1>
     <p>{{ subtitle }}</p>
     <hr>
+    <a class="btn btn-success" href="{% url 'create-post' %}">Create a new post</a>
     {% for i in posts %}
         <h3>Title: {{i.title}}</h3>
         <p>Description: {{ i.description }}</p>
