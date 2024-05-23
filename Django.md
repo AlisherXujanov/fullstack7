@@ -316,17 +316,26 @@ https://jinja.palletsprojects.com/en/3.1.x/templates/#builtin-filters
 
 <!-- imports -->
 {% load static %} <!-- to load static files -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
 
-<html>
-<head>
-    <title>{% block title %}{% endblock title %}</title>
-    
-    {% block css %}{% endblock css %}
-</head>
-<body>
-    {% block content %}{% endblock content %}
-    {% block scripts %}{% endblock scripts %}
-</body>
+    {% block css %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts %}
+    {% endblock %}
+  </body>
 </html>
 
 ...

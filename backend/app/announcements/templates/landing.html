@@ -1,72 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>My Web Site</h1>
-    <div class="header">
-        <h3>Announcements</h3>
-        <a class="btn btn-success" href="{% url 'create_announcement' %}">
-            Create a new announcement
-        </a>
-    </div>
+{% block title %}
+  My Web Site
+{% endblock %}
 
-    <main>
-        {% for item in all_announcements %}
-            <article>
-                <h2>{{ item.title }}</h2>
-                <p>{{ item.content }}</p>
-            </article>
-        {% endfor %}
-    </main>
-
-</body>
-<style>
+{% block css %}
+  <style>
     * {
-        transition: 0.5s;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        text-align: center;
+      transition: 0.5s;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-align: center;
     }
     main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
     article {
-        background: linear-gradient(to right, orangered, green);
-        padding: 20px;
-        color: snow;
-        border-radius: 10px;
+      background: linear-gradient(to right, orangered, green);
+      padding: 20px;
+      color: snow;
+      border-radius: 10px;
     }
     .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
     }
     .btn {
-        padding: 10px 20px;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        cursor: pointer;
-        display: inline-block;
-        border-radius: 10px;
-        text-decoration: none;
-        color: green;
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 10px;
+      text-decoration: none;
+      color: green;
     }
     .btn.btn-success {
-        border: 2px solid green;
+      border: 2px solid green;
     }
     .btn.btn-success:hover {
-        background-color: green;
-        color: snow;
+      background-color: green;
+      color: snow;
     }
-</style>
-</html>
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>My Web Site</h1>
+  <div class="header">
+    <h3>Announcements</h3>
+    <a class="btn btn-success" href="{% url 'create_announcement' %}">Create a new announcement</a>
+  </div>
+
+  <main>
+    {% for item in all_announcements %}
+      <article>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.content }}</p>
+      </article>
+    {% endfor %}
+  </main>
+{% endblock %}
+
