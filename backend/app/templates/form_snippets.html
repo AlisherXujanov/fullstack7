@@ -1,0 +1,40 @@
+{% comment %}This file waits for form as variable PASS it through includes tag{% include 'form_snippets.html' with form=form %}
+{% endcomment %}
+
+<style>
+  form {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+  }
+  input[type='submit'] {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: orangered;
+    color: snow;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  input:focus,
+  textarea:focus {
+    border-color: orangered;
+  }
+</style>
+
+<div class="form-wrapper">
+  <form method="POST">
+    {% csrf_token %}
+    {% comment %}Cross site request forgery token is a security measure to prevent{% endcomment %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+  </form>
+</div>

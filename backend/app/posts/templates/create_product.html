@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Create a new Product</h1>
+{% extends 'base.html' %}
 
-    <form method="POST">
-      {% csrf_token %}
-      {% comment %} Cross site request forgery token is a security measure to prevent {% endcomment %}
-      {{ form.as_p }}
-      <input type="submit" value="Submit" />
-    </form>
-  </body>
-</html>
+{% block title %}
+  Create Products
+{% endblock %}
+
+{% block content %}
+  {% include "form_snippets.html" with form=form %}
+{% endblock %}
+
