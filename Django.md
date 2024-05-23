@@ -44,7 +44,7 @@
 ---
 ---
 
- # Modals
+# Modals
 # Admin-page  &&  Forms-(basics) 
 - models.CharField      - a string of characters
 - models.URLField       - a string that has to be a valid URL format
