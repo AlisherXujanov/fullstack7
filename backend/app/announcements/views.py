@@ -7,7 +7,8 @@ from .forms import AnnouncementForm
 def landing_page(request):
     all_announcements = Announcement.objects.all()
     context = {
-        "all_announcements": all_announcements
+        "all_announcements": all_announcements,
+        "item_for_if": None,
     }
     return render(request, 'landing.html', context)
 
