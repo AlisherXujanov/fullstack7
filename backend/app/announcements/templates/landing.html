@@ -14,6 +14,10 @@
   <div class="header">
     <h3>Announcements</h3>
     <div class="all-links">
+      <a class="btn btn-success" href="{% url 'products' %}">
+        <img src="{% static 'imgs/car.jpg' %}" width="100%" height="50">
+      </a>
+
       <a class="btn btn-success" href="{% url 'create_announcement' %}">Create a new announcement</a>
       <a class="btn btn-success" href="{% url 'home' %}">Posts</a>
       <a class="btn btn-success" href="{% url 'products' %}">Products</a>
