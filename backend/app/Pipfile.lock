@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7f45ab173e35257019d0575aba4a3ee8471697021da9b3fd8e3ffbc22e0ee4fa"
+            "sha256": "9f8036b751df58fcec2daf0ce7a310010f0cdefb112a186bf29b4911f08bc8b8"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.12"
+            "python_version": "*"
         },
         "sources": [
             {
@@ -18,11 +18,11 @@
     "default": {
         "anyio": {
             "hashes": [
-                "sha256:048e05d0f6caeed70d731f3db756d35dcc1f35747c8c403364a8332c630441b8",
-                "sha256:f75253795a87df48568485fd18cdd2a3fa5c4f7c5be8e5e36637733fce06fed6"
+                "sha256:5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94",
+                "sha256:c1b2d8f46a8a812513012e1107cb0e68c17159a7a594208005a57dc776e1bdc7"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==4.3.0"
+            "version": "==4.4.0"
         },
         "asgiref": {
             "hashes": [
@@ -48,6 +48,15 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==5.0.6"
+        },
+        "django-bootstrap5": {
+            "hashes": [
+                "sha256:6a5d83e9ff1952f7c07c54cebcb76c85f09787b8b57eeb4ec07554cd583acc64",
+                "sha256:a3cee2b3d45745210c5b898af2917f310f44df746269fe09a93be28a0adc2a4b"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==24.2"
         },
         "h11": {
             "hashes": [
@@ -83,12 +92,12 @@
         },
         "python-telegram-bot": {
             "hashes": [
-                "sha256:5fd21710902270f5946c6a484918227b361b8119e1dadae6b3dd7fcee3b1a74e",
-                "sha256:dded93d733585a37b382fd5e088faffc37c3ae6d2bd4052d105d9a40f8a0152a"
+                "sha256:2ebb462a98f502727d108c00bb50c513a68ddaf9545298c42f13996a9acf8354",
+                "sha256:af0f45d61521126de98f5bdc8a75a9df8b93d0c35d18b018181ca7648a38b017"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==21.1.1"
+            "version": "==21.2"
         },
         "sniffio": {
             "hashes": [

@@ -27,7 +27,7 @@
   <main>
     {% for item in all_announcements %}
       <article>
-        <h2>{{ item.title|title }}</h2>
+        <h2>{{ item.title }}</h2>
         <p>{{ item.content }}</p>
         <br />
         <p>{{ item.date_posted|date:'Y-m-dS' }}</p>

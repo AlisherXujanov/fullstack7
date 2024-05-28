@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Announcement
 from .forms import AnnouncementForm
 
-
 # Create your views here.
 def landing_page(request):
     all_announcements = Announcement.objects.all()

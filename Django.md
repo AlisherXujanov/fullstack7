@@ -519,7 +519,7 @@ objs = ModelName.objects.filter(field1__gt=F('field2'), field3__lt=F('field4'))
 ```python
 from django.db.models import Q
 
-Q means OR and ~Q means NOT
+# Q means OR and ~Q means NOT
 
 # Q
 # Get all the objects where field1 is greater than field2 or field3 is less than field4
@@ -551,6 +551,7 @@ avg_price = Book.objects.aggregate(Avg('price'))
 
 # Get the count of all books
 book_count = Book.objects.aggregate(Count('id'))
+book_count = Book.objects.count()  # This is the same as the above line
 
 # Get the minimum price of all books
 min_price = Book.objects.aggregate(Min('price'))
@@ -562,7 +563,9 @@ max_price = Book.objects.aggregate(Max('price'))
 total_price = Book.objects.aggregate(Sum('price'))
 ```
 
-This will return a dictionary with the calculated values for each query. For example, **avg_price** will be a dictionary with a single key-value pair, where the key is '**price__avg**' and the value is the average price of all books. Similarly, **book_count** will be a dictionary with a single key-value pair, where the key is '**id__count**' and the value is the count of all books.
+- This will return a dictionary with the calculated values for each query. For example, **avg_price** will be a dictionary with a single key-value pair, where the key is '**price__avg**' and the value is the average price of all books. Similarly, **book_count** will be a dictionary with a single key-value pair, where the key is '**id__count**' and the value is the count of all books.
+
+- RU: Это вернет словарь с вычисленными значениями для каждого запроса. Например, **avg_price** будет словарем с одной парой ключ-значение, где ключ - '**price__avg**', а значение - средняя цена всех книг. Аналогично, **book_count** будет словарем с одной парой ключ-значение, где ключ - '**id__count**', а значение - количество всех книг.
 
 
 #### Custom Manager

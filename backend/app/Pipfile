@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 python-telegram-bot = "*"
 django = "*"
+django-bootstrap5 = "*"
 
 [dev-packages]
 
