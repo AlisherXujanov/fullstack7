@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+
 header .upper-side {
     padding: 20px;
     text-align: center;
@@ -17,9 +20,9 @@ header nav {
     align-items: center;
 }
 header nav a#logo {
+    font-family: 'Sofia', sans-serif;
     transform: scale(2);
     text-transform: none;
-    font-family: 'Pacifico', cursive;
 }
 nav .nav-links {
     text-align: left;

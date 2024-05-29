@@ -13,7 +13,7 @@ def create_post(request):
         form = PostsForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('home')
+        return redirect('posts-list')
 
     else: # get method
         form = PostsForm()

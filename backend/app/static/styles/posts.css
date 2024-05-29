@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+    height: 80vh;
+    overflow: auto;
+    position: relative;
+}
+.post-item {
+    background: linear-gradient(to right, #caefd7, #f5bfd7, #abc9e9);
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    text-align: center;
+}
+.post-item .content {
+    height: 100px;
+    overflow: hidden;
+    font-style: italic;
+    padding: 0 10px;
+    text-align: left;
+}
+.post-item .info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+.post-item .action-btns {
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    background: rgba(0,0,0, 0.1);
+}
+.post-item .action-btns .btn {
+    border-radius: 0;
+    font-weight: bold;
+    color: #555;
+    transition: 0.5s;   
+}
+.post-item .action-btns .btn:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0, 0.2);
+}
+
+.post-item .action-btns .btn:hover {color:snow}
+.post-item .action-btns .view:hover {
+    background: rgba(0,0,200, 0.5);
+}
+.post-item .action-btns .edit:hover {
+    background: rgba(0,200,0, 0.5);
+}
+.post-item .action-btns .delete:hover {
+    background: rgba(200,0,0, 0.5);
+}
+.post h2 {
+    font-size: 1.6em;
+    font-family: 'Sofia', sans-serif;
+    margin-bottom: 10px;
+}
+
+.posts::-webkit-scrollbar {
+    display: none;
+}
