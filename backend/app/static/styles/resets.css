@@ -5,5 +5,16 @@
     transition: 0.5s;
 }
 body {
+    /* background: linear-gradient(#e7e7e7, #f9f5f2); */
     font-family: monospace;
+    /* get bg.jpg from static/bg.jpg */
+    background: url(../imgs/bg.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.main-content-wrapper {
+    padding: 50px 100px;
 }

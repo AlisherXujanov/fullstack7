@@ -1,14 +1,23 @@
 <header>
+    <div class="upper-side">
+        DOWNLOAD A FREE 7-DAY MEAL PLAN SAMPLE <ins>YES PLEASE!</ins>
+    </div>
     <nav>
+        <div class="nav-links">
+            <a class="nav-item" href="{% url 'about' %}">About</a>
+            <a class="nav-item" href="{% url 'posts-list' %}">Posts</a>
+            <a class="nav-item" href="#">Recipes &DoubleDownArrow;</a>
+            <a class="nav-item" href="#">Popular &DoubleDownArrow;</a>
+        </div>
         <div class="logo-wrapper">
-            <a href="{% url 'landing_page' %}">
-                <h3>Home</h3>
+            <a id="logo" class="nav-item" href="{% url 'home' %}">
+                <span style="color:red;">Asia</span>Kitchen
             </a>
         </div>
-        <div class="links">
-            <a class="nav-item" href="{% url 'create_announcement' %}">Create a new announcement</a>
-            <a class="nav-item" href="{% url 'home' %}">Posts</a>
-            <a class="nav-item" href="{% url 'products' %}">Products</a>
+        <div class="auth-wrapper">
+            <a class="nav-item" href="#">🔍</a>
+            <a class="nav-item login" href="#">Log in</a>
+            <a class="nav-item signup" href="#">Sign up</a>
         </div>
     </nav>
 </header>

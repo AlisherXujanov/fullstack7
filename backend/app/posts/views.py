@@ -3,6 +3,11 @@ from .models import Posts
 from .forms import PostsForm
 
 
+def posts_list(request):
+    posts = Posts.objects.all()
+    return render(request, 'posts_list.html', context={'posts': posts})
+
+
 def create_post(request):
     if request.method == 'POST':
         form = PostsForm(request.POST)

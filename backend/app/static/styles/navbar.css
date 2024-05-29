@@ -1,19 +1,49 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333;
-    color: snow;
+header .upper-side {
+    padding: 20px;
+    text-align: center;
+    color: #555;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
 }
-
+header nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+header nav a#logo {
+    transform: scale(2);
+    text-transform: none;
+    font-family: 'Pacifico', cursive;
+}
+nav .nav-links {
+    text-align: left;
+}
 nav a {
     display: inline-block;
-    padding: 10px 20px;
     text-decoration: none;
-    color: snow;
+    padding: 15px;
+    color: #666;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.8em;
     transition: 0.5s;
 }
-nav a:hover {
-    background-color: green;
+nav a:hover:not(#logo):not(.auth-wrapper a) {
+    color: black;
+    transform: scale(1.05);
+}
+
+nav .auth-wrapper {
+    text-align: right;
+}
+nav a.signup {
+    color: snow;
+    font-weight: bold;
+    background-color: #cc4744;
+    border-radius: 10px;
 }
