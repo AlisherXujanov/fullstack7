@@ -9,11 +9,12 @@
 .posts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px;
+    gap: 2px;
     margin: 20px 0;
     height: 80vh;
     overflow: auto;
     position: relative;
+    padding: 20px;
 }
 .post-item {
     background: linear-gradient(to right, #caefd7, #f5bfd7, #abc9e9);
@@ -44,6 +45,18 @@
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     background: rgba(0,0,0, 0.1);
+    opacity: 0;
+}
+.posts:hover .post-item:not(:hover) {
+    filter: blur(2px);
+}
+.post-item:hover {
+    box-shadow: 0 0 10px rgba(0,0,0, 0.5);
+    transform: scale(1.03);
+    z-index: 999;
+}
+.post-item:hover .action-btns {
+    opacity: 1;
 }
 .post-item .action-btns .btn {
     border-radius: 0;
