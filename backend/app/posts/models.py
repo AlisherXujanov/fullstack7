@@ -10,19 +10,10 @@ from django.db import models
 
 # Create your models here.
 class Posts(models.Model):
-    title = models.CharField(max_length=50)
-    description = models.TextField()
-    date = models.DateField(auto_now_add=True)
-    author = models.CharField(max_length=50)
-
-
-    def __str__(self) -> str:
-        return self.title
-
-
-class Products(models.Model):
-    title = models.CharField(max_length=50)
-    description = models.TextField(default='...')
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
+    author = models.CharField(max_length=200)
 
     def __str__(self) -> str:
         return self.title
