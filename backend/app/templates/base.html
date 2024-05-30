@@ -4,33 +4,49 @@
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "styles/navbar.css" %}">
-    <link rel="stylesheet" href="{% static "styles/resets.css" %}">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/resets.css' %}" />
     <title>
       {% block title %}
+
       {% endblock %}
     </title>
 
     {% block css %}
+
     {% endblock %}
   </head>
   <body>
-    {% include "navbar.html" %}
+    {% include 'navbar.html' %}
+
+    <div class="container" id="messages">
+      {% bootstrap_messages %}
+    </div>
 
     <main class="main-content-wrapper">
       {% block content %}
+
       {% endblock %}
     </main>
 
+    {% include 'footer.html' %}
+
     {% block scripts %}
+
     {% endblock %}
 
-    {% include 'footer.html' %}
+    <script>
+      setTimeout(function () {
+        var messages = document.querySelectorAll('#messages')
+        messages.forEach(function (message) {
+          message.remove()
+        })
+      }, 5000)
+    </script>
   </body>
 </html>
