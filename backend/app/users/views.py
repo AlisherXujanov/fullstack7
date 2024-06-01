@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
 from django.contrib.auth.models import User
+from .models import Profile
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
@@ -14,10 +15,11 @@ def create_user(request):
             username = form.cleaned_data['username']
             first_name = form.cleaned_data['first_name']
             last_name = form.cleaned_data['last_name']
-            age = form.cleaned_data['age']
             email = form.cleaned_data['email']
-            choice = form.cleaned_data['choice']
-            # image = form.cleaned_data['image']
+
+            age = form.cleaned_data['age']
+            gender = form.cleaned_data['gender']
+            image = form.cleaned_data['image']
 
             user = User.objects.create_user(
                 username=username,
@@ -26,6 +28,16 @@ def create_user(request):
                 email=email,
             )
             user.save()
+
+            profile = Profile.objects.create(
+                user=user,
+                age=age,
+                gender=gender,
+                image=image,
+                bio='',
+            )
+            profile.save()
+
             messages.success(request, f'Welcome {first_name} to our platform!')
             return redirect('home')
 
