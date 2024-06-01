@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Registration
+{% endblock %}
+
+{% block content %}
+  <h2>Registration</h2>
+  {% include 'form_snippets.html' with form=form %}
+{% endblock %}
