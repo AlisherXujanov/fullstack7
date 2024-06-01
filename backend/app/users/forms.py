@@ -19,10 +19,10 @@ class UserForm(forms.Form):
                              widget=forms.NumberInput(attrs={'placeholder': 'Age'}))
     email = forms.EmailField(label='Email', max_length=100,
                              widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-    gender = forms.ChoiceField(choices=CHOICES, label="Gender",
-                               widget=forms.Select(attrs={'class': 'form-select'}))
-    # image = forms.ImageField(label='Image', widget=forms.FileInput(
-    #     attrs={'class': 'form-control'}))
+    # choice = forms.ChoiceField(choices=CHOICES, label="Gender",
+    #                            widget=forms.Select(attrs={'class': 'form-select'}))
+    image = forms.ImageField(label='Image', widget=forms.FileInput(
+        attrs={'class': 'form-control'}))
 
     def is_valid(self) -> bool:
         return super().is_valid()

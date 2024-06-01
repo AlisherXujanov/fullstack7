@@ -7,9 +7,9 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     age = models.IntegerField(null=True, blank=True)
-    gender = models.CharField(max_length=50)
     bio = models.TextField(null=True, blank=True)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    gender = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'

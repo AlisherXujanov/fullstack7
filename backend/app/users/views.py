@@ -18,7 +18,7 @@ def create_user(request):
             email = form.cleaned_data['email']
 
             age = form.cleaned_data['age']
-            gender = form.cleaned_data['gender']
+            # gender = form.cleaned_data['choice']
             image = form.cleaned_data['image']
 
             user = User.objects.create_user(
@@ -32,7 +32,7 @@ def create_user(request):
             profile = Profile.objects.create(
                 user=user,
                 age=age,
-                gender=gender,
+                # gender=gender,
                 image=image,
                 bio='',
             )
