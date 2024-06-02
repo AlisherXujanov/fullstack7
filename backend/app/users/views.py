@@ -25,7 +25,7 @@ def create_user(request):
                 messages.error(request, 'Username already exists')
                 return redirect('create_user')
 
-            user = User.objects.create_user(username=username, password=password)
+            user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
 
             profile = Profile.objects.create(user=user)
@@ -38,3 +38,5 @@ def create_user(request):
             print(form.errors)
 
     return render(request, 'create_user.html', {'form': form})
+
+
