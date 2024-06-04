@@ -15,15 +15,6 @@ def create_user(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            password2 = form.cleaned_data['password2']
-
-            if password != password2:
-                # OR USE is_valid() METHOD from inside the form
-                messages.error(request, 'Passwords do not match')
-                return redirect('create_user')
-            if user := User.objects.filter(username=username).first():
-                messages.error(request, 'Username already exists')
-                return redirect('create_user')
 
             user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
