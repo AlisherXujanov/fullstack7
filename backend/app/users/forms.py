@@ -1,5 +1,6 @@
 from django import forms
 import re
+from django.contrib.auth.models import User
 
 class UserForm(forms.Form):
     username = forms.CharField(label='Username', max_length=50, 
@@ -33,4 +34,25 @@ class UserForm(forms.Form):
             self.add_error('username', 'Имя пользователя должно содержать только буквы, цифры и _')
             return False
 
+        return form
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='Username', max_length=50, 
+                            widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(label='Password', max_length=50,
+                                    widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'type':'password'}))
+
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+        self.username = self.data.get('username')
+        self.password = self.data.get('password')
+
+    def is_valid(self):
+        form = super(LoginForm, self).is_valid()
+
+        # if not (user := User.objects.filter(username=self.username).first()):
+        #     self.add_error('username', 'Пользователь не найден по данному логину')
+        #     return False
+        
         return form

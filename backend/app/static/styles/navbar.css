@@ -44,9 +44,15 @@ nav a:hover:not(#logo):not(.auth-wrapper a) {
 nav .auth-wrapper {
     text-align: right;
 }
-nav a.signup {
+nav a.signup,
+nav a.create-post {
     color: snow;
     font-weight: bold;
     background-color: #cc4744;
     border-radius: 10px;
+}
+
+
+nav a.create-post {
+    background-color: #5244cc;
 }

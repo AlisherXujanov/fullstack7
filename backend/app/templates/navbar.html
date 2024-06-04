@@ -15,9 +15,14 @@
             </a>
         </div>
         <div class="auth-wrapper">
-            <a class="nav-item" href="#">🔍</a>
-            <a class="nav-item login" href="#">Log in</a>
-            <a class="nav-item signup" href="{% url "create_user" %}">Sign up</a>
+            {% if not request.user.is_authenticated %}
+                <a class="nav-item" href="#">🔍</a>
+                <a class="nav-item login" href="{% url "login_user" %}">Log in</a>
+                <a class="nav-item signup" href="{% url "create_user" %}">Sign up</a>
+            {% else %}
+                <a class="nav-item create-post" href="{% url 'create-post' %}">Create Post</a>
+                <a class="nav-item logout" href="{% url 'logout_user' %}">Log out</a>
+            {% endif %}
         </div>
     </nav>
 </header>
