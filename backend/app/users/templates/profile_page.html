@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  {{ user.username|upper }} Profile
+  {{ user.username|title }} Profile
 {% endblock %}
 
 {% block content %}
-  <h2>{{ user.username|upper }} Profile</h2>
+  <h2>
+    <img src="{{user.profile.image.url}}" alt="profile-picture" class="profile-picture">
+    {{ user.username|title }} Profile
+  </h2>
+
+  <hr style="margin: 20px 0;">
+
+  {% include 'form_snippets.html' with form=form %}
 {% endblock %}

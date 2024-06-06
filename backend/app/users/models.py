@@ -3,13 +3,6 @@ from django.contrib.auth.models import User
 from PIL import Image
 
 
-CHOICES = (
-    ('1', "Male"),
-    ('2', 'Female'),
-    ('3', 'Other'),
-)
-
-
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

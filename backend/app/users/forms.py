@@ -1,6 +1,7 @@
+from email.policy import default
 from django import forms
 import re
-from django.contrib.auth.models import User
+from .models import Profile
 
 class UserForm(forms.Form):
     username = forms.CharField(label='Username', max_length=50, 
@@ -56,3 +57,33 @@ class LoginForm(forms.Form):
         #     return False
         
         return form
+
+
+CHOICES = (
+    ('male', "Male"),
+    ('female', 'Female'),
+    ('other', 'Other'),
+)
+
+
+class ProfileForm(forms.ModelForm):
+    first_name = forms.CharField(label='First name', max_length=100, required=False,
+                            widget=forms.TextInput(
+                                attrs={'class': 'form-control', "placeholder": "First name"}))
+    last_name = forms.CharField(label='Last name', max_length=100, required=False,
+                            widget=forms.TextInput(
+                                attrs={'class': 'form-control', "placeholder": "Last name"}))
+    
+    image = forms.ImageField(label='Profile picture', required=False,
+                            widget=forms.FileInput(
+                                attrs={'class': 'form-control', "placeholder": "Profile picture"}))
+    gender = forms.ChoiceField(label='Choose your gender', choices=CHOICES,
+                               widget=forms.Select(
+                                   attrs={'class': 'form-control'}))
+    bio = forms.CharField(label='Bio', required=False, help_text='Write something about yourself',
+                            widget=forms.Textarea(
+                                attrs={'class': 'form-control', 'rows': 4, "placeholder": "Write something about yourself"}))
+
+    class Meta:
+        model = Profile
+        fields = ["first_name",  "last_name",  "bio",  "image",  "age",  "gender"]

@@ -23,7 +23,7 @@
         <div class="profile-drp-wrapper">
           <p class="user-info">
             <a class="nav-item login" href="{% url 'profile_page' %}">{{ request.user.username }}</a>
-            <img src="{{ request.user.profile.image.url }}" class="user-image" alt="user-image" />
+            <img src="{{ request.user.profile.image.url }}" class="profile-picture" alt="user-image" />
           </p>
           <div class="content">
             <a class="nav-item create-post" href="{% url 'create-post' %}">Create Post</a>
