@@ -7,6 +7,8 @@ from .forms import PostsForm
 from django.contrib import messages
 
 # CRM - it means Create, Read, Update, Delete
+# Client Relational Mapping
+
 # By convention, the order of the functions is:
 # 1. C  -  Create
 # 2. R  -  Read
