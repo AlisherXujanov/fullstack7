@@ -75,6 +75,7 @@ nav a.create-post {
 .profile-drp-wrapper .content {
     position: absolute;
     right: 0;
+    z-index: 999;
     background-color: rgb(0,0,0, 0.5);
     border-radius: 10px;
     display: none;
@@ -92,4 +93,7 @@ nav a.create-post {
 
 .profile-drp-wrapper:hover .content {
     display: block;
+}
+nav a.signup {
+    background-color: #5244cc;
 }
