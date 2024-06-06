@@ -22,7 +22,7 @@
       {% else %}
         <div class="profile-drp-wrapper">
           <p class="user-info">
-            {{ request.user.username }}
+            <a class="nav-item login" href="{% url 'profile_page' %}">{{ request.user.username }}</a>
             <img src="{{ request.user.profile.image.url }}" class="user-image" alt="user-image" />
           </p>
           <div class="content">
