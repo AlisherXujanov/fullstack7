@@ -6,4 +6,5 @@ urlpatterns = [
     path('login/', login_user, name='login_user'),
     path('logout/', logout_user, name='logout_user'),
     path('profile/', profile_page, name='profile_page'),
+    path('update-profile/', update_profile_page, name='update_profile_page'),
 ]
