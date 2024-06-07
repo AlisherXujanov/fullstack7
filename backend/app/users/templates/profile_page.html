@@ -14,7 +14,7 @@
 {% block content %}
   <div class="profile-intro-wrapper">
     <div>
-      <img src="{{ user.profile.image.url }}" alt="profile-picture" class="profile-picture-item" />
+      <img src="{{ profile.image.url }}" alt="profile-picture" class="profile-picture-item" />
     </div>
     <div class="content">
       <div class="control fullname">
@@ -23,7 +23,7 @@
           {% if profile.first_name or profile.last_name %}
             <h4>{{ profile.first_name|title }} {{ profile.last_name|title }}</h4>
           {% else %}
-            <h4>{{ user.username|title }}</h4>
+            <h4>{{ profile.user.username|title }}</h4>
           {% endif %}
         </div>
 
