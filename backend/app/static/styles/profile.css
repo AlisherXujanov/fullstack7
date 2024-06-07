@@ -5,7 +5,7 @@
 }
 
 .profile-intro-wrapper {
-    min-height: 90vh;
+    min-height: 50vh;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -14,7 +14,7 @@
 
 .profile-intro-wrapper img {
     width: 80%;
-    height: 70%;
+    min-height: 350px;
     margin: 0 auto;
     border-radius: 20px;
 }
