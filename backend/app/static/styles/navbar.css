@@ -10,6 +10,7 @@ header .upper-side {
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
 }
+
 header nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -19,14 +20,17 @@ header nav {
     justify-content: center;
     align-items: center;
 }
+
 header nav a#logo {
     font-family: 'Sofia', sans-serif;
     transform: scale(2);
     text-transform: none;
 }
+
 nav .nav-links {
     text-align: left;
 }
+
 nav a {
     display: inline-block;
     text-decoration: none;
@@ -36,6 +40,7 @@ nav a {
     text-transform: uppercase;
     transition: 0.5s;
 }
+
 nav a:hover:not(#logo):not(.auth-wrapper a) {
     color: black;
     transform: scale(1.05);
@@ -47,17 +52,31 @@ nav .auth-wrapper {
     justify-content: flex-end;
     align-items: center;
 }
+
 nav a.signup,
 nav a.create-post {
-    color: snow;
+    padding: 10px 20px;
     font-weight: bold;
+    background-color: darkslategray;
     border-radius: 10px;
+    color: snow;
+}
+nav a.create-post {
+    background-color: transparent;
+    color: rgb(47, 79, 79, 0.6);
+    border: 2px solid rgb(47, 79, 79, 0.6);
+    margin-right: 15px;
+}
+nav a.create-post:hover {
+    color: snow;
+    background-color: darkslategray;
+    margin-right: 0;
 }
 
 .profile-drp-wrapper {
     display: inline-block;
-    width: 320px;
     position: relative;
+    top: 7px;
 }
 
 
@@ -69,26 +88,34 @@ nav a.create-post {
 
 .profile-drp-wrapper .content {
     position: absolute;
-    right: 0;
+    left: 20px;
+    bottom: -30px;
+    padding-top: 15px;
     z-index: 999;
-    background-color: rgb(0,0,0, 0.5);
-    border-radius: 10px;
+    background-color: rgb(0, 0, 0, 0.5);
     display: none;
-}
-.profile-drp-wrapper .content > * {
-    display: block;
-    padding: 10px 20px;
-    text-align: left;
-    color: snow;
-}
-.profile-drp-wrapper .content > *:hover {
-    background-color: #5244cc;
+    clip-path: polygon(16% 0, 32% 24%, 100% 23%, 100% 100%, 0 100%, 0% 25%);
 }
 
+.profile-drp-wrapper .content>* {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    color: snow;
+}
+
+.profile-drp-wrapper .content>*:hover {
+    background-color: darkslategray;
+}
+
+.profile-drp-wrapper .view-profile:hover {
+    text-decoration: underline solid 2px;
+}
 
 .profile-drp-wrapper:hover .content {
     display: block;
 }
+
 nav a.signup {
-    background-color: #5244cc;
+    background-color: darkslategray;
 }

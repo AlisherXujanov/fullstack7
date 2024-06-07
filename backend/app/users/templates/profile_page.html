@@ -9,34 +9,66 @@
   <link rel="stylesheet" href="{% static 'styles/profile.css' %}" />
 {% endblock %}
 
+{% comment %}https://miro.medium.com/v2/resize:fit:1400/1*UDuwM3CZovb8K1lUP2HVag.png{% endcomment %}
+
 {% block content %}
   <div class="profile-intro-wrapper">
-    <img src="{{ user.profile.image.url }}" alt="profile-picture" class="profile-picture-item" />
+    <div>
+      <img src="{{ user.profile.image.url }}" alt="profile-picture" class="profile-picture-item" />
+    </div>
     <div class="content">
-      <div class="control">
-        <h6>Name Surname</h6>
-        <h4>{{ profile.first_name|title }} {{ profile.last_name|title }}</h4>
+      <div class="control fullname">
+        <div>
+          <h6>Name Surname</h6>
+          {% if profile.first_name or profile.last_name %}
+            <h4>{{ profile.first_name|title }} {{ profile.last_name|title }}</h4>
+          {% else %}
+            <h4>{{ user.username|title }}</h4>
+          {% endif %}
+        </div>
+
+        {% if request.user.is_authenticated %}
+          {% if profile.id == request.user.profile.id %}
+            <a href="{% url 'update_profile_page' %}" class="btn btn-outline-secondary">Update Profile</a>
+          {% endif %}
+        {% endif %}
       </div>
       <div class="control">
         <h6>Email</h6>
-        <h4>{{ profile.user.email }}</h4>
+        {% if profile.user.email %}
+          <h4 class="mail"><a href="mailto:{{ profile.user.email }}">{{ profile.user.email }}</a></h4>
+        {% else %}
+          <h4>---</h4>
+        {% endif %}
       </div>
       <div class="control">
         <h6>Bio</h6>
-        <h4>{{ profile.bio }}</h4>
+        {% if profile.bio %}
+          <h4 class="bio">{{ profile.bio }}</h4>
+        {% else %}
+          <h4>---</h4>
+        {% endif %}
       </div>
       <div class="control age-gender">
         <div class="left">
-          <h6>Age</h6>
-          <h4>{{ profile.age }}</h4>
+          <h6>
+            Age:{% if profile.age %}
+              {{ profile.age }}
+            {% else %}
+              ---
+            {% endif %}
+          </h6>
         </div>
         <div class="right">
-          <h6>Gender</h6>
-          <h4>{{ profile.gender }}</h4>
+          <h6>
+            Gender:{% if profile.gender %}
+              {{ profile.gender|title }}
+            {% else %}
+              ---
+            {% endif %}
+          </h6>
         </div>
       </div>
     </div>
   </div>
-  
-  <a href="{% url 'update_profile_page' %}" class="btn btn-outline-primary link">Update Profile</a>
 {% endblock %}

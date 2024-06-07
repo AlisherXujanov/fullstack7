@@ -15,6 +15,7 @@ class Posts(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    # image = models.ImageField(upload_to='posts', blank=True, null=True)
 
     def __str__(self) -> str:
         return self.title

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Posts
 from .forms import PostsForm
+from django.contrib.auth.models import User
 
 # import messages and use it for all views to inform the user about the success of the operation
 # RU: импортируем messages и используем его для всех представлений, чтобы информировать пользователя о успешности операции

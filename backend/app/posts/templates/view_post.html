@@ -12,24 +12,25 @@
 {% block content %}
   <div class="intro">
     <h1>Post item</h1>
-    <a href="{% url 'create-post' %}" class="btn btn-outline-primary">Create post</a>
+    <div>
+      <a href="{% url 'update-post' post.id %}" class="btn btn-outline-primary edit">Edit</a>
+      <a href="#" class="btn btn-outline-danger delete">Delete</a>
+    </div>
   </div>
 
   <hr />
-  <div class="post-item">
+  <div class="post-item view">
     <div class="info">
-      <p>{{ post.author }}</p>
+      <p>
+        <img src="{{ post.get_owner_pic }}" class="author-image" alt="post-author-image" />
+        <a class="nav-item view-auth-profile" href="{% url 'post_auth_profile_page' post.author.id %}">{{ post.author }}</a>
+      </p>
       <p>{{ post.date_posted|date }}</p>
     </div>
 
     <h2 class="title">{{ post.title }}</h2>
 
     <p class="content">{{ post.content }}</p>
-
-    <div class="action-btns">
-      <a href="{% url 'update-post' post.id %}" class="btn edit">Edit</a>
-      <a href="#" class="btn delete">Delete</a>
-    </div>
   </div>
   <hr />
 {% endblock %}

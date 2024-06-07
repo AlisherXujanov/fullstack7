@@ -11,34 +11,45 @@
     grid-template-columns: repeat(2, 1fr);
 
 }
+
 .profile-intro-wrapper img {
     width: 80%;
     height: 70%;
     margin: 0 auto;
     border-radius: 20px;
 }
+
 .profile-intro-wrapper .content .control.age-gender {
     display: flex;
     justify-content: space-between;
     padding-right: 200px;
 }
-.profile-intro-wrapper .content .control {
-    margin-bottom: 50px;
+
+.profile-intro-wrapper .content .control.fullname {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;    
 }
+
+
+.profile-intro-wrapper .content .control {
+    margin-bottom: 20px;
+}
+
 .profile-intro-wrapper .content {
     padding-left: 50px;
     text-align: left;
-    font-family: sans-serif;
 }
+
 .profile-intro-wrapper .content h4 {
-    font-style: italic;
-    font-family: monospace;
+    font-weight: 300;
 }
-.profile-intro-wrapper .content h5 {
+
+.profile-intro-wrapper .content h6 {
     color: gray;
 }
 
-.btn.link {
-    display: block;
-    text-align: center;
+.bio,
+.mail {
+    font-size: 14px;
 }

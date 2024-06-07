@@ -20,13 +20,13 @@
         <a class="nav-item login" href="{% url 'login_user' %}">Log in</a>
         <a class="nav-item signup" href="{% url 'create_user' %}">Sign up</a>
       {% else %}
+        <a class="nav-item create-post" href="{% url 'create-post' %}">Create Post</a>
         <div class="profile-drp-wrapper">
           <p class="user-info">
-            <a class="nav-item login" href="{% url 'profile_page' %}">{{ request.user.username }}</a>
+            <a class="nav-item view-profile" href="{% url 'profile_page' %}">{{ request.user.username }}</a>
             <img src="{{ request.user.profile.image.url }}" class="profile-picture" alt="user-image" />
           </p>
           <div class="content">
-            <a class="nav-item create-post" href="{% url 'create-post' %}">Create Post</a>
             <a class="nav-item logout" href="{% url 'logout_user' %}">Log out</a>
           </div>
         </div>

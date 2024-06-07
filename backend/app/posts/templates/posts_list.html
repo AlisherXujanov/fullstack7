@@ -21,7 +21,7 @@
         <div class="info">
           <p>
             <img src="{{ post.get_owner_pic }}" class="author-image" alt="post-author-image" />
-            {{ post.author }}
+            <a class="nav-item view-auth-profile" href="{% url 'post_auth_profile_page' post.author.id  %}">{{ post.author }}</a>
           </p>
           <p>{{ post.date_posted|date }}</p>
         </div>

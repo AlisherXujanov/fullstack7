@@ -28,6 +28,7 @@
 .post-item h2 {
     font-size: 1.3em;
     font-weight: bold;
+    padding: 0 5px;
 }
 .post-item .info img {
     border-radius: 50%;
@@ -40,8 +41,8 @@
     height: 100px;
     overflow: hidden;
     font-style: italic;
-    padding: 0 10px;
     text-align: left;
+    padding: 5px 15px;
 }
 .post-item .info {
     display: flex;
@@ -50,6 +51,15 @@
     padding: 5px 15px;
     font-weight: bold;
     overflow: hidden;
+    }
+.post-item .info a.view-auth-profile {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #555;
+}
+.post-item .info:hover a.view-auth-profile {
+    text-decoration: underline;
 }
 .post-item .action-btns {
     position: absolute;
@@ -67,6 +77,10 @@
     box-shadow: 0 0 10px rgba(0,0,0, 0.5);
     transform: scale(1.03);
     z-index: 999;
+}
+.post-item.view:hover {
+    transform: scale(1);
+    box-shadow: none;
 }
 .post-item:hover .action-btns {
     opacity: 1;
