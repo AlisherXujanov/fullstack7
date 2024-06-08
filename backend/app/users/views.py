@@ -62,11 +62,13 @@ def logout_user(request):
 
 def profile_page(request, author_id: int = None):
     posts = []
-    if author_id:
-        profile = Profile.objects.filter(user__id=author_id).first()
+    if request.user.is_authenticated:
+        user = User.objects.filter(id=request.user.id).first()
+        profile = Profile.objects.filter(id=user.profile.id).first()
         posts = Posts.objects.filter(author=profile.user)
-    elif request.user.is_authenticated:
-        profile = Profile.objects.filter(id=request.user.profile.id).first()
+        if author_id:
+            profile = Profile.objects.filter(user__id=author_id).first()
+            posts = Posts.objects.filter(author=profile.user)
     else:
         return redirect('login_user')
 

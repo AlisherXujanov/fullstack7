@@ -21,7 +21,7 @@
         <div class="info">
           <p>
             <img src="{{ post.get_owner_pic }}" class="author-image" alt="post-author-image" />
-            <a class="nav-item view-auth-profile" href="{% url 'post_auth_profile_page' post.author.id  %}">{{ post.author }}</a>
+            <a class="nav-item view-auth-profile" href="{% url 'post_auth_profile_page' post.author.id %}">{{ post.author }}</a>
           </p>
           <p>{{ post.date_posted|date }}</p>
         </div>
@@ -35,7 +35,7 @@
             <div class="action-btns">
               <a href="{% url 'view-post' post.id %}" class="btn view">View</a>
               <a href="{% url 'update-post' post.id %}" class="btn edit">Edit</a>
-              <a href="{% url 'delete-post' post.id %}" class="btn delete">Delete</a>
+              <span class="btn delete" data-post-id="{{ post.id }}">Delete</span>
             </div>
           {% endif %}
         {% endif %}
@@ -43,4 +43,25 @@
     {% endfor %}
   </div>
   <hr />
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    const deleteBtns = document.querySelectorAll('.btn.delete')
+    const URL = `{% url 'delete-post' 9999999999 %}`
+    
+    function confirmDeletion(post_ID) {
+      if (confirm("Are you sure you want to delete this post?")) {
+        let location_to_send = URL.replace("9999999999", post_ID)
+        location.href = location_to_send
+      } else {
+        return
+      }
+    }
+    
+    deleteBtns.forEach((btn) => {
+      let postID = btn.getAttribute('data-post-id')
+      btn.addEventListener('click', confirmDeletion.bind(null, postID))
+    })
+  </script>
 {% endblock %}

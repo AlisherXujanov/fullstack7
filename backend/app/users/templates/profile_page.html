@@ -71,4 +71,31 @@
       </div>
     </div>
   </div>
+  {% if posts|length > 0 %}
+    <div class="profile-post-items-wrapper">
+      {% for post in posts %}
+        <div class="profile-post-item">
+          <a href="{% url 'view-post' post.id %}" class="btn view">
+            <p class="post-title">{{ post.title }}</p>
+            <p class="title-content">{{ post.content }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    let allContents = document.querySelectorAll('.title-content')
+    
+    function shorten(given_string) {
+      let short_version = given_string.slice(0, 35)
+      return short_version + ' ...'
+    }
+    allContents.forEach((content) => {
+      let contentText = content.textContent
+      content.textContent = shorten(contentText)
+    })
+  </script>
 {% endblock %}
