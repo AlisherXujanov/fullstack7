@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Posts
 from .forms import PostsForm
 from django.contrib.auth.models import User
+from django.views.generic import ListView
 
 # import messages and use it for all views to inform the user about the success of the operation
 # RU: импортируем messages и используем его для всех представлений, чтобы информировать пользователя о успешности операции
@@ -16,9 +17,16 @@ from django.contrib import messages
 # 3. M  -  Modify (Update)  / Delete
 
 
-def posts_list(request):
-    posts = Posts.objects.all()
-    return render(request, 'posts_list.html', context={'posts': posts})
+# def posts_list(request):
+#     posts = Posts.objects.all()
+#     return render(request, 'posts_list.html', context={'posts': posts})
+
+
+class PostListView(ListView):
+    model = Posts
+    template_name = 'posts_list.html'
+    context_object_name = 'posts'
+    paginate_by = 4
 
 
 def create_post(request):

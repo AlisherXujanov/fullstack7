@@ -1173,10 +1173,6 @@ def profile(request):
 
 
 
-
-
-
-
 # CVB
 # Class Based Views (intermediate)
 Class-based views are an alternative to function-based views. They provide a lot of functionality out of the box, and they are easier to extend and customize.
@@ -1240,6 +1236,17 @@ class PostListView(ListView):
     model = Post
     template_name = 'post_list.html'
 
+    # For custom queryset
+    # queryset = Post.objects.filter(published=True)
+
+    # For custom queryset name
+    # context_object_name = 'posts'
+
+    # For custom context data
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['message'] = 'Welcome to my website!'
+
     def get_queryset(self):
         return Books.objects.all()
 
@@ -1288,6 +1295,14 @@ class PostCreateView(CreateView):
     template_name = 'post_form.html'
     success_url = '/posts/'
 ```
+In HTML
+```html
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+```
 
 #### UpdateView
 It's used when we want to allow users to update existing objects in our application.
@@ -1301,6 +1316,27 @@ class PostUpdateView(UpdateView):
     form_class = PostForm
     template_name = 'post_form.html'
     success_url = '/posts/'
+
+    # def form_valid(self, form):
+    #     form.instance.author = self.request.user
+    #     return super().form_valid(form)
+
+
+# Then in forms.py
+class PostForm(forms.ModelForm):
+    ...
+    ...
+    def __init__...
+        self.title = ...
+
+    def is_valid(self):
+        valid = super().is_valid()
+        if not valid:
+            return valid
+        if self.title == 'bad':
+            self.add_error('title', 'Title cannot be "bad"')
+            return False
+        return True
 ```
 
 #### DeleteView
@@ -1337,6 +1373,12 @@ from django.views.generic import RedirectView
 
 class HomeRedirectView(RedirectView):
     url = '/home/'
+
+# and to use this
+path('home/', HomeRedirectView.as_view(), name='home'),
+
+# Then in pages
+{% url 'home' %}
 ```
 
 #### ListView with pagination

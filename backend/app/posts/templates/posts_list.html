@@ -15,6 +15,8 @@
   </div>
 
   <hr />
+  {% include "paginator.html" with is_paginated=is_paginated page_obj=page_obj paginator=paginator  %}
+
   <div class="posts">
     {% for post in posts %}
       <div class="post-item">
@@ -43,6 +45,7 @@
     {% endfor %}
   </div>
   <hr />
+
 {% endblock %}
 
 {% block scripts %}
@@ -51,8 +54,8 @@
     const URL = `{% url 'delete-post' 9999999999 %}`
     
     function confirmDeletion(post_ID) {
-      if (confirm("Are you sure you want to delete this post?")) {
-        let location_to_send = URL.replace("9999999999", post_ID)
+      if (confirm('Are you sure you want to delete this post?')) {
+        let location_to_send = URL.replace('9999999999', post_ID)
         location.href = location_to_send
       } else {
         return
