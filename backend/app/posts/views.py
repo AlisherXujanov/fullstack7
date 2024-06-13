@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Posts
 from .forms import PostsForm
 from django.contrib.auth.models import User
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView
 
 # import messages and use it for all views to inform the user about the success of the operation
 # RU: импортируем messages и используем его для всех представлений, чтобы информировать пользователя о успешности операции
@@ -61,9 +61,19 @@ def update_post(request, pk):
     return render(request, 'update_post.html', context={'form': form})
 
 
-def view_post(request, pk):
-    post = Posts.objects.get(id=pk)
-    return render(request, 'view_post.html', context={'post': post})
+# def view_post(request, pk):
+#     post = Posts.objects.get(id=pk)
+#     return render(request, 'view_post.html', context={'post': post})
+
+
+class PostDetailView(DetailView):
+    model = Posts
+    template_name = 'view_post.html'
+    context_object_name = 'post'  # default is object
+
+    # def get_queryset(self):
+    #     # If you want to change the data that is passed into HTML        
+    #     return Posts.objects.filter(id=self.kwargs['pk'])
 
 
 def delete_post(request, pk):
