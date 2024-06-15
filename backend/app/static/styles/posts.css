@@ -16,6 +16,7 @@
     position: relative;
     padding: 20px;
 }
+
 .post-item {
     background: linear-gradient(to right, #caefd7, #f5bfd7, #abc9e9);
     border-radius: 5px;
@@ -25,11 +26,13 @@
     text-align: center;
     overflow: hidden;
 }
+
 .post-item h2 {
     font-size: 1.3em;
     font-weight: bold;
     padding: 0 5px;
 }
+
 .post-item .info img {
     border-radius: 50%;
     width: 50px;
@@ -37,6 +40,7 @@
     float: left;
     margin-right: 10px;
 }
+
 .post-item .content {
     height: 100px;
     overflow: hidden;
@@ -44,6 +48,7 @@
     text-align: left;
     padding: 5px 15px;
 }
+
 .post-item .info {
     display: flex;
     justify-content: space-between;
@@ -51,60 +56,95 @@
     padding: 5px 15px;
     font-weight: bold;
     overflow: hidden;
-    }
+}
+
 .post-item .info a.view-auth-profile {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8em;
     color: #555;
 }
+
 .post-item .info:hover a.view-auth-profile {
     text-decoration: underline;
 }
+
+.post-item .add-to-wishlist-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    text-align: center;
+}
+.post-item:hover .add-to-wishlist-section {
+    opacity: 1;
+}
+.post-item .add-to-wishlist-section a {
+    transform: scale(3);
+}
+.post-item .add-to-wishlist-section.show  {
+    opacity: 1;
+}
+.post-item .add-to-wishlist-section a.like-red {
+    color: red;
+}
+
 .post-item .action-btns {
     position: absolute;
     bottom: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    background: rgba(0,0,0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     opacity: 0;
 }
+
 /* .posts:hover .post-item:not(:hover) {
     filter: blur(2px);
 } */
 .post-item:hover {
-    box-shadow: 0 0 10px rgba(0,0,0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.03);
     z-index: 999;
 }
+
 .post-item.view:hover {
     transform: scale(1);
     box-shadow: none;
 }
+
 .post-item:hover .action-btns {
     opacity: 1;
 }
+
 .post-item .action-btns .btn {
     border-radius: 0;
     font-weight: bold;
     color: #555;
-    transition: 0.5s;   
-}
-.post-item .action-btns .btn:not(:last-child) {
-    border-right: 1px solid rgba(0,0,0, 0.2);
+    transition: 0.5s;
 }
 
-.post-item .action-btns .btn:hover {color:snow}
+.post-item .action-btns .btn:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.post-item .action-btns .btn:hover {
+    color: snow
+}
+
 .post-item .action-btns .view:hover {
-    background: rgba(0,0,200, 0.5);
+    background: rgba(0, 0, 200, 0.5);
 }
+
 .post-item .action-btns .edit:hover {
-    background: rgba(0,200,0, 0.5);
+    background: rgba(0, 200, 0, 0.5);
 }
+
 .post-item .action-btns .delete:hover {
-    background: rgba(200,0,0, 0.5);
+    background: rgba(200, 0, 0, 0.5);
 }
+
 .post h2 {
     font-size: 1.6em;
     font-family: 'Sofia', sans-serif;

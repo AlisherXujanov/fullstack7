@@ -3,6 +3,7 @@ from .models import Posts
 from .forms import PostsForm
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView
+from .usecases import add_to_wishlist, remove_from_wishlist
 
 # import messages and use it for all views to inform the user about the success of the operation
 # RU: импортируем messages и используем его для всех представлений, чтобы информировать пользователя о успешности операции
@@ -21,12 +22,39 @@ from django.contrib import messages
 #     posts = Posts.objects.all()
 #     return render(request, 'posts_list.html', context={'posts': posts})
 
+def add_to_favorites(request, pk):
+    if add_to_wishlist(request, pk):
+        messages.success(request, 'Added to wishlist!')
+    else:
+        messages.warning(request, 'Already in wishlist!')
+
+    return redirect('posts-list')
+
+
+def remove_from_favorites(request, pk):
+    if remove_from_wishlist(request, pk):
+        messages.success(request, 'Removed item from wishlist!')
+    else:
+        messages.warning(request, 'Item was not in the wishlist!')
+
+    return redirect('posts-list')
+
 
 class PostListView(ListView):
     model = Posts
     template_name = 'posts_list.html'
     context_object_name = 'posts'
     paginate_by = 4
+
+    def __init__(self, *args, **kwargs):
+        self.request = None
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        self.request = self.request or kwargs.get('request')
+        context['wishlist'] = self.request.session.get('wishlist', [])
+        return context
 
 
 def create_post(request):
@@ -72,7 +100,7 @@ class PostDetailView(DetailView):
     context_object_name = 'post'  # default is object
 
     # def get_queryset(self):
-    #     # If you want to change the data that is passed into HTML        
+    #     # If you want to change the data that is passed into HTML
     #     return Posts.objects.filter(id=self.kwargs['pk'])
 
 

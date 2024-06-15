@@ -15,7 +15,7 @@
   </div>
 
   <hr />
-  {% include "paginator.html" with is_paginated=is_paginated page_obj=page_obj paginator=paginator  %}
+  {% include 'paginator.html' with is_paginated=is_paginated page_obj=page_obj paginator=paginator %}
 
   <div class="posts">
     {% for post in posts %}
@@ -39,13 +39,22 @@
               <a href="{% url 'update-post' post.id %}" class="btn edit">Edit</a>
               <span class="btn delete" data-post-id="{{ post.id }}">Delete</span>
             </div>
+          {% else %}
+            {% if post.id not in wishlist %}
+              <div class="add-to-wishlist-section">
+                <a href="{% url 'add-to-favorites' post.id %}" class="btn like">♥</a>
+              </div>
+            {% else %}
+              <div class="add-to-wishlist-section show">
+                <a href="{% url 'remove-from-favorites' post.id %}" class="btn like-red">♥</a>
+              </div>
+            {% endif %}
           {% endif %}
         {% endif %}
       </div>
     {% endfor %}
   </div>
   <hr />
-
 {% endblock %}
 
 {% block scripts %}
