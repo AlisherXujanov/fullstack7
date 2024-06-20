@@ -80,12 +80,32 @@
     opacity: 0;
     text-align: center;
 }
+
+.post-item .non-author-wrapper a.view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    clip-path: none;
+    border-radius: 0 20px 0 0;
+    opacity: 0;
+    transition: 0.3s;
+    outline: none;
+    border: none;
+}
+.post-item:hover .non-author-wrapper a.view {
+    opacity: 1;
+}
+
 .post-item:hover .add-to-wishlist-section {
     opacity: 1;
 }
-.post-item .add-to-wishlist-section.show  {
+
+.post-item .add-to-wishlist-section.show {
     opacity: 1;
 }
+
 .post-item .add-to-wishlist-section a.like {
     color: grey;
     text-decoration: none;
@@ -93,15 +113,20 @@
     transform: scale(3);
     padding: 5px 10px;
 }
+
+
 .post-item .add-to-wishlist-section a.like.red {
     color: darkred;
 }
+
 .post-item .add-to-wishlist-section:hover {
     filter: drop-shadow(1px 1px 10px rgba(255, 0, 0));
 }
+
 .post-item .add-to-wishlist-section:hover a {
     color: darkred;
 }
+
 .post-item .add-to-wishlist-section.show:hover {
     filter: drop-shadow(1px 1px 10px rgba(0, 255, 255));
 }

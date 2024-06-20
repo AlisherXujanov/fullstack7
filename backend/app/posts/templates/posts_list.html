@@ -40,15 +40,19 @@
               <span class="btn delete" data-post-id="{{ post.id }}">Delete</span>
             </div>
           {% else %}
-            {% if post.id not in wishlist %}
-              <div class="add-to-wishlist-section" title="Like">
-                <a href="{% url 'add-to-favorites' post.id %}" class="like">♥</a>
-              </div>
-            {% else %}
-              <div class="add-to-wishlist-section show" title="Unlike">
-                <a href="{% url 'remove-from-favorites' post.id %}" class="like red">♥</a>
-              </div>
-            {% endif %}
+            <div class="non-author-wrapper">
+              <a href="{% url 'view-post' post.id %}" class="btn view">View</a>
+              
+              {% if post.id not in wishlist %}
+                <div class="add-to-wishlist-section" title="Like">
+                  <a href="{% url 'add-to-favorites' post.id %}" class="like">♥</a>
+                </div>
+              {% else %}
+                <div class="add-to-wishlist-section show" title="Unlike">
+                  <a href="{% url 'remove-from-favorites' post.id %}" class="like red">♥</a>
+                </div>
+              {% endif %}
+            </div>
           {% endif %}
         {% endif %}
       </div>

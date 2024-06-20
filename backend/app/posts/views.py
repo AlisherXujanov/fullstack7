@@ -74,10 +74,17 @@ def create_post(request):
     return render(request, 'create_post.html', context={'form': form})
 
 
+
 # pk  =>  primary key
 def update_post(request, pk):
     post = Posts.objects.get(id=pk)
+
+    if request.user != post.author:
+        messages.warning(request, 'You are not allowed to update this post!')
+        return redirect('posts-list')
+
     form = PostsForm(instance=post)
+
 
     if request.method == 'POST':
         form = PostsForm(request.POST, instance=post)
