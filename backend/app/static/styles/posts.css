@@ -72,7 +72,10 @@
 .post-item .add-to-wishlist-section {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    right: 0;
+    border-radius: 20px 0 0 0;
+    padding: 10px;
+    width: 20%;
     background: rgba(0, 0, 0, 0.1);
     opacity: 0;
     text-align: center;
@@ -80,14 +83,27 @@
 .post-item:hover .add-to-wishlist-section {
     opacity: 1;
 }
-.post-item .add-to-wishlist-section a {
-    transform: scale(3);
-}
 .post-item .add-to-wishlist-section.show  {
     opacity: 1;
 }
-.post-item .add-to-wishlist-section a.like-red {
-    color: red;
+.post-item .add-to-wishlist-section a.like {
+    color: grey;
+    text-decoration: none;
+    display: inline-block;
+    transform: scale(3);
+    padding: 5px 10px;
+}
+.post-item .add-to-wishlist-section a.like.red {
+    color: darkred;
+}
+.post-item .add-to-wishlist-section:hover {
+    filter: drop-shadow(1px 1px 10px rgba(255, 0, 0));
+}
+.post-item .add-to-wishlist-section:hover a {
+    color: darkred;
+}
+.post-item .add-to-wishlist-section.show:hover {
+    filter: drop-shadow(1px 1px 10px rgba(0, 255, 255));
 }
 
 .post-item .action-btns {

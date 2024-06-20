@@ -8,6 +8,10 @@ python-telegram-bot = "*"
 django = "*"
 django-bootstrap5 = "*"
 pillow = "*"
+django-allauth = "*"
+requests = "*"
+pyjwt = "*"
+cryptography = "*"
 
 [dev-packages]
 

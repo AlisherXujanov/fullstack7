@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
+GOOGLE_SECRET_KEY = os.getenv('GOOGLE_SECRET_KEY')
+GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID')
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,6 +45,13 @@ INSTALLED_APPS = [
     'posts',
     'django_bootstrap5',
     'users',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [
@@ -52,9 +63,41 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SOCIALACCOUNT_PROVIDERS = {
+    # site for creating google auth service https://console.cloud.google.com/
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_SECRET_KEY,
+            # 'key': ''
+        }
+    },
+    # ============================================================================
+    # site for creating github auth service https://github.com/settings/developers
+    # 'github': {
+    #     'APP': {
+    #         'client_id': '...',
+    #         'secret': '...',
+    #         'key': ''
+    #     }
+    # }
+}
+
 
 TEMPLATES = [
     {

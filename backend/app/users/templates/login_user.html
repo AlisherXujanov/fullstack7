@@ -7,4 +7,8 @@
 {% block content %}
   <h2>Login</h2>
   {% include 'form_snippets.html' with form=form %}
+
+  <hr>
+  <a href="{% provider_login_url 'google' %}">Login with Google</a>
+  
 {% endblock %}
