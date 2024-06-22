@@ -62,6 +62,7 @@ class PostListView(ListView):
 
 
 @login_required
+@permission_required('posts.can_create_post')
 def create_post(request):
     if request.method == 'POST':
         form = PostsForm(request.POST)

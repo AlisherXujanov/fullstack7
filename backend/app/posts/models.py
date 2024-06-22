@@ -27,3 +27,5 @@ class Posts(models.Model):
     class Meta:
         verbose_name_plural = 'Posts'
         ordering = ('-date_posted',)
+
+        permissions = [('can_create_post', 'Can create post'),]
