@@ -5,6 +5,7 @@ from .models import Profile
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from posts.models import Posts
+from django.contrib.auth.decorators import login_required, permission_required
 
 def create_user(request):
     form = UserForm()
@@ -20,9 +21,6 @@ def create_user(request):
             user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
 
-            profile = Profile.objects.create(user=user)
-            profile.save()
-
             messages.success(request, f'Please, login now!')
             return redirect('login_user')
         else:
@@ -30,6 +28,7 @@ def create_user(request):
             print(form.errors)
 
     return render(request, 'create_user.html', {'form': form})
+
 
 def login_user(request):
     form = LoginForm()
@@ -54,12 +53,15 @@ def login_user(request):
             
     return render(request, 'login_user.html', {'form': form})
 
+
+@login_required
 def logout_user(request):
     logout(request)
     messages.success(request, 'You have been logged out')
     return redirect('home')
 
 
+@login_required
 def profile_page(request, author_id: int = None):
     posts = []
     if request.user.is_authenticated:
@@ -79,6 +81,7 @@ def profile_page(request, author_id: int = None):
     return render(request, 'profile_page.html', context)
 
 
+@login_required
 def update_profile_page(request):
     profile = Profile.objects.filter(id=request.user.profile.id).first()
     form = ProfileForm(instance=profile)

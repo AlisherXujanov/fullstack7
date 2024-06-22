@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% load static %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block css %}
+  <style></style>
+{% endblock %}
+
+{% block content %}
+  <h5 style="text-align: center;">You are about to login with your social account</h5>
+  {% include 'form_snippets.html' with form=form btn_text='Continue' %}
+{% endblock %}

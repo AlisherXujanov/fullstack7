@@ -4,6 +4,8 @@ from .forms import PostsForm
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView
 from .usecases import add_to_wishlist, remove_from_wishlist
+from django.contrib.auth.decorators import login_required, permission_required
+
 
 # import messages and use it for all views to inform the user about the success of the operation
 # RU: импортируем messages и используем его для всех представлений, чтобы информировать пользователя о успешности операции
@@ -22,6 +24,7 @@ from django.contrib import messages
 #     posts = Posts.objects.all()
 #     return render(request, 'posts_list.html', context={'posts': posts})
 
+@login_required
 def add_to_favorites(request, pk):
     if add_to_wishlist(request, pk):
         messages.success(request, 'Added to wishlist!')
@@ -31,6 +34,7 @@ def add_to_favorites(request, pk):
     return redirect('posts-list')
 
 
+@login_required
 def remove_from_favorites(request, pk):
     if remove_from_wishlist(request, pk):
         messages.success(request, 'Removed item from wishlist!')
@@ -57,6 +61,7 @@ class PostListView(ListView):
         return context
 
 
+@login_required
 def create_post(request):
     if request.method == 'POST':
         form = PostsForm(request.POST)
@@ -76,6 +81,7 @@ def create_post(request):
 
 
 # pk  =>  primary key
+@login_required
 def update_post(request, pk):
     post = Posts.objects.get(id=pk)
 
@@ -111,6 +117,7 @@ class PostDetailView(DetailView):
     #     return Posts.objects.filter(id=self.kwargs['pk'])
 
 
+@login_required
 def delete_post(request, pk):
     post = Posts.objects.get(id=pk)
     post.delete()

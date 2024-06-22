@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% load static %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block css %}
+  <style>
+    .social-accounts-wrapper {
+      text-align: center;
+    }
+    .social-accounts-wrapper .content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      margin: 0 auto;
+    }
+    .social-accounts-wrapper .content .items {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .social-accounts-wrapper .content .items a{
+        text-decoration: none;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h2>Login</h2>
+  {% include 'form_snippets.html' with form=form %}
+
+  <div class="social-accounts-wrapper">
+
+    <p>Or</p>
+    <h5>Login with</h5>
+    
+    <div class="content">
+      <hr />
+      <div class="items">
+        <div class="google">
+          <a href="{% provider_login_url 'google' %}">
+            Google
+            <img src="{% static 'icons/google.png' %}" alt="Google login" width="50" height="50" />
+          </a>
+        </div>
+        <div class="github">
+          <a href="#">
+            Github
+            <img style="margin-top: 3px;" src="{% static 'icons/github.png' %}" alt="Google login" width="40" height="40" />
+          </a>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+{% endblock %}
