@@ -14,21 +14,43 @@
 
 <header>
   <div class="upper-side">
-    DOWNLOAD A FREE 7-DAY MEAL PLAN SAMPLE<ins>YES PLEASE!</ins>
+    {% translate 'DOWNLOAD A FREE 7-DAY MEAL PLAN SAMPLE' %}
+    <ins>
+      {% translate 'YES PLEASE' %}!
+    </ins>
   </div>
   <nav>
     <div class="nav-links">
-      <a class="nav-item" href="{% url 'about' %}">About</a>
-      <a class="nav-item" href="{% url 'posts-list' %}">Posts</a>
+      <a class="nav-item" href="{% url 'about' %}">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBelTZfI5HwmdvHAV1HvPfXa94XdrCYlXaUw&s" width="30" height="30" />
+        {% translate 'About' %}
+      </a>
+      <a class="nav-item" href="{% url 'posts-list' %}">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHexW-8n7cYh2LVTo7ngju6Getn8PBIo6yw&s" width="25" height="20" />
+        {% translate 'Posts' %}
+      </a>
 
-      {% get_current_language as language %}
-      {% get_available_languages as languages %}
+      <div class="lang-dropdown">
+        {% get_current_language as language %}
+        {% get_available_languages as languages %}
 
-      <option>{{ language }}</option>
+        <a href="#" class="cur-lang nav-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHpMvmhV3813PubUdXCPAf_MsWB7VSYq8dBw&s" width="25" height="20" />
+          {% if language == 'en' %}
+            English
+          {% elif language == 'ru' %}
+            Russian
+          {% else %}
+            Uzbek
+          {% endif %}
+        </a>
 
-      {% for lang_code, lang_name in languages %}
-        <a href="{% url 'change_lang' lang_code %}">{{ lang_name }}</a>
-      {% endfor %}
+        <div class="drp-content">
+          {% for lang_code, lang_name in languages %}
+            <a href="{% url 'change_lang' lang_code %}">{{ lang_name }}</a>
+          {% endfor %}
+        </div>
+      </div>
     </div>
     <div class="logo-wrapper">
       <a id="logo" class="nav-item" href="{% url 'home' %}"><span style="color:red;">Asia</span>Kitchen</a>
@@ -36,17 +58,17 @@
     <div class="auth-wrapper">
       {% if not request.user.is_authenticated %}
         <a class="nav-item" href="#">🔍</a>
-        <a class="nav-item login" href="{% url 'account_login' %}">Log in</a>
-        <a class="nav-item signup" href="{% url 'create_user' %}">Sign up</a>
+        <a class="nav-item login" href="{% url 'account_login' %}">{% translate 'Log in' %}</a>
+        <a class="nav-item signup" href="{% url 'create_user' %}">{% translate 'Sign up' %}</a>
       {% else %}
-        <a class="nav-item create-post" href="{% url 'create-post' %}">Create Post</a>
+        <a class="nav-item create-post" href="{% url 'create-post' %}">{% translate 'Create Post' %}</a>
         <div class="profile-drp-wrapper">
           <p class="user-info">
             <a class="nav-item view-profile" href="{% url 'profile_page' %}">{{ request.user.username }}</a>
             <img src="{{ request.user.profile.image.url }}" class="profile-picture" alt="user-image" />
           </p>
           <div class="content">
-            <a class="nav-item logout" href="{% url 'logout_user' %}">Log out</a>
+            <a class="nav-item logout" href="{% url 'logout_user' %}">{% translate 'Log out' %}</a>
           </div>
         </div>
       {% endif %}

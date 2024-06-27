@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('change-lang/<str:lang_code>/', change_lang, name='change_lang'),
+    # This needs to be changed
 ] 
 
 urlpatterns += i18n_patterns(

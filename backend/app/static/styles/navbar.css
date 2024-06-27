@@ -119,3 +119,34 @@ nav a.create-post:hover {
 nav a.signup {
     background-color: darkslategray;
 }
+
+
+
+
+.lang-dropdown {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.lang-dropdown .drp-content {
+    width: 200px;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.lang-dropdown:hover .drp-content {
+    display: block;
+}
+
+.lang-dropdown .drp-content a {
+    width: 100%;
+    cursor: pointer;
+}
+.lang-dropdown .drp-content a:hover {
+    background-color: lightgray;
+}

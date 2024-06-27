@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-27 08:37+0500\n"
+"POT-Creation-Date: 2024-06-27 09:45+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,46 @@ msgstr "Ruscha"
 msgid "Uzbek"
 msgstr "Uzbekcha"
 
-#: .\app\views.py:19
+#: .\app\views.py:16 .\app\views.py:29
 msgid "Hello World"
 msgstr "Salom dunyo!"
+
+#: .\app\views.py:27
+msgid "Language changed to "
+msgstr "Til o'zgartirildi: "
+
+#: .\templates\about.html:15
+msgid "text"
+msgstr "matn"
+
+#: .\templates\navbar.html:17
+msgid "DOWNLOAD A FREE 7-DAY MEAL PLAN SAMPLE"
+msgstr "TEKIN 7-KUNLIK OVQAT REJASI NAMUNASI YUKLAB OLING"
+
+#: .\templates\navbar.html:19
+msgid "YES PLEASE"
+msgstr "HA, ILTIMOS"
+
+#: .\templates\navbar.html:26
+msgid "About"
+msgstr "Biz haqimizda"
+
+#: .\templates\navbar.html:30
+msgid "Posts"
+msgstr "Xabarlar"
+
+#: .\templates\navbar.html:61
+msgid "Log in"
+msgstr "Kirish"
+
+#: .\templates\navbar.html:62
+msgid "Sign up"
+msgstr "Ro'yxatdan o'tish"
+
+#: .\templates\navbar.html:64
+msgid "Create Post"
+msgstr "Xabar yaratish"
+
+#: .\templates\navbar.html:71
+msgid "Log out"
+msgstr "Chiqish"
