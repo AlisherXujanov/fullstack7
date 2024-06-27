@@ -19,14 +19,17 @@ from django.urls import path, include
 from .views import HomeView, about
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+urlpatterns += i18n_patterns(
     path('', HomeView.as_view(), name='home'),
     path('about/', about, name='about'),
     path('posts/', include('posts.urls')),
     path('users/', include('users.urls')),
-
-
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
