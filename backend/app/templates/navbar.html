@@ -1,7 +1,8 @@
 {% load i18n %}
 
 <style>
-  #select-language, option {
+  #select-language,
+  option {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -20,18 +21,14 @@
       <a class="nav-item" href="{% url 'about' %}">About</a>
       <a class="nav-item" href="{% url 'posts-list' %}">Posts</a>
 
-      <select id="select-language">
-        {% get_current_language as language %}
-        {% get_available_languages as languages %}
+      {% get_current_language as language %}
+      {% get_available_languages as languages %}
 
-        <option>{{ language }}</option>
+      <option>{{ language }}</option>
 
-        {% for lang_code, lang_name in languages %}
-          <option value="{{ lang_code }}">
-            <a href="{% url 'change_lang' lang_code %}">{{ lang_name }}</a>
-          </option>
-        {% endfor %}
-      </select>
+      {% for lang_code, lang_name in languages %}
+        <a href="{% url 'change_lang' lang_code %}">{{ lang_name }}</a>
+      {% endfor %}
     </div>
     <div class="logo-wrapper">
       <a id="logo" class="nav-item" href="{% url 'home' %}"><span style="color:red;">Asia</span>Kitchen</a>
