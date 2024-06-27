@@ -26,6 +26,10 @@ from django.contrib import messages
 
 @login_required
 def add_to_favorites(request, pk):
+    """
+        This view serves to add 
+        a post to the wishlist.
+    """
     if add_to_wishlist(request, pk):
         messages.success(request, 'Added to wishlist!')
     else:
