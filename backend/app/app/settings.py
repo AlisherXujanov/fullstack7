@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'posts',
     'django_bootstrap5',
     'users',
+    'rest_framework',
 
     'django.contrib.sites',
     'allauth',
