@@ -20,12 +20,22 @@ from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
+from posts.api_views import PostViewSet
+
+from rest_framework import routers
+router = routers.DefaultRouter()
+
+router.register(r'posts', PostViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('change-lang/<str:lang_code>/', change_lang, name='change_lang'),
     # This needs to be changed
+
+    # API views
+    path('apis/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ] 
 
 urlpatterns += i18n_patterns(
