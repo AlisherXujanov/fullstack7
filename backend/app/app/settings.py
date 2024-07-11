@@ -15,8 +15,8 @@ from pathlib import Path
 import os
 from decouple import config
 
-GOOGLE_CLIENT_ID = config('GOOGLE_CLIENT_ID')
-GOOGLE_SECRET_KEY = config('GOOGLE_SECRET_KEY')
+GOOGLE_CLIENT_ID =  "..."
+GOOGLE_SECRET_KEY = "..."
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

@@ -42,6 +42,8 @@ class PostView(APIView):
         data = PostSerializer(data=request.data, context=context)
         # Save author to the post
         if data.is_valid():
+            # HERE WE NEED TO MAKE IT DYNAMIC
+            # THIS LINE MUST BE DELETED LATER or changed to request.user
             data.validated_data['author'] = User.objects.first()
             data.save()
             return Response(data.data, status=status.HTTP_201_CREATED)
