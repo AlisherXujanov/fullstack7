@@ -27,3 +27,19 @@ def posts_view(request):
         pool[obj.id] = model_to_dict(obj)
 
     return Response({"data": pool, 'message': 'Hello, world!'}, status=status.HTTP_200_OK)
+
+
+# If we want to use it in the class-based view
+class PostView(APIView):
+    def get(self, request):
+        context = {"request": request}
+        all_posts = Posts.objects.all()
+        posts = PostSerializer(all_posts, many=True, context=context)
+        return Response(posts.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        context = {"request": request}
+        data = PostSerializer(data=request.data, context=context)
+        if data.is_valid():
+            data.save()
+            return Response(data.data, status=status.HTTP_201_CREATED)
