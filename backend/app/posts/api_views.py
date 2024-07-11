@@ -47,3 +47,12 @@ class PostView(APIView):
             data.validated_data['author'] = User.objects.first()
             data.save()
             return Response(data.data, status=status.HTTP_201_CREATED)
+        
+    def put(self, request, pk):
+        context = {"request": request}
+        post = Posts.objects.get(id=pk)
+        data = PostSerializer(instance=post, data=request.data, context=context)
+        if data.is_valid():
+            data.save()
+            return Response(data.data, status=status.HTTP_200_OK)
+        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
