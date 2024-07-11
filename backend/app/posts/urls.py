@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import *
+from .api_views import posts_view
 
 urlpatterns = [
     path('create-post', create_post, name='create-post'),
@@ -9,4 +10,6 @@ urlpatterns = [
     path('posts-list', PostListView.as_view(), name='posts-list'),
     path('add-to-favorites/<int:pk>', add_to_favorites, name='add-to-favorites'),
     path('remove-from-favorites/<int:pk>', remove_from_favorites, name='remove-from-favorites'),
+
+    path('api-posts', posts_view, name='posts')
 ]
