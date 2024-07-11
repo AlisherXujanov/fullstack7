@@ -101,9 +101,12 @@ from rest_framework.views import APIView
 from rest_framework import generics, viewsets
 
 @api_view(['GET', 'POST'])
-def books_view(request):
-    data = modal_to_dict(Book.objects.all())
-    return Response({'message': 'Hello, world!'}, status=status.HTTP_200_OK)
+def posts_view(request):
+    pool = {}
+    for obj in Posts.objects.all():
+        pool[obj.id] = model_to_dict(obj)
+
+    return Response({"data": pool, 'message': 'Hello, world!'}, status=status.HTTP_200_OK)
 
 class Books():
     @staticmethod
@@ -117,14 +120,22 @@ class Books():
 # If we want to use it in the class-based view
 class BookView(APIView):
 	def get(self, request):
-        all_books = Books.objects.all()
-        books = BooksSerializer(all_books, many=True)
-        return Response(books.data, status=status.HTTP_200_OK)
+        context = {"request": request}
+        all_posts = Posts.objects.all()
+        posts = PostSerializer(all_posts, many=True, context=context)
+        return Response(posts.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        data = BooksSerializer(data=request.data)
+        context = {"request": request}
+        data = PostSerializer(data=request.data, context=context)
+        # Save author to the post
         if data.is_valid():
+            data.validated_data['author'] = User.objects.first()
             data.save()
+            # {
+            #     "title": "Test post",
+            #     "content": "Hello world"
+            # }
             return Response(data.data, status=status.HTTP_201_CREATED)
 ```
 

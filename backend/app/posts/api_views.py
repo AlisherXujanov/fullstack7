@@ -9,7 +9,7 @@ from rest_framework.decorators import api_view
 # For using class-based views
 from rest_framework.views import APIView
 from django.forms.models import model_to_dict
-
+from django.contrib.auth.models import User
 
 class PostViewSet(viewsets.ModelViewSet):
     """
@@ -40,6 +40,8 @@ class PostView(APIView):
     def post(self, request):
         context = {"request": request}
         data = PostSerializer(data=request.data, context=context)
+        # Save author to the post
         if data.is_valid():
+            data.validated_data['author'] = User.objects.first()
             data.save()
             return Response(data.data, status=status.HTTP_201_CREATED)
