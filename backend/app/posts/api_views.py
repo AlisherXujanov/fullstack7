@@ -56,3 +56,9 @@ class PostView(APIView):
             data.save()
             return Response(data.data, status=status.HTTP_200_OK)
         return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    def delete(self, request, pk):
+        post = Posts.objects.get(id=pk)
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

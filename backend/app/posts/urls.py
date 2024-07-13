@@ -14,4 +14,5 @@ urlpatterns = [
     path('api-posts', posts_view, name='posts'),
     path('api-posts-class', PostView.as_view(), name='posts-class'),
     path('api-update-post/<int:pk>', PostView.as_view(), name='update-post-class'),
+    path('api-delete-post/<int:pk>', PostView.as_view(), name='delete-post-class'),
 ]
