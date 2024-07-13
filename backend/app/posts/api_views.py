@@ -31,11 +31,17 @@ def posts_view(request):
 
 # If we want to use it in the class-based view
 class PostView(APIView):
-    def get(self, request):
+    def get(self, request, pk=None):
         context = {"request": request}
-        all_posts = Posts.objects.all()
-        posts = PostSerializer(all_posts, many=True, context=context)
-        return Response(posts.data, status=status.HTTP_200_OK)
+        if pk:
+            post = Posts.objects.get(id=pk)
+            post = PostSerializer(post, context=context)
+            return Response(post.data, status=status.HTTP_200_OK)
+        else:
+            all_posts = Posts.objects.all()
+            posts = PostSerializer(all_posts, many=True, context=context)
+            return Response(posts.data, status=status.HTTP_200_OK)    
+   
 
     def post(self, request):
         context = {"request": request}
