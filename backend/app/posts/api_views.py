@@ -46,12 +46,19 @@ class PostView(APIView):
     def post(self, request):
         context = {"request": request}
         data = PostSerializer(data=request.data, context=context)
+        # book_names = request.data["book_names"]
+
         # Save author to the post
         if data.is_valid():
             # HERE WE NEED TO MAKE IT DYNAMIC
             # THIS LINE MUST BE DELETED LATER or changed to request.user
             data.validated_data['author'] = User.objects.first()
             data.save()
+            
+            # for book_name in book_names:
+            #     book = Books.objects.create(name=book_name, content=post)
+            #     book.save()
+            
             return Response(data.data, status=status.HTTP_201_CREATED)
         
     def put(self, request, pk):

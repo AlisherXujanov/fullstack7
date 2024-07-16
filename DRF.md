@@ -319,6 +319,10 @@ class BookSerializer(serializers.ModelSerializer):
     # 2. We can also use SerializerMethodField() to create a custom field
     # ex: price_in_discount = serializers.SerializerMethodField(method_name='price_after_discount')
 
+    # def __init__(self, *args, **kwargs) -> None:
+    #     super(BookSerializer).__init__(*args, **kwargs)
+    #     self.request = self.data.get('request')
+
     class Meta:
         model = Book
         fields = ['title', 'author_name', 'price_in_discount', 'description', 'created_at']
@@ -329,6 +333,7 @@ class BookSerializer(serializers.ModelSerializer):
 
     def current_user_as_author(self, obj:Book):
         request = self.context.get('request')
+        # request = self.request
         return request.user.username
 
 # NOTE: To be able to get request object in serializer, 
