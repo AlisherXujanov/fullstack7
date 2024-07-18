@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate
 
 @api_view(['POST'])
 def login(request):
+    # {
+    #     "username": "admin",
+    #     "password": "qweqweqwe"
+    # }
     username = request.data.get('username')
     password = request.data.get('password')
     user = authenticate(username=username, password=password)

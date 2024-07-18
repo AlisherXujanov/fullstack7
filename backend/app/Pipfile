@@ -14,6 +14,7 @@ pyjwt = "*"
 cryptography = "*"
 python-decouple = "*"
 djangorestframework = "*"
+djoser = "*"
 
 [dev-packages]
 

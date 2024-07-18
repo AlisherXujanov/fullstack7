@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'users',
     'rest_framework',
+    'djoser',
 
     'django.contrib.sites',
     'allauth',
@@ -161,11 +162,25 @@ REST_FRAMEWORK = {
         # Allows us to use token authentication throughout the project
         'rest_framework.authentication.TokenAuthentication',
     ],
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.AnonRateThrottle', # for anonymous users
+    #     'rest_framework.throttling.UserRateThrottle', # for authenticated users
+    # ],
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '3/minute', # 3 requests per minute
+    #     'user': '5/minute', # 5 requests per minute
+    # }
 }
 if DEBUG:
     REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] += [
         'rest_framework.authentication.SessionAuthentication',
     ]
+
+DJOSER = {
+    "USER_ID_FIELD": "username",  # We use username for login
+    # "LOGIN_FIELD": "email", # We can use email or username for login
+    "USER_CREATE_PASSWORD_RETYPE": True, # We can use this to make user retype the password
+}
 
 
 # Internationalization

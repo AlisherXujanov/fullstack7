@@ -35,10 +35,14 @@ urlpatterns = [
     # TODO: This needs to be changed
 
     path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 
     # API views
     path('apis/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+
+
 ]
 
 urlpatterns += i18n_patterns(
