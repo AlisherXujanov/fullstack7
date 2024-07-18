@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from rest_framework.authtoken.views import obtain_auth_token
 from django.contrib import admin
 from django.urls import path, include
 from .views import *
@@ -31,12 +32,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('change-lang/<str:lang_code>/', change_lang, name='change_lang'),
-    # This needs to be changed
+    # TODO: This needs to be changed
+
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 
     # API views
     path('apis/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-] 
+]
 
 urlpatterns += i18n_patterns(
     path('', HomeView.as_view(), name='home'),

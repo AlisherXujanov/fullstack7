@@ -13,9 +13,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 import os
+import sys
 from decouple import config
 
-GOOGLE_CLIENT_ID =  "..."
+GOOGLE_CLIENT_ID = "..."
 GOOGLE_SECRET_KEY = "..."
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-th4bm*u2cyj1jfn!#jhwodjllkvmg6c5xz$@xv0r3wyoh4)!w&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get("LOCAL_ENVIRONMENT") == "local_environment":
+    DEBUG = True
+else:
+    DEBUG = False
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -54,6 +59,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
+
+
+    'rest_framework.authtoken',  # Allows us create a token for each user
 ]
 
 MIDDLEWARE = [
@@ -146,6 +154,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # Allows us to use token authentication throughout the project
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] += [
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 
 
 # Internationalization

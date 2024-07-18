@@ -5,24 +5,7 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView
 from .usecases import add_to_wishlist, remove_from_wishlist
 from django.contrib.auth.decorators import login_required, permission_required
-
-
-# import messages and use it for all views to inform the user about the success of the operation
-# RU: импортируем messages и используем его для всех представлений, чтобы информировать пользователя о успешности операции
 from django.contrib import messages
-
-# CRM - it means Create, Read, Update, Delete
-# Client Relational Mapping
-
-# By convention, the order of the functions is:
-# 1. C  -  Create
-# 2. R  -  Read
-# 3. M  -  Modify (Update)  / Delete
-
-
-# def posts_list(request):
-#     posts = Posts.objects.all()
-#     return render(request, 'posts_list.html', context={'posts': posts})
 
 @login_required
 def add_to_favorites(request, pk):
