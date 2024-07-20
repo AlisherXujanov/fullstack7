@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'djoser',
+    'rest_framework_simplejwt',
 
     'django.contrib.sites',
     'allauth',
@@ -160,7 +161,8 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # Allows us to use token authentication throughout the project
-        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     # 'DEFAULT_THROTTLE_CLASSES': [
     #     'rest_framework.throttling.AnonRateThrottle', # for anonymous users
