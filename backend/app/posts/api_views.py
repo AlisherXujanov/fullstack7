@@ -31,6 +31,8 @@ def posts_view(request):
 
 # If we want to use it in the class-based view
 class PostView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    
     def get(self, request, pk=None):
         context = {"request": request}
         if pk:

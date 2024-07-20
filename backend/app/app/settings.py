@@ -16,10 +16,6 @@ import os
 import sys
 from decouple import config
 
-from datetime import timedelta
-REFRESH_TOKEN_LIFETIME_SIX_WEEKS = 42  # days
-
-
 GOOGLE_CLIENT_ID = "..."
 GOOGLE_SECRET_KEY = "..."
 
@@ -57,7 +53,6 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'djoser',
-    'rest_framework_simplejwt',
 
     'django.contrib.sites',
     'allauth',
@@ -165,8 +160,7 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # Allows us to use token authentication throughout the project
-        # 'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
     # 'DEFAULT_THROTTLE_CLASSES': [
     #     'rest_framework.throttling.AnonRateThrottle', # for anonymous users
@@ -186,19 +180,6 @@ DJOSER = {
     "USER_ID_FIELD": "username",  # We use username for login
     # "LOGIN_FIELD": "email", # We can use email or username for login
     "USER_CREATE_PASSWORD_RETYPE": True, # We can use this to make user retype the password
-}
-
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=REFRESH_TOKEN_LIFETIME_SIX_WEEKS),
-    'ROTATE_REFRESH_TOKENS': True,  # If True, refresh tokens will be rotated
-    # That means that after each request we will get a new refresh token
-    # RU: Если True, токены обновления будут поворачиваться
-    # Это означает, что после каждого запроса мы получим новый токен обновления
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    # In the client we need to send the token in the header like this:
-    # Authorization: bearer <token>
 }
 
 

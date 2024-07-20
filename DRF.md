@@ -673,7 +673,8 @@ SIMPLE_JWT = {
     # Это означает, что после каждого запроса мы получим новый токен обновления
     'AUTH_HEADER_TYPES': ('Bearer',),
     # In the client we need to send the token in the header like this:
-    # Authorization: bearer <token>
+    # Authorization: Bearer <token>   
+    # NOTE:  <token> must be sent without the brackets or quotes
 }
 ```
 `NOTE`
