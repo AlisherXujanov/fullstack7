@@ -7,45 +7,53 @@ import { useContext } from "react";
 import { globalContext } from "../../state";
 
 function Login(props) {
-    const [regState, setRegState] = useState({})
+    const [loginState, setloginState] = useState({})
     const state = useContext(globalContext);
 
 
     async function submit(e) {
         e.preventDefault();
-        if (!regState.username || !regState.password1) {
+        if (!loginState.username || !loginState.password) {
             toast.error("Please, fill in all fields", { theme: "dark", toastId: 10 })
             return
         }
         await loginToAccount(e)
-        setRegState({})
+        setloginState({})
         e.target.reset()
     }
 
     async function loginToAccount(e) {
-        const URL_address = BASE_URL + "users"
-        const response = await fetch(URL_address)
-        const users = await response.json()
+        const URL_address = BASE_URL + "/api/token/create/"
 
-        for (let user of users) {
-            if (user.username === regState.username && user.password1 === regState.password1) {
-                toast.success(
-                    "Successfully logged in as " + regState.username,
-                    { theme: "dark", toastId: 10 }
-                )
-                state.toggleAuthModal(e)
-                return
-            }
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginState)
         }
-        toast.error("Incorrect credentials", { theme: "dark", toastId: 10 })
-        state.toggleAuthModal(e)
-        return
+
+        try {
+            const response = await fetch(URL_address, options)
+            if (response.ok) {
+                toast.success("Successfully logged in", { theme: "dark", toastId: 10 })
+                const data = await response.json()
+                console.log(data)
+            } else {
+                throw new Error("Failed to login")
+            }
+        } catch (e) {
+            toast.error("Incorrect credentials", { theme: "dark", toastId: 10 })
+            console.log(e)
+        } finally {
+            state.toggleAuthModal(e)
+        }
     }
 
     function handleState(e) {
         const key = e.target.name
         const val = e.target.value
-        setRegState({ ...regState, [key]: val })
+        setloginState({ ...loginState, [key]: val })
     }
 
     return (
@@ -64,7 +72,7 @@ function Login(props) {
                 <div className="form-control">
                     <label htmlFor="password">Password</label>
                     <input
-                        type="password" id="password" placeholder='Password' name='password1'
+                        type="password" id="password" placeholder='Password' name='password'
                         onChange={handleState}
                     />
                 </div>

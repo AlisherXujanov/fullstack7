@@ -68,6 +68,7 @@ function Registration(props) {
         )
         const data = await response.json()
         console.log(data)
+        console.log(response)
         // state.
 
         return response.ok
