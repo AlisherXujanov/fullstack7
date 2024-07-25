@@ -10,7 +10,7 @@ function Registration(props) {
     const [regState, setRegState] = useState({
         username: '',
         email: '',
-        password1: '',
+        password: '',
         re_password: ''
     })
     const [errors, setErrors] = useState({})
@@ -19,38 +19,39 @@ function Registration(props) {
     async function submit(e) {
         e.preventDefault();
 
-        if (!regState.username || !regState.email || !regState.password1 || !regState.re_password) {
+        if (!regState.username || !regState.email || !regState.password || !regState.re_password) {
             // if (!regState.username) { setErrors({...errors, 'username':true}) }
             // else { setErrors({...errors, 'username':false}) }
 
             // if (!regState.email) { setErrors({...errors, 'email':true}) }
             // else { setErrors({...errors, 'email':false}) }
 
-            // if (!regState.password1) { setErrors({...errors, 'password1':true}) }
-            // else { setErrors({...errors, 'password1':false}) }
+            // if (!regState.password) { setErrors({...errors, 'password':true}) }
+            // else { setErrors({...errors, 'password':false}) }
 
             // if (!regState.re_password) { setErrors({...errors, 're_password':true}) }
             // else { setErrors({...errors, 're_password':false}) }
             toast.error("Please, fill in all fields", { theme: "dark", toastId: 10 })
             return
-        } else if (regState.password1 !== regState.re_password) {
+        } else if (regState.password !== regState.re_password) {
             toast.error("Passwords do not match", { theme: "dark", toastId: 10 })
             return
         }
         try {
-            await createNewAccount(e)
-            state.
-
-            toast.success(
-                "Successfully created a new account for " + regState.username,
-                { theme: "dark", toastId: 10 }
-            )
+            if (await createNewAccount(e)) {
+                toast.success(
+                    "Successfully created a new account for " + regState.username,
+                    { theme: "dark", toastId: 10 }
+                )
+            } else {
+                throw new Error("Failed to create a new account")
+            }
         } catch (e) {
-            console.log(e)
-            return
+            toast.error("Failed to create a new account", { theme: "dark", toastId: 10 })
+        } finally {
+            e.target.reset()
+            state.toggleAuthModal(e)
         }
-        e.target.reset()
-        state.toggleAuthModal(e)
     }
 
     async function createNewAccount(e) {
@@ -65,9 +66,11 @@ function Registration(props) {
                 body: JSON.stringify(regState)
             }
         )
-        console.log(response)
         const data = await response.json()
         console.log(data)
+        // state.
+
+        return response.ok
     }
 
     function handleState(e) {
@@ -100,8 +103,8 @@ function Registration(props) {
                 <div className="form-control">
                     <label htmlFor="password">Password</label>
                     <input
-                        className={errors.password1 ? "input-error" : ""}
-                        type="password" id="password" placeholder='Password' name='password1'
+                        className={errors.password ? "input-error" : ""}
+                        type="password" id="password" placeholder='Password' name='password'
                         onChange={handleState}
                     />
                 </div>
