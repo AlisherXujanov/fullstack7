@@ -29,3 +29,6 @@ def change_lang(request, lang_code: str):
     text = _("Hello World")
     context = {'text': text}
     return render(request, 'about.html', context)
+
+
+

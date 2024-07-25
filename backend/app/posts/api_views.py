@@ -10,6 +10,7 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from django.forms.models import model_to_dict
 from django.contrib.auth.models import User
+from rest_framework.pagination import PageNumberPagination
 
 class PostViewSet(viewsets.ModelViewSet):
     """
@@ -40,9 +41,23 @@ class PostView(APIView):
             post = PostSerializer(post, context=context)
             return Response(post.data, status=status.HTTP_200_OK)
         else:
-            all_posts = Posts.objects.all()
-            posts = PostSerializer(all_posts, many=True, context=context)
-            return Response(posts.data, status=status.HTTP_200_OK)    
+            # posts = Posts.objects.all()
+            # posts = PostSerializer(posts, many=True, context=context)
+            
+            # if self.request.query_params.get('date_posted'):
+            #     posts = posts.order_by("date_posted")
+            # if title__startswith := self.request.query_params.get('title__startswith'):
+            #     posts = posts.filter(title__startswith=title__startswith)
+            # posts = PostSerializer(posts, many=True, context=context)
+            # return Response(posts.data, status=status.HTTP_200_OK)
+
+            posts = Posts.objects.all()
+            paginator = PageNumberPagination()
+            result_page = paginator.paginate_queryset(posts, request)
+            serializer = PostSerializer(
+                result_page, many=True, context=context)
+            return paginator.get_paginated_response(serializer.data)
+
    
 
     def post(self, request):

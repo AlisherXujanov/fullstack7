@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from datetime import timedelta
 from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 import os
@@ -21,6 +22,9 @@ GOOGLE_SECRET_KEY = "..."
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+REFRESH_TOKEN_LIFETIME_SIX_WEEKS = 42  # days
 
 
 # Quick-start development settings - unsuitable for production
@@ -53,6 +57,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'djoser',
+    'rest_framework_simplejwt',
 
     'django.contrib.sites',
     'allauth',
@@ -60,7 +65,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
-
 
     'rest_framework.authtoken',  # Allows us create a token for each user
 ]
@@ -104,6 +108,18 @@ SOCIALACCOUNT_PROVIDERS = {
     #         'key': ''
     #     }
     # }
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=REFRESH_TOKEN_LIFETIME_SIX_WEEKS),
+    'ROTATE_REFRESH_TOKENS': True,  # If True, refresh tokens will be rotated
+    # That means that after each request we will get a new refresh token
+    # RU: Если True, токены обновления будут поворачиваться
+    # Это означает, что после каждого запроса мы получим новый токен обновления
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    # In the client we need to send the token in the header like this:
+    # Authorization: bearer <token>
 }
 
 
@@ -160,7 +176,8 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # Allows us to use token authentication throughout the project
-        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     # 'DEFAULT_THROTTLE_CLASSES': [
     #     'rest_framework.throttling.AnonRateThrottle', # for anonymous users
@@ -170,6 +187,8 @@ REST_FRAMEWORK = {
     #     'anon': '3/minute', # 3 requests per minute
     #     'user': '5/minute', # 5 requests per minute
     # }
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 1,
 }
 if DEBUG:
     REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] += [
@@ -179,7 +198,8 @@ if DEBUG:
 DJOSER = {
     "USER_ID_FIELD": "username",  # We use username for login
     # "LOGIN_FIELD": "email", # We can use email or username for login
-    "USER_CREATE_PASSWORD_RETYPE": True, # We can use this to make user retype the password
+    # We can use this to make user retype the password
+    "USER_CREATE_PASSWORD_RETYPE": True,
 }
 
 

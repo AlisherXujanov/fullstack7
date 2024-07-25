@@ -744,7 +744,7 @@ For example, we can filter the books by author or by title.
 
 
 So, if the user asks books by author, we can do it like this:
-ex: `http://domain-name.com/api/books/?author=John`
+ex: `http://domain-name.com/api/books?author=John`
 
 ```python
 # views.py
@@ -888,7 +888,7 @@ when we visit it again it loads faster because it is cached.
 # По умолчанию он кэширует страницу для всех пользователей вместе
 ```
 
-[This is the link that we can visit for filtering](https://www.django-rest-framework.org/api-guide/caching/)
+[This is the link that we can visit for caching](https://www.django-rest-framework.org/api-guide/caching/)
 
 
 
