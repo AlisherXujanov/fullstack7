@@ -81,7 +81,7 @@ function Registration(props) {
 
     return (
         <div className="auth-content-wrapper">
-            <Heading size={2}>Registration</Heading>
+            <Heading size={2}>Sign up</Heading>
 
             <form onSubmit={submit}>
                 <div className="form-control">

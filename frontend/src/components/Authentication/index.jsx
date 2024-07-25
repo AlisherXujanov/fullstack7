@@ -5,8 +5,6 @@ import './style.scss'
 import { useContext } from "react";
 import { globalContext } from "../../state";
 
-const URL_address = "http://localhost:7070/users"
-
 function Authentication(props) {
     const [isRegistred, setIsRegistred] = useState(true)
     const state = useContext(globalContext);
@@ -15,13 +13,19 @@ function Authentication(props) {
     return (
         <div id='authentication-wrapper'>
             <section className='content'>
-                <button className="close-btn" onClick={state.toggleAuthModal}>&times;</button>  
+                <button className="close-btn" onClick={state.toggleAuthModal}>&times;</button>
                 {
                     isRegistred ? <Login /> : <Registration />
                 }
-                <button className='toggle-auth' onClick={() => setIsRegistred(!isRegistred)}>
-                    Toggle Registration
-                </button>
+
+                <p>
+                    <small>
+                        {isRegistred ? 'Don\'t have an account?' : 'Already have an account?'}
+                        <button style={{ cursor: 'pointer' }} className='toggle-auth' onClick={() => setIsRegistred(!isRegistred)}>
+                            {isRegistred ? 'Create an account' : 'Log in'}
+                        </button>
+                    </small>
+                </p>
             </section>
         </div>
     );
