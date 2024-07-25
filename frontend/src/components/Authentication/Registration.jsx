@@ -7,7 +7,12 @@ import { useContext } from "react";
 import { globalContext } from "../../state";
 
 function Registration(props) {
-    const [regState, setRegState] = useState({})
+    const [regState, setRegState] = useState({
+        username: '',
+        email: '',
+        password1: '',
+        password2: ''
+    })
     const [errors, setErrors] = useState({})
     const state = useContext(globalContext);
 
@@ -32,25 +37,30 @@ function Registration(props) {
             toast.error("Passwords do not match", { theme: "dark", toastId: 10 })
             return
         }
+        try {
+            await createNewAccount(e)
+            state.
 
-        // fetch()    
-        toast.success(
-            "Successfully created a new account for " + regState.username,
-            { theme: "dark", toastId: 10 }
-        )
-        await createNewAccount(e)
-        setRegState({})
+            toast.success(
+                "Successfully created a new account for " + regState.username,
+                { theme: "dark", toastId: 10 }
+            )
+        } catch (e) {
+            console.log(e)
+            return
+        }
         e.target.reset()
         state.toggleAuthModal(e)
     }
 
     async function createNewAccount(e) {
-        const URL_address = BASE_URL + "users"
+        const URL_address = BASE_URL + "/auth/users"
         const response = await fetch(URL_address,
             {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    // "Authorization": "Token ..."
                 },
                 body: JSON.stringify(regState)
             }

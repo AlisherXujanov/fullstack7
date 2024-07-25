@@ -70,7 +70,7 @@ function Login(props) {
                 </div>
                 <div className="form-control">
                     <button className='warning-btn'>
-                        Sign Up
+                        Login
                     </button>
                 </div>
             </form>
