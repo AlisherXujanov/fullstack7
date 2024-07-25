@@ -11,7 +11,7 @@ function Registration(props) {
         username: '',
         email: '',
         password1: '',
-        password2: ''
+        re_password: ''
     })
     const [errors, setErrors] = useState({})
     const state = useContext(globalContext);
@@ -19,7 +19,7 @@ function Registration(props) {
     async function submit(e) {
         e.preventDefault();
 
-        if (!regState.username || !regState.email || !regState.password1 || !regState.password2) {
+        if (!regState.username || !regState.email || !regState.password1 || !regState.re_password) {
             // if (!regState.username) { setErrors({...errors, 'username':true}) }
             // else { setErrors({...errors, 'username':false}) }
 
@@ -29,11 +29,11 @@ function Registration(props) {
             // if (!regState.password1) { setErrors({...errors, 'password1':true}) }
             // else { setErrors({...errors, 'password1':false}) }
 
-            // if (!regState.password2) { setErrors({...errors, 'password2':true}) }
-            // else { setErrors({...errors, 'password2':false}) }
+            // if (!regState.re_password) { setErrors({...errors, 're_password':true}) }
+            // else { setErrors({...errors, 're_password':false}) }
             toast.error("Please, fill in all fields", { theme: "dark", toastId: 10 })
             return
-        } else if (regState.password1 !== regState.password2) {
+        } else if (regState.password1 !== regState.re_password) {
             toast.error("Passwords do not match", { theme: "dark", toastId: 10 })
             return
         }
@@ -54,7 +54,7 @@ function Registration(props) {
     }
 
     async function createNewAccount(e) {
-        const URL_address = BASE_URL + "/auth/users"
+        const URL_address = BASE_URL + "/auth/users/"
         const response = await fetch(URL_address,
             {
                 method: 'POST',
@@ -108,8 +108,8 @@ function Registration(props) {
                 <div className="form-control">
                     <label htmlFor="password-conf">Password confirmation</label>
                     <input
-                        className={errors.password2 ? "input-error" : ""}
-                        type="password" id="password-conf" placeholder='Password confirmation' name='password2'
+                        className={errors.re_password ? "input-error" : ""}
+                        type="password" id="password-conf" placeholder='Password confirmation' name='re_password'
                         onChange={handleState}
                     />
                 </div>
